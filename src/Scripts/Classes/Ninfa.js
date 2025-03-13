@@ -1,8 +1,7 @@
-import Stats from "./Stats"
 export default Ninfa;
 
 class Ninfa {
-    constructor(scene, x, y, sprites, NinfaElegida) {
+    constructor(scene, x, y, sprites, NinfaElegida,stats) {
        
         this.scene = scene; //Referencia a la escena
         this.x = x; //Posición en X
@@ -14,27 +13,7 @@ class Ninfa {
         this.Ninfa = NinfaElegida;
 
         //Seteo de las estadísticas en función de la NinfaElegida
-
-        switch(this.Ninfa){
-            case(0):
-            this.NinfaStats = Stats(1,2,3,1,2,3);
-            break;
-            case(1):
-            this.NinfaStats = Stats(3,2,1,2,3,1);
-            break;
-            case(2):
-            this.NinfaStats = Stats(2,1,1,3,2,3);
-            break;
-            case(3):
-            this.NinfaStats = Stats(3,1,2,3,1,2);
-            break;
-            case(4):
-            this.NinfaStats = Stats(2,3,3,2,1,1);
-            break;
-            case(5):
-            this.NinfaStats = Stats(1,3,2,1,3,2);
-            break;
-        }
+        this.NinfaStats = stats;
 
         //Todos los sprites (la rama y la ninfa en cuestión)
 
