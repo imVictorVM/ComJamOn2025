@@ -1,0 +1,72 @@
+import Player1 from "../Classes/Player1.js";
+import Player2 from "../Classes/Player2.js";
+import card from "../Classes/CardClass.js"
+import Ninfa from "../Classes/Ninfa.js"
+export default class GameScene extends Phaser.Scene {
+    constructor(){
+        super({key: "GameScene"})
+
+        this.whichRama;
+        //Array the sprites
+        this.spriteArray;
+    }
+
+init(ramaSelected){
+    this.whichRama = ramaSelected;
+}
+
+preload(){
+
+    //Precarga del fondo 
+
+    //Precarga de las imágenes de las ramas
+
+    //Precarga de las imágenes de las distintas ninfas
+
+    //Precarga de las imágenes de las cartas
+
+}
+
+    create(){
+        switch(this.whichRama){
+            case(0):
+            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaCerezo1','NinfaCerezo1Feliz','NinfaCerezo1Triste','NinfaCerezo1Enfadado']; //Seteamos su array de sprites
+            ninfa = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama); //Creamos la ninfa
+            break;
+            case(1):
+            break;
+            case(2):
+            break;
+            case(3):
+            break;
+            case(4):
+            break;
+            case(5):
+            break;
+        }
+        
+    }
+    changeScene(final){
+        switch (final) {
+            case 0: //Ninguno cumple los requisitos para pasar de ronda
+                console.log("RamaKaboom");
+                break;
+            case 1: //Cumplen los requisitos para pasar de 1 ronda pero no para la segunda
+                console.log("NosotrosKaboom");
+                break;
+            case 2: //Gana el player 1 pero no el player 2
+                console.log("Win jaja player 2 kaboom");
+                break;
+            case 3: //Gana el player 2 pero no el player 1
+                console.log("Win jaja player 1 kaboom");
+                break;
+            case 4: //Ganan ambos y se acepta poliamor
+                console.log("2 pa 1 cada cual que interprete lo que quiera");
+                break;
+            case 5: //Ganan ambos pero uno rechaza el poliamor
+                console.log("Todo hace kaboom");
+                break;
+        }
+    }
+
+}
