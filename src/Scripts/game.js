@@ -1,4 +1,4 @@
-import MainMenuScene from "./MainMenu.js";
+import MainMenuScene from "./Scenes/MainMenu.js";
 
 let config = {
 	type: Phaser.AUTO,
