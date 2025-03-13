@@ -99,7 +99,7 @@ export default class MainMenuScene extends Phaser.Scene {
             console.log("Jugar")
         }
         else if(whatSelection == 1){
-            //this.scene.start('CreditsScene');
+            this.scene.start('CreditsScene');
             console.log("Creditos")
         }
     }
