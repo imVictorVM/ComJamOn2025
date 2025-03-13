@@ -1,0 +1,105 @@
+{
+    "Eventos": {
+
+        "Prueba": {
+
+            "dialogs": [
+
+                {},
+                {"text": "Hola me muero"}
+            ]
+
+        },
+        
+
+        "evento0.3": {
+            "dialogs": [
+                {},
+                { "character": "Tarik", "text": "Shai, ha llegado nueva gente con provisiones." },
+                { "character": "Tarik", "text": "Están pidiendo refugio en el templo." },
+                { "character": "Eshe", "text": "Cada vez hay más gente." },
+                { "character": "Eshe", "text": "Vamos a acabar quedándonos sin espacio." },
+                { "character": "Shai", "text": "Confío en que este asedio no dure tanto como para llegar a ese punto." },
+                { "character": "Eshe", "text": "Está bien ser positivo." },
+                { "character": "Eshe", "text": "Pero dejar entrar a la gente en el templo indiscriminadamente no me parece la mejor idea." },
+                { "character": "Eshe", "text": "He visto a gente sospechosa en los alrededores." },
+                { "character": "Tarik", "text": "No digas eso, Eshe." },
+                { "character": "Eshe", "text": "Es la verdad." },
+                { "character": "Eshe", "text": "Lo último que necesitamos es que alguien nos robe." },
+                { "character": "Eshe", "text": "Y he visto a un chico de pelo rojo que no me inspira confianza." },
+                { "character": "Eshe", "text": "Apesta a magia extraña." },
+                { "character": "Tarik", "text": "¿Qué propones que hagamos entonces?" },
+                { "character": "Tarik", "text": "¿Cerrar las puertas del templo y dejar que gente inocente muera?" },
+                { "character": "Tarik", "text": "Se supone que los templos de los dioses ofrecen protección a sus creyentes." },
+                { "character": "Eshe", "text": "Eso no es lo que estaba diciendo." },
+                { "character": "Eshe", "text": "Solo creo que deberíamos tener más cuidado." },
+                {
+                    "character": "Shai",
+                    "text": "Eshe, confía en Ra.",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0, "next": "fragmento_0.3.2",
+                            "god": "Ra" 
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1, "next": "fragmento_0.3.1",
+                            "god": "Ra" 
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1, "next": "fragmento_0.3.1",
+                            "god": "Ra" 
+                        }
+                    ]
+                }
+            ]
+        },
+
+        "fragmento_0.3.1": {
+            "dialogs": [
+                {},
+            { "character": "Eshe", "text": "Esa es una respuesta bastante ingenua." },
+            { "character": "Eshe", "text": "No me la esperaba de ti." },
+            { "character": "Shai", "text": "En situaciones así de extremas solo podemos mantener la esperanza." },
+            { "character": "Shai", "text": "El momento en el que dejemos de confiar en que podemos superar esto, es el momento en el que Apofis ha ganado." },
+            { "character": "Tarik", "text": "Creo que Shai tiene razón." },
+            { "character": "Tarik", "text": "Solo espero que tengas razón y no se alargue mucho más." },
+            { "character": "Eshe", "text": "Si eso es lo que ambos pensáis confiaré en vosotros." },
+            { "character": "Eshe", "text": "Pero voy a seguir vigilando a la gente sospechosa por mi cuenta." },
+            { "character": "Eshe", "text": "Y si tengo que clavarle una flecha a alguien lo haré." }
+            ]
+        },
+
+        "fragmento_0.3.2": {
+            "dialogs": [
+            {},
+            { "character": "Tarik", "text": "Lo que dices tiene sentido." },
+            { "character": "Tarik", "text": "Pero es bastante desesperanzador." },
+            { "character": "Eshe", "text": "Mejor tristes que muertos, hermano." },
+            { "character": "Shai", "text": "Tampoco es de mi agrado dejar a gente desprotegida." },
+            { "character": "Shai", "text": "Pero si no tenemos cuidado no podremos ayudar a nadie." },
+            { "character": "Tarik", "text": "Bueno, si esta es la decisión de la mayoría tendré que acatarla." },
+            { "character": "Tarik", "text": "Ven conmigo a la entrada Eshe." },
+            { "character": "Tarik", "text": "Tú tienes mejor criterio para estas cosas." }
+            ]
+        }
+    }
+
+       
+    
+
+    
+    
+}
+     
+
+            
+        
+        
+   
+    
+       
+
+

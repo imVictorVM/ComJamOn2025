@@ -1,4 +1,5 @@
 import MainMenuScene from "./Scenes/MainMenu.js";
+import PruebaDialog from "./Scenes/PruebaDialog.js"; 
 
 let config = {
 	type: Phaser.AUTO,
@@ -12,7 +13,7 @@ let config = {
 		height: 1080,
 		zoom: 1
 	},
-	scene: [MainMenuScene],
+	scene: [MainMenuScene,PruebaDialog],
 	physics: { 
 		default: 'arcade', 
 		arcade: { 

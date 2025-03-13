@@ -30,6 +30,6 @@ export default class MainMenuScene extends Phaser.Scene {
 
 
     changeScene(){
-       console.log("Changing Scene");
+        this.scene.start('PruebaDialog');
     }
 }
