@@ -15,9 +15,6 @@ export default class Player2 extends Player {
     }
     
 init(){
-    Player.leftMovKey = this.leftMovKey;
-    Player.rightMovKey = this.rightMovKey;
-    Player.selectKey = this.selectKey;
 }
 
 }
