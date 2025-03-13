@@ -17,4 +17,19 @@ export default class Player1 extends Player {
 init(){
 }
 
+moveleft(){
+    return Phaser.Input.Keyboard.JustDown(this.leftMovKey);
 }
+
+moveright(){
+    return Phaser.Input.Keyboard.JustDown(this.rightMovKey);
+}
+
+select(){
+   return Phaser.Input.Keyboard.JustDown(this.selectKey);
+}
+
+
+}
+
+

@@ -39,12 +39,16 @@ export default class MainMenuScene extends Phaser.Scene {
 
     update(t,dt){
         super.update(t,dt);
-        if(this.Player1.selectKey.isDown || this.Player2.selectKey.isDown){
-            console.log("selected");
+        if( this.Player1.moveleft()|| this.Player2.moveleft()){
+            console.log("move left");
         }
 
-        if(this.Player2.leftMovKey.isDown){
-            console.log("Player2 left");
+        if(this.Player1.moveright()|| this.Player2.moveright()){
+            console.log("move right");
+        }
+
+        if(this.Player1.select()|| this.Player2.select()){
+            console.log("select");
         }
     }
 
