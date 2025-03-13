@@ -3,13 +3,13 @@ import MainMenuScene from "./MainMenu.js";
 let config = {
 	type: Phaser.AUTO,
 	parent: 'juego',
-	pixelArt: true,
+	pixelArt: false,
 	scale: {
 		autoCenter: Phaser.Scale.CENTER_HORIZONTALLY,
 
 		mode: Phaser.Scale.FIT,
-		width: 512,
-		height: 512,
+		width: 1920,
+		height: 1080,
 		zoom: 1
 	},
 	scene: [MainMenuScene],
