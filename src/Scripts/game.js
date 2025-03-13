@@ -1,4 +1,5 @@
-import MainMenuScene from "./Scenes/MainMenu.js";
+import MainMenuScene from "./Scenes/MainMenuScene.js";
+import TreeScene from "./Scenes/TreeScene.js";
 import PruebaDialog from "./Scenes/PruebaDialog.js"; 
 
 let config = {
@@ -13,7 +14,7 @@ let config = {
 		height: 1080,
 		zoom: 1
 	},
-	scene: [MainMenuScene,PruebaDialog],
+	scene: [MainMenuScene,TreeScene,PruebaDialog],
 	physics: { 
 		default: 'arcade', 
 		arcade: { 

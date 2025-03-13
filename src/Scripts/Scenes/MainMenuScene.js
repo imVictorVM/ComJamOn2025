@@ -95,7 +95,7 @@ export default class MainMenuScene extends Phaser.Scene {
     changeScene(whatSelection){
         
         if(whatSelection == 0){
-            //this.scene.start('TreeScene');
+            this.scene.start('TreeScene');
             console.log("Jugar")
         }
         else if(whatSelection == 1){
@@ -108,4 +108,4 @@ export default class MainMenuScene extends Phaser.Scene {
         this.selectedStart.setVisible(!this.selectedStart.visible);
         this.selectedCredits.setVisible(!this.selectedCredits.visible);
     }
-    }
+}
