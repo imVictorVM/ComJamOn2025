@@ -28,23 +28,40 @@ preload(){
 }
 
     create(){
+
+        //Creación de la respectiva Ninfa en función de la rama seleccionada por el jugador
         switch(this.whichRama){
             case(0):
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaCerezo1','NinfaCerezo1Feliz','NinfaCerezo1Triste','NinfaCerezo1Enfadado']; //Seteamos su array de sprites
             ninfa = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama); //Creamos la ninfa
             break;
             case(1):
+            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaCerezo2','NinfaCerezo2Feliz','NinfaCerezo2Triste','NinfaCerezo2Enfadado']; //Seteamos su array de sprites
+            ninfa = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama); //Creamos la ninfa
             break;
             case(2):
+            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauceLloron1','NinfaSauceLloron1Feliz','NinfaSauceLloron1Triste','NinfaSauceLloron1Enfadado']; //Seteamos su array de sprites
+            ninfa = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama); //Creamos la ninfa
             break;
             case(3):
+            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauceLloron2','NinfaSauceLloron2Feliz','NinfaSauceLloron2Triste','NinfaSauceLloron2Enfadado']; //Seteamos su array de sprites
+            ninfa = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama); //Creamos la ninfa
             break;
             case(4):
+            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera1','NinfaPalmera1Feliz','NinfaPalmera1Triste','NinfaPalmera1Enfadado']; //Seteamos su array de sprites
+            ninfa = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama); //Creamos la ninfa
             break;
             case(5):
+            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera2','NinfaPalmera2Feliz','NinfaPalmera2Triste','NinfaPalmera2Enfadado']; //Seteamos su array de sprites
+            ninfa = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama); //Creamos la ninfa
             break;
         }
-        
+        /* Pruebas
+        console.log(ninfa);
+        _card = new card(this,'card',0,1,0,0,0,0); //Chuleta de stats: [empatia, extorsion, estabilidadMental, creatividad, paciencia, inteligencia]
+        console.log(_card);
+        ninfa.ReadCardStats()
+        */
     }
     changeScene(final){
         switch (final) {

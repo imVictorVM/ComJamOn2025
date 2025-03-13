@@ -56,7 +56,7 @@ class Ninfa {
     }
 
     //Recibe las estadísticas de la carta y comprueba sus estadísticas en función de las de la ninfa
-    ReadCard(cardStats){
+    ReadCardStats(cardStats){
         if(cardStats.empatia == 1) this.NinfaStats.compareEmpatia();
         if(cardStats.extorsion == 1) this.NinfaStats.compareExtorsion();
         if(cardStats.estabilidadMental == 1) this.NinfaStats.compareEstabilidadMental();
