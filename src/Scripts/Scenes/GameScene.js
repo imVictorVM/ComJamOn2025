@@ -176,11 +176,13 @@ changeScene(final){
 
   update(t,dt){
         super.update(t,dt);
+
+        //PLAYER 1
         if( this.Player1.moveleft()){
             console.log("move left");
             if(this.selectionPlayer1 != 0){
                 this.selectionPlayer1 -=1;
-                this.changeSelection(this.selectionPlayer1);
+                this.changeSelectionPlayer1(this.selectionPlayer1);
             }
         }
 
@@ -188,7 +190,7 @@ changeScene(final){
             console.log("move right");
             if(this.selectionPlayer1 != 2){
                 this.selectionPlayer1 += 1;
-                this.changeSelection(this.selectionPlayer1);
+                this.changeSelectionPlayer1(this.selectionPlayer1);
             }
         }
 
@@ -197,9 +199,32 @@ changeScene(final){
             //this.changeScene(this.selectionPlayer1);
             //elegir carta
         }
+
+        //PLAYER 2
+        if( this.Player2.moveleft()){
+            console.log("move left");
+            if(this.selectionPlayer2 != 0){
+                this.selectionPlayer2 -=1;
+                this.changeSelectionPlayer2(this.selectionPlayer2);
+            }
+        }
+
+        if(this.Player2.moveright()){
+            console.log("move right");
+            if(this.selectionPlayer2 != 2){
+                this.selectionPlayer2 += 1;
+                this.changeSelectionPlayer2(this.selectionPlayer2);
+            }
+        }
+
+        if(this.Player2.select()){
+            console.log("select");
+            //this.changeScene(this.selectionPlayer1);
+            //elegir carta
+        }
     }
 
-    changeSelection(whatSelection) {
+    changeSelectionPlayer1(whatSelection) {
         switch (whatSelection) {
             case 0:
                 this.selectedcard1.setVisible(true);
@@ -224,6 +249,52 @@ changeScene(final){
                 //this.selectedcard4.setVisible(false);
                 this.selectedcard5.setVisible(true);
                 //this.selectedcard6.setVisible(true);
+                break;
+            
+            /*    case 3:
+                this.selectedt1b1.setVisible(false);
+                this.selectedt1b2.setVisible(false);
+                this.selectedt2b1.setVisible(false);
+                this.selectedt2b2.setVisible(true);
+                this.selectedt3b1.setVisible(false);
+                this.selectedt3b2.setVisible(false);
+                break;
+            case 4:
+                this.selectedt1b1.setVisible(false);
+                this.selectedt1b2.setVisible(false);
+                this.selectedt2b1.setVisible(false);
+                this.selectedt2b2.setVisible(false);
+                this.selectedt3b1.setVisible(true);
+                this.selectedt3b2.setVisible(false);
+                break;
+            case 5:
+                this.selectedt1b1.setVisible(false);
+                this.selectedt1b2.setVisible(false);
+                this.selectedt2b1.setVisible(false);
+                this.selectedt2b2.setVisible(false);
+                this.selectedt3b1.setVisible(false);
+                this.selectedt3b2.setVisible(true);
+                break;
+                */
+        }
+    }
+
+    changeSelectionPlayer2(whatSelection) {
+        switch (whatSelection) {
+            case 0:
+                this.selectedcard2.setVisible(true);
+                this.selectedcard4.setVisible(false);
+                this.selectedcard6.setVisible(false);
+                break;
+            case 1:
+                this.selectedcard2.setVisible(false);
+                this.selectedcard4.setVisible(true);
+                this.selectedcard6.setVisible(false);
+                break;
+            case 2:
+                this.selectedcard2.setVisible(false);
+                this.selectedcard4.setVisible(false);
+                this.selectedcard6.setVisible(true);
                 break;
             
             /*    case 3:
