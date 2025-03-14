@@ -34,7 +34,7 @@ create(){
 
     //selections
     this.selectionPlayer1 = 0;
-    this.selectionPlayer2 = 2;
+    this.selectionPlayer2 = 5;
     
     //Creación de la respectiva Ninfa en función de la rama seleccionada por el jugador
     console.log(this.whichRama);
@@ -81,39 +81,32 @@ create(){
 
 
     //Crear cartas
+    this.createCards();
+
+    /* Pruebas */
+    console.log( this.ninfa );
+    
+    //console.log(this.card);
+    this.ninfa.ReadCardStats(this.card1.stats)
+        
+}
+
+createCards(){
+    //Crear cartas
     this.card1 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,1,0,0,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
     this.card1.setSprite(this.sys.game.canvas.width / 8, this.sys.game.canvas.height / 2);
 
-    this.selectedcard1 = this.add.text(
-        this.sys.game.canvas.width / 20,
-        this.sys.game.canvas.height / 1.5,
+    this.selectedcard1Player1 = this.add.text(
+        this.sys.game.canvas.width / 8,
+        this.sys.game.canvas.height / 1.3,
         '----', { 
         fontSize: '40px', 
         color: 'white',      
     }).setVisible(true);
     
 
-    this.selectedcard2 = this.add.text(
-        this.sys.game.canvas.width / 20,
-        this.sys.game.canvas.height / 4,
-        '----', { 
-        fontSize: '40px', 
-        color: 'red',      
-    }).setVisible(false);
-
-    this.card = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',1,0,0,0,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
-    this.card.setSprite(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2);
-
-    this.selectedcard3 = this.add.text(
-        this.sys.game.canvas.width / 2,
-        this.sys.game.canvas.height / 1.5,
-        '----', { 
-        fontSize: '40px', 
-        color: 'white',      
-    }).setVisible(false);
-
-    this.selectedcard4 = this.add.text(
-        this.sys.game.canvas.width / 2,
+    this.selectedcard1Player2 = this.add.text(
+        this.sys.game.canvas.width /8,
         this.sys.game.canvas.height / 4,
         '----', { 
         fontSize: '40px', 
@@ -121,31 +114,101 @@ create(){
     }).setVisible(false);
 
     this.card2 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',1,0,0,0,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
-    this.card2.setSprite(this.sys.game.canvas.width / 1.5, this.sys.game.canvas.height / 2);
+    this.card2.setSprite(this.sys.game.canvas.width / 5, this.sys.game.canvas.height / 2);
 
-    this.selectedcard5 = this.add.text(
-        this.sys.game.canvas.width / 1.5,
-        this.sys.game.canvas.height / 1.5,
+    this.selectedcard2Player1 = this.add.text(
+        this.sys.game.canvas.width / 5,
+        this.sys.game.canvas.height / 1.3,
         '----', { 
         fontSize: '40px', 
         color: 'white',      
     }).setVisible(false);
 
-    this.selectedcard6 = this.add.text(
+    this.selectedcard2Player2 = this.add.text(
+        this.sys.game.canvas.width / 5,
+        this.sys.game.canvas.height / 4,
+        '----', { 
+        fontSize: '40px', 
+        color: 'red',      
+    }).setVisible(false);
+
+    this.card3 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,1,0,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
+    this.card3.setSprite(this.sys.game.canvas.width / 3, this.sys.game.canvas.height / 2);
+
+    this.selectedcard3Player1 = this.add.text(
+        this.sys.game.canvas.width / 3,
+        this.sys.game.canvas.height / 1.3,
+        '----', { 
+        fontSize: '40px', 
+        color: 'white',      
+    }).setVisible(false);
+
+    this.selectedcard3Player2 = this.add.text(
+        this.sys.game.canvas.width / 3,
+        this.sys.game.canvas.height / 4,
+        '----', { 
+        fontSize: '40px', 
+        color: 'red',      
+    }).setVisible(false);
+
+    this.card4 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,1,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
+    this.card4.setSprite(this.sys.game.canvas.width / 1.5, this.sys.game.canvas.height / 2);
+
+    this.selectedcard4Player1 = this.add.text(
+        this.sys.game.canvas.width / 1.5,
+        this.sys.game.canvas.height / 1.3,
+        '----', { 
+        fontSize: '40px', 
+        color: 'white',      
+    }).setVisible(false);
+
+    this.selectedcard4Player2 = this.add.text(
         this.sys.game.canvas.width / 1.5,
         this.sys.game.canvas.height / 4,
         '----', { 
         fontSize: '40px', 
         color: 'red',      
-    }).setVisible(true);
-
-    /* Pruebas */
-    console.log( this.ninfa );
+    }).setVisible(false);
     
-    console.log(this.card);
-    this.ninfa.ReadCardStats(this.card.stats)
-        
+    this.card5 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,0,1,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
+    this.card5.setSprite(this.sys.game.canvas.width / 1.35, this.sys.game.canvas.height / 2);
+
+    this.selectedcard5Player1 = this.add.text(
+        this.sys.game.canvas.width / 1.35,
+        this.sys.game.canvas.height / 1.3,
+        '----', { 
+        fontSize: '40px', 
+        color: 'white',      
+    }).setVisible(false);
+
+    this.selectedcard5Player2 = this.add.text(
+        this.sys.game.canvas.width / 1.35,
+        this.sys.game.canvas.height / 4,
+        '----', { 
+        fontSize: '40px', 
+        color: 'red',      
+    }).setVisible(false);
+
+    this.card6 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,0,0,1); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
+    this.card6.setSprite(this.sys.game.canvas.width / 1.15, this.sys.game.canvas.height / 2);
+
+    this.selectedcard6Player1 = this.add.text(
+        this.sys.game.canvas.width / 1.15,
+        this.sys.game.canvas.height / 1.3,
+        '----', { 
+        fontSize: '40px', 
+        color: 'white',      
+    }).setVisible(false);
+
+    this.selectedcard6Player2 = this.add.text(
+        this.sys.game.canvas.width / 1.15,
+        this.sys.game.canvas.height / 4,
+        '----', { 
+        fontSize: '40px', 
+        color: 'red',      
+    }).setVisible(true);
 }
+
 changeScene(final){
     switch (final) {
         case 0: //Ninguno cumple los requisitos para pasar de ronda
@@ -188,7 +251,7 @@ changeScene(final){
 
         if(this.Player1.moveright()){
             console.log("move right");
-            if(this.selectionPlayer1 != 2){
+            if(this.selectionPlayer1 != 5){
                 this.selectionPlayer1 += 1;
                 this.changeSelectionPlayer1(this.selectionPlayer1);
             }
@@ -211,7 +274,7 @@ changeScene(final){
 
         if(this.Player2.moveright()){
             console.log("move right");
-            if(this.selectionPlayer2 != 2){
+            if(this.selectionPlayer2 != 5){
                 this.selectionPlayer2 += 1;
                 this.changeSelectionPlayer2(this.selectionPlayer2);
             }
@@ -227,101 +290,107 @@ changeScene(final){
     changeSelectionPlayer1(whatSelection) {
         switch (whatSelection) {
             case 0:
-                this.selectedcard1.setVisible(true);
-                //this.selectedcard2.setVisible(true);
-                this.selectedcard3.setVisible(false);
-                //this.selectedcard4.setVisible(false);
-                this.selectedcard5.setVisible(false);
-                //this.selectedcard6.setVisible(false);
+                this.selectedcard1Player1.setVisible(true);
+                this.selectedcard2Player1.setVisible(false);
+                this.selectedcard3Player1.setVisible(false);
+                this.selectedcard4Player1.setVisible(false);
+                this.selectedcard5Player1.setVisible(false);
+                this.selectedcard6Player1.setVisible(false);
                 break;
             case 1:
-                this.selectedcard1.setVisible(false);
-                //this.selectedcard2.setVisible(false);
-                this.selectedcard3.setVisible(true);
-                //this.selectedcard4.setVisible(true);
-                this.selectedcard5.setVisible(false);
-                //this.selectedcard6.setVisible(false);
+                console.log("entra");
+                this.selectedcard1Player1.setVisible(false);
+                this.selectedcard2Player1.setVisible(true);
+                this.selectedcard3Player1.setVisible(false);
+                this.selectedcard4Player1.setVisible(false);
+                this.selectedcard5Player1.setVisible(false);
+                this.selectedcard6Player1.setVisible(false);
                 break;
             case 2:
-                this.selectedcard1.setVisible(false);
-                //this.selectedcard2.setVisible(false);
-                this.selectedcard3.setVisible(false);
-                //this.selectedcard4.setVisible(false);
-                this.selectedcard5.setVisible(true);
-                //this.selectedcard6.setVisible(true);
+                this.selectedcard1Player1.setVisible(false);
+                this.selectedcard2Player1.setVisible(false);
+                this.selectedcard3Player1.setVisible(true);
+                this.selectedcard4Player1.setVisible(false);
+                this.selectedcard5Player1.setVisible(false);
+                this.selectedcard6Player1.setVisible(false);
                 break;
-            
-            /*    case 3:
-                this.selectedt1b1.setVisible(false);
-                this.selectedt1b2.setVisible(false);
-                this.selectedt2b1.setVisible(false);
-                this.selectedt2b2.setVisible(true);
-                this.selectedt3b1.setVisible(false);
-                this.selectedt3b2.setVisible(false);
+            case 3:
+                this.selectedcard1Player1.setVisible(false);
+                this.selectedcard2Player1.setVisible(false);
+                this.selectedcard3Player1.setVisible(false);
+                this.selectedcard4Player1.setVisible(true);
+                this.selectedcard5Player1.setVisible(false);
+                this.selectedcard6Player1.setVisible(false);
                 break;
             case 4:
-                this.selectedt1b1.setVisible(false);
-                this.selectedt1b2.setVisible(false);
-                this.selectedt2b1.setVisible(false);
-                this.selectedt2b2.setVisible(false);
-                this.selectedt3b1.setVisible(true);
-                this.selectedt3b2.setVisible(false);
+                this.selectedcard1Player1.setVisible(false);
+                this.selectedcard2Player1.setVisible(false);
+                this.selectedcard3Player1.setVisible(false);
+                this.selectedcard4Player1.setVisible(false);
+                this.selectedcard5Player1.setVisible(true);
+                this.selectedcard6Player1.setVisible(false);
                 break;
             case 5:
-                this.selectedt1b1.setVisible(false);
-                this.selectedt1b2.setVisible(false);
-                this.selectedt2b1.setVisible(false);
-                this.selectedt2b2.setVisible(false);
-                this.selectedt3b1.setVisible(false);
-                this.selectedt3b2.setVisible(true);
+                this.selectedcard1Player1.setVisible(false);
+                this.selectedcard2Player1.setVisible(false);
+                this.selectedcard3Player1.setVisible(false);
+                this.selectedcard4Player1.setVisible(false);
+                this.selectedcard5Player1.setVisible(false);
+                this.selectedcard6Player1.setVisible(true);
                 break;
-                */
         }
     }
 
     changeSelectionPlayer2(whatSelection) {
         switch (whatSelection) {
             case 0:
-                this.selectedcard2.setVisible(true);
-                this.selectedcard4.setVisible(false);
-                this.selectedcard6.setVisible(false);
+                this.selectedcard1Player2.setVisible(true);
+                this.selectedcard2Player2.setVisible(false);
+                this.selectedcard3Player2.setVisible(false);
+                this.selectedcard4Player2.setVisible(false);
+                this.selectedcard5Player2.setVisible(false);
+                this.selectedcard6Player2.setVisible(false);
                 break;
             case 1:
-                this.selectedcard2.setVisible(false);
-                this.selectedcard4.setVisible(true);
-                this.selectedcard6.setVisible(false);
+                this.selectedcard1Player2.setVisible(false);
+                this.selectedcard2Player2.setVisible(true);
+                this.selectedcard3Player2.setVisible(false);
+                this.selectedcard4Player2.setVisible(false);
+                this.selectedcard5Player2.setVisible(false);
+                this.selectedcard6Player2.setVisible(false);
                 break;
             case 2:
-                this.selectedcard2.setVisible(false);
-                this.selectedcard4.setVisible(false);
-                this.selectedcard6.setVisible(true);
+                this.selectedcard1Player2.setVisible(false);
+                this.selectedcard2Player2.setVisible(false);
+                this.selectedcard3Player2.setVisible(true);
+                this.selectedcard4Player2.setVisible(false);
+                this.selectedcard5Player2.setVisible(false);
+                this.selectedcard6Player2.setVisible(false);
                 break;
-            
-            /*    case 3:
-                this.selectedt1b1.setVisible(false);
-                this.selectedt1b2.setVisible(false);
-                this.selectedt2b1.setVisible(false);
-                this.selectedt2b2.setVisible(true);
-                this.selectedt3b1.setVisible(false);
-                this.selectedt3b2.setVisible(false);
+            case 3:
+                this.selectedcard1Player2.setVisible(false);
+                this.selectedcard2Player2.setVisible(false);
+                this.selectedcard3Player2.setVisible(false);
+                this.selectedcard4Player2.setVisible(true);
+                this.selectedcard5Player2.setVisible(false);
+                this.selectedcard6Player2.setVisible(false);
                 break;
             case 4:
-                this.selectedt1b1.setVisible(false);
-                this.selectedt1b2.setVisible(false);
-                this.selectedt2b1.setVisible(false);
-                this.selectedt2b2.setVisible(false);
-                this.selectedt3b1.setVisible(true);
-                this.selectedt3b2.setVisible(false);
+                this.selectedcard1Player2.setVisible(false);
+                this.selectedcard2Player2.setVisible(false);
+                this.selectedcard3Player2.setVisible(false);
+                this.selectedcard4Player2.setVisible(false);
+                this.selectedcard5Player2.setVisible(true);
+                this.selectedcard6Player2.setVisible(false);
                 break;
             case 5:
-                this.selectedt1b1.setVisible(false);
-                this.selectedt1b2.setVisible(false);
-                this.selectedt2b1.setVisible(false);
-                this.selectedt2b2.setVisible(false);
-                this.selectedt3b1.setVisible(false);
-                this.selectedt3b2.setVisible(true);
+                this.selectedcard1Player2.setVisible(false);
+                this.selectedcard2Player2.setVisible(false);
+                this.selectedcard3Player2.setVisible(false);
+                this.selectedcard4Player2.setVisible(false);
+                this.selectedcard5Player2.setVisible(false);
+                this.selectedcard6Player2.setVisible(true);
                 break;
-                */
         }
     }
 }
