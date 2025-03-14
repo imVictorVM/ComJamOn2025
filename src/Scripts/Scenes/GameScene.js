@@ -9,6 +9,8 @@ constructor(){
     this.whichRama;
     //Array the sprites
     this.spriteArray;
+    this.timer;
+    this.startGame;
 }
 
 init(ramaSelected){
@@ -28,6 +30,15 @@ preload(){
 }
 
 create(){
+    //Startgame
+    this.startGame = false;
+    this.countdown = 5 * 1000; //5 segundos
+    
+    //TIMER
+    this.timer = this.time.addEvent({ 
+        delay: 5 * 1000, //1000 por milisegundos
+        callback: () => {this.startGame = true} });
+
     //JUGADORES
             this.Player1 = new Player1(this, 100, 100, 'player1');
             this.Player2 = new Player2(this, 100, 100, 'player2');
@@ -262,57 +273,64 @@ changeScene(final){
   update(t,dt){
         super.update(t,dt);
 
-        //PLAYER 1
-        if( this.Player1.moveleft()){
-            console.log("move left");
-            if(this.selectionPlayer1 != 0){
-                this.selectionPlayer1 -=1;
-                this.changeSelectionPlayer1(this.selectionPlayer1);
+        if(this.startGame == true) {
+            //PLAYER 1
+            if( this.Player1.moveleft()){
+                console.log("move left");
+                if(this.selectionPlayer1 != 0){
+                    this.selectionPlayer1 -=1;
+                    this.changeSelectionPlayer1(this.selectionPlayer1);
+                }
+            }
+
+            if(this.Player1.moveright()){
+                console.log("move right");
+                if(this.selectionPlayer1 != 5){
+                    this.selectionPlayer1 += 1;
+                    this.changeSelectionPlayer1(this.selectionPlayer1);
+                }
+            }
+
+            if(this.Player1.select() && this.cardArray[this.selectionPlayer1].selected == false){
+                console.log("select");
+                //this.changeScene(this.selectionPlayer1);
+                //elegir carta
+                this.checkPlayerElection(1);
+                this.cardArray[this.selectionPlayer1].selected = true;
+                console.log("has been selected");
+            }
+
+            //PLAYER 2
+            if( this.Player2.moveleft()){
+                console.log("move left");
+                if(this.selectionPlayer2 != 0){
+                    this.selectionPlayer2 -=1;
+                    this.changeSelectionPlayer2(this.selectionPlayer2);
+                }
+            }
+
+            if(this.Player2.moveright()){
+                console.log("move right");
+                if(this.selectionPlayer2 != 5){
+                    this.selectionPlayer2 += 1;
+                    this.changeSelectionPlayer2(this.selectionPlayer2);
+                }
+            }
+
+            if(this.Player2.select() && this.cardArray[this.selectionPlayer2].selected == false){
+                console.log("select");
+                //this.changeScene(this.selectionPlayer1);
+                //elegir carta
+                this.checkPlayerElection(2);
+                this.cardArray[this.selectionPlayer2].selected = true;
+                console.log("has been selected 2");
             }
         }
-
-        if(this.Player1.moveright()){
-            console.log("move right");
-            if(this.selectionPlayer1 != 5){
-                this.selectionPlayer1 += 1;
-                this.changeSelectionPlayer1(this.selectionPlayer1);
-            }
+        else{
+            this.countdown -= dt;
+            console.log(this.countdown);
         }
-
-        if(this.Player1.select() && this.cardArray[this.selectionPlayer1].selected == false){
-            console.log("select");
-            //this.changeScene(this.selectionPlayer1);
-            //elegir carta
-            this.checkPlayerElection(1);
-            this.cardArray[this.selectionPlayer1].selected = true;
-            console.log("has been selected");
-        }
-
-        //PLAYER 2
-        if( this.Player2.moveleft()){
-            console.log("move left");
-            if(this.selectionPlayer2 != 0){
-                this.selectionPlayer2 -=1;
-                this.changeSelectionPlayer2(this.selectionPlayer2);
-            }
-        }
-
-        if(this.Player2.moveright()){
-            console.log("move right");
-            if(this.selectionPlayer2 != 5){
-                this.selectionPlayer2 += 1;
-                this.changeSelectionPlayer2(this.selectionPlayer2);
-            }
-        }
-
-        if(this.Player2.select() && this.cardArray[this.selectionPlayer2].selected == false){
-            console.log("select");
-            //this.changeScene(this.selectionPlayer1);
-            //elegir carta
-            this.checkPlayerElection(2);
-            this.cardArray[this.selectionPlayer2].selected = true;
-            console.log("has been selected 2");
-        }
+        
     }
 
     changeSelectionPlayer1(whatSelection) {
