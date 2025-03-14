@@ -43,7 +43,7 @@ export default class loadScene extends Phaser.Scene {
 
 
     // AQUÍ CARGAMOS TODOS LOS RECURSOS
-
+    this.load.image('carta', 'src/Assets/cartaDebug.png');
 
     ///////////////////////////
 

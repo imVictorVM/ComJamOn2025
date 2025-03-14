@@ -28,6 +28,14 @@ preload(){
 }
 
 create(){
+    //JUGADORES
+            this.Player1 = new Player1(this, 100, 100, 'player1');
+            this.Player2 = new Player2(this, 100, 100, 'player2');
+
+    //selections
+    this.selectionPlayer1 = 0;
+    this.selectionPlayer2 = 2;
+    
     //Creación de la respectiva Ninfa en función de la rama seleccionada por el jugador
     console.log(this.whichRama);
     switch(this.whichRama){
@@ -70,9 +78,70 @@ create(){
 
     }
 
+
+
+    //Crear cartas
+    this.card1 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,1,0,0,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
+    this.card1.setSprite(this.sys.game.canvas.width / 8, this.sys.game.canvas.height / 2);
+
+    this.selectedcard1 = this.add.text(
+        this.sys.game.canvas.width / 20,
+        this.sys.game.canvas.height / 1.5,
+        '----', { 
+        fontSize: '40px', 
+        color: 'white',      
+    }).setVisible(true);
+    
+
+    this.selectedcard2 = this.add.text(
+        this.sys.game.canvas.width / 20,
+        this.sys.game.canvas.height / 4,
+        '----', { 
+        fontSize: '40px', 
+        color: 'red',      
+    }).setVisible(false);
+
+    this.card = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',1,0,0,0,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
+    this.card.setSprite(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2);
+
+    this.selectedcard3 = this.add.text(
+        this.sys.game.canvas.width / 2,
+        this.sys.game.canvas.height / 1.5,
+        '----', { 
+        fontSize: '40px', 
+        color: 'white',      
+    }).setVisible(false);
+
+    this.selectedcard4 = this.add.text(
+        this.sys.game.canvas.width / 2,
+        this.sys.game.canvas.height / 4,
+        '----', { 
+        fontSize: '40px', 
+        color: 'red',      
+    }).setVisible(false);
+
+    this.card2 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',1,0,0,0,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
+    this.card2.setSprite(this.sys.game.canvas.width / 1.5, this.sys.game.canvas.height / 2);
+
+    this.selectedcard5 = this.add.text(
+        this.sys.game.canvas.width / 1.5,
+        this.sys.game.canvas.height / 1.5,
+        '----', { 
+        fontSize: '40px', 
+        color: 'white',      
+    }).setVisible(false);
+
+    this.selectedcard6 = this.add.text(
+        this.sys.game.canvas.width / 1.5,
+        this.sys.game.canvas.height / 4,
+        '----', { 
+        fontSize: '40px', 
+        color: 'red',      
+    }).setVisible(true);
+
     /* Pruebas */
     console.log( this.ninfa );
-    this.card = new card(this,'card',0,1,0,0,0,0); //Chuleta de stats: [empatia, extorsion, estabilidadMental, creatividad, paciencia, inteligencia]
+    
     console.log(this.card);
     this.ninfa.ReadCardStats(this.card.stats)
         
@@ -104,4 +173,84 @@ changeScene(final){
         break;
     }
   }
+
+  update(t,dt){
+        super.update(t,dt);
+        if( this.Player1.moveleft()){
+            console.log("move left");
+            if(this.selectionPlayer1 != 0){
+                this.selectionPlayer1 -=1;
+                this.changeSelection(this.selectionPlayer1);
+            }
+        }
+
+        if(this.Player1.moveright()){
+            console.log("move right");
+            if(this.selectionPlayer1 != 2){
+                this.selectionPlayer1 += 1;
+                this.changeSelection(this.selectionPlayer1);
+            }
+        }
+
+        if(this.Player1.select()){
+            console.log("select");
+            //this.changeScene(this.selectionPlayer1);
+            //elegir carta
+        }
+    }
+
+    changeSelection(whatSelection) {
+        switch (whatSelection) {
+            case 0:
+                this.selectedcard1.setVisible(true);
+                //this.selectedcard2.setVisible(true);
+                this.selectedcard3.setVisible(false);
+                //this.selectedcard4.setVisible(false);
+                this.selectedcard5.setVisible(false);
+                //this.selectedcard6.setVisible(false);
+                break;
+            case 1:
+                this.selectedcard1.setVisible(false);
+                //this.selectedcard2.setVisible(false);
+                this.selectedcard3.setVisible(true);
+                //this.selectedcard4.setVisible(true);
+                this.selectedcard5.setVisible(false);
+                //this.selectedcard6.setVisible(false);
+                break;
+            case 2:
+                this.selectedcard1.setVisible(false);
+                //this.selectedcard2.setVisible(false);
+                this.selectedcard3.setVisible(false);
+                //this.selectedcard4.setVisible(false);
+                this.selectedcard5.setVisible(true);
+                //this.selectedcard6.setVisible(true);
+                break;
+            
+            /*    case 3:
+                this.selectedt1b1.setVisible(false);
+                this.selectedt1b2.setVisible(false);
+                this.selectedt2b1.setVisible(false);
+                this.selectedt2b2.setVisible(true);
+                this.selectedt3b1.setVisible(false);
+                this.selectedt3b2.setVisible(false);
+                break;
+            case 4:
+                this.selectedt1b1.setVisible(false);
+                this.selectedt1b2.setVisible(false);
+                this.selectedt2b1.setVisible(false);
+                this.selectedt2b2.setVisible(false);
+                this.selectedt3b1.setVisible(true);
+                this.selectedt3b2.setVisible(false);
+                break;
+            case 5:
+                this.selectedt1b1.setVisible(false);
+                this.selectedt1b2.setVisible(false);
+                this.selectedt2b1.setVisible(false);
+                this.selectedt2b2.setVisible(false);
+                this.selectedt3b1.setVisible(false);
+                this.selectedt3b2.setVisible(true);
+                break;
+                */
+        }
+    }
 }

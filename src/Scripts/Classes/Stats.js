@@ -1,8 +1,8 @@
 export default class Stats
  {
-    constructor(empatia,extorsion,estabilidadMental,creatividad,paciencia,inteligencia) {
+    constructor(empatia,extroversion,estabilidadMental,creatividad,paciencia,inteligencia) {
        this.empatia = empatia;
-       this.extorsion = extorsion;
+       this.extroversion = extroversion;
        this.estabilidadMental = estabilidadMental;
        this.creatividad = creatividad;
        this.paciencia = paciencia;
@@ -21,12 +21,12 @@ export default class Stats
 
     }
 
-    compareExtorsion(){
+    compareExtroversion(){
 
-        if(this.extorsion == 1){
+        if(this.extroversion == 1){
             //Llamar al método pasandole un tremendo -1
         }
-        else if(this.extorsion == 2){
+        else if(this.extroversion == 2){
             //Llamara al método pasandole un fantástico 0
         }
       /*  else //Llamar al método pasandole alto 1*/
