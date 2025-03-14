@@ -31,7 +31,7 @@ preload(){
 
 create(){
     //Startgame
-    this.startGame = false;
+    this.startGame = false; //booleano para empezar el juego
     this.countdown = 5 * 1000; //5 segundos
     this.countdownText = this.add.text(
         this.sys.game.canvas.width / 2,
@@ -338,7 +338,6 @@ changeScene(final){
         else{
             this.countdown -= dt;
             this.countdownText.setText(Math.floor(this.countdown / 1000) + 1);
-            console.log(this.countdown);
         }
         
     }
