@@ -33,6 +33,13 @@ create(){
     //Startgame
     this.startGame = false;
     this.countdown = 5 * 1000; //5 segundos
+    this.countdownText = this.add.text(
+        this.sys.game.canvas.width / 2,
+        this.sys.game.canvas.height / 2,
+        '5', { 
+        fontSize: '80px', 
+        color: 'white',      
+    });
     
     //TIMER
     this.timer = this.time.addEvent({ 
@@ -274,6 +281,8 @@ changeScene(final){
         super.update(t,dt);
 
         if(this.startGame == true) {
+            this.countdownText.setVisible(false);
+            
             //PLAYER 1
             if( this.Player1.moveleft()){
                 console.log("move left");
@@ -328,6 +337,7 @@ changeScene(final){
         }
         else{
             this.countdown -= dt;
+            this.countdownText.setText(Math.floor(this.countdown / 1000) + 1);
             console.log(this.countdown);
         }
         
