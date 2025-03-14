@@ -1,6 +1,6 @@
-export default class Ninfa {
+export default class Ninfa{
     constructor(scene, x, y, sprites, NinfaElegida,stats) {
-       
+        //super(scene, x, y, sprite); 
         this.scene = scene; //Referencia a la escena
         this.x = x; //Posición en X
         this.y = y; //Posición en Y
@@ -35,7 +35,7 @@ export default class Ninfa {
     //Recibe las estadísticas de la carta y comprueba sus estadísticas en función de las de la ninfa
     ReadCardStats(cardStats){
         if(cardStats.empatia == 1) this.NinfaStats.compareEmpatia();
-        if(cardStats.extorsion == 1) this.NinfaStats.compareExtorsion();
+        if(cardStats.extroversion == 1) this.NinfaStats.compareExtroversion();
         if(cardStats.estabilidadMental == 1) this.NinfaStats.compareEstabilidadMental();
         if(cardStats.creatividad == 1) this.NinfaStats.compareCreatividad();
         if(cardStats.paciencia == 1) this.NinfaStats.comparePaciencia();
