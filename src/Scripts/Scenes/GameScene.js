@@ -91,9 +91,25 @@ create(){
         
 }
 
+//metodo para ocultar mierda
 createCards(){
+    //Proximamente se puede pasar como parametro la pool de cartas(respuestas) dado una pregunta
+    //Lo que habra que cambiar son las estadisticas que se pueden leer del json correspondiente
+    //la posicion de las cartas es fija, asi como su tamaño.
+    
+    //crear array
+    this.cardArray = [
+
+        this.card1 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,1,0,0,0,0),
+        this.card2 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',1,0,0,0,0,0),
+        this.card3 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,1,0,0,0),
+        this.card4 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,1,0,0),
+        this.card5 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,0,1,0),
+        this.card6 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,0,0,1)
+    ];
+
     //Crear cartas
-    this.card1 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,1,0,0,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
+     //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
     this.card1.setSprite(this.sys.game.canvas.width / 8, this.sys.game.canvas.height / 2);
 
     this.selectedcard1Player1 = this.add.text(
@@ -113,7 +129,7 @@ createCards(){
         color: 'red',      
     }).setVisible(false);
 
-    this.card2 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',1,0,0,0,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
+   
     this.card2.setSprite(this.sys.game.canvas.width / 5, this.sys.game.canvas.height / 2);
 
     this.selectedcard2Player1 = this.add.text(
@@ -132,7 +148,6 @@ createCards(){
         color: 'red',      
     }).setVisible(false);
 
-    this.card3 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,1,0,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
     this.card3.setSprite(this.sys.game.canvas.width / 3, this.sys.game.canvas.height / 2);
 
     this.selectedcard3Player1 = this.add.text(
@@ -151,7 +166,6 @@ createCards(){
         color: 'red',      
     }).setVisible(false);
 
-    this.card4 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,1,0,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
     this.card4.setSprite(this.sys.game.canvas.width / 1.5, this.sys.game.canvas.height / 2);
 
     this.selectedcard4Player1 = this.add.text(
@@ -170,7 +184,6 @@ createCards(){
         color: 'red',      
     }).setVisible(false);
     
-    this.card5 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,0,1,0); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
     this.card5.setSprite(this.sys.game.canvas.width / 1.35, this.sys.game.canvas.height / 2);
 
     this.selectedcard5Player1 = this.add.text(
@@ -189,7 +202,6 @@ createCards(){
         color: 'red',      
     }).setVisible(false);
 
-    this.card6 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,0,0,1); //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
     this.card6.setSprite(this.sys.game.canvas.width / 1.15, this.sys.game.canvas.height / 2);
 
     this.selectedcard6Player1 = this.add.text(
@@ -207,6 +219,16 @@ createCards(){
         fontSize: '40px', 
         color: 'red',      
     }).setVisible(true);
+}
+
+//para comprobar la eleccion
+checkPlayerElection(player)
+{
+    if(player == 1){
+        this.ninfa.ReadCardStats(this.cardArray[this.selectionPlayer1].stats);
+    }
+    else this.ninfa.ReadCardStats(this.cardArray[this.selectionPlayer2].stats);
+
 }
 
 changeScene(final){
@@ -257,10 +279,13 @@ changeScene(final){
             }
         }
 
-        if(this.Player1.select()){
+        if(this.Player1.select() && this.cardArray[this.selectionPlayer1].selected == false){
             console.log("select");
             //this.changeScene(this.selectionPlayer1);
             //elegir carta
+            this.checkPlayerElection(1);
+            this.cardArray[this.selectionPlayer1].selected = true;
+            console.log("has been selected");
         }
 
         //PLAYER 2
@@ -280,10 +305,13 @@ changeScene(final){
             }
         }
 
-        if(this.Player2.select()){
+        if(this.Player2.select() && this.cardArray[this.selectionPlayer2].selected == false){
             console.log("select");
             //this.changeScene(this.selectionPlayer1);
             //elegir carta
+            this.checkPlayerElection(2);
+            this.cardArray[this.selectionPlayer2].selected = true;
+            console.log("has been selected 2");
         }
     }
 
