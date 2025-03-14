@@ -1,6 +1,4 @@
-export default
-
-class Ninfa {
+export default class Ninfa {
     constructor(scene, x, y, sprites, NinfaElegida,stats) {
        
         this.scene = scene; //Referencia a la escena

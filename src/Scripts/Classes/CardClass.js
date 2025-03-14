@@ -1,6 +1,5 @@
 import Stats from "./Stats.js"
-export default
-class Card {
+export default class Card {
     constructor(scene, sprite,empatia,extorsion,estabilidadMental,creatividad,paciencia,inteligencia) {
         this.scene = scene;
         this.sprite = sprite;
