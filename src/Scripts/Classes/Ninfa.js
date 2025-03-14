@@ -1,9 +1,6 @@
-import Stats from "./Stats"
-export default Ninfa;
-
-class Ninfa {
-    constructor(scene, x, y, sprites, NinfaElegida) {
-       
+export default class Ninfa{
+    constructor(scene, x, y, sprites, NinfaElegida,stats) {
+        //super(scene, x, y, sprite); 
         this.scene = scene; //Referencia a la escena
         this.x = x; //Posición en X
         this.y = y; //Posición en Y
@@ -14,27 +11,7 @@ class Ninfa {
         this.Ninfa = NinfaElegida;
 
         //Seteo de las estadísticas en función de la NinfaElegida
-
-        switch(this.Ninfa){
-            case(0):
-            this.NinfaStats = Stats(1,2,3,1,2,3);
-            break;
-            case(1):
-            this.NinfaStats = Stats(3,2,1,2,3,1);
-            break;
-            case(2):
-            this.NinfaStats = Stats(2,1,1,3,2,3);
-            break;
-            case(3):
-            this.NinfaStats = Stats(3,1,2,3,1,2);
-            break;
-            case(4):
-            this.NinfaStats = Stats(2,3,3,2,1,1);
-            break;
-            case(5):
-            this.NinfaStats = Stats(1,3,2,1,3,2);
-            break;
-        }
+        this.NinfaStats = stats;
 
         //Todos los sprites (la rama y la ninfa en cuestión)
 
@@ -56,9 +33,9 @@ class Ninfa {
     }
 
     //Recibe las estadísticas de la carta y comprueba sus estadísticas en función de las de la ninfa
-    ReadCard(cardStats){
+    ReadCardStats(cardStats){
         if(cardStats.empatia == 1) this.NinfaStats.compareEmpatia();
-        if(cardStats.extorsion == 1) this.NinfaStats.compareExtorsion();
+        if(cardStats.extroversion == 1) this.NinfaStats.compareExtroversion();
         if(cardStats.estabilidadMental == 1) this.NinfaStats.compareEstabilidadMental();
         if(cardStats.creatividad == 1) this.NinfaStats.compareCreatividad();
         if(cardStats.paciencia == 1) this.NinfaStats.comparePaciencia();

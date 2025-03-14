@@ -1,0 +1,82 @@
+export default class loadScene extends Phaser.Scene {
+    constructor(){
+        super({key: "loadScene"})
+    }
+
+
+  preload() {
+
+    // Texto de carga
+    this.loadingText = this.add.text(
+      this.cameras.main.width / 2,
+      this.cameras.main.height / 2.4,
+      "Cargando...",
+      {
+        font: "100px Arial",
+        fill: "#ffffff",
+      }
+    ).setOrigin(0.5);
+
+    // Barra de progreso
+    const progressBar = this.add.graphics();
+    const progressBox = this.add.graphics();
+    const width = this.cameras.main.width;
+    const height = this.cameras.main.height;
+
+    progressBox.fillStyle(0x222222, 0.8);
+    progressBox.fillRect(width / 2 - 150, height / 2, 300, 50);
+
+    // Listener para actualizar la barra de progreso
+    this.load.on("progress", (value) => {
+      
+    
+      this.add.image(0, 0, 'imLoad').setOrigin(0, 0);
+      progressBar.clear();
+      progressBar.fillStyle(0xffffff, 1);
+      progressBar.fillRect(
+        width / 2 - 140,
+        height / 2 + 10,
+        280 * value,
+        30
+      );
+    });
+
+
+    // AQUÍ CARGAMOS TODOS LOS RECURSOS
+    this.load.image('carta', 'src/Assets/cartaDebug.png');
+
+    ///////////////////////////
+
+     // Evento para limpiar una vez que todo esté cargado
+ this.load.on("complete", () => {
+    progressBar.destroy();
+    progressBox.destroy();
+    this.loadingText.setText("¡Carga completa!");
+  });
+  }
+
+
+
+  create() {
+    
+    //Pintamos un fondo
+    var back = this.add.image(0, 0, 'imLoad').setOrigin(0, 0);
+
+    //escalar el fondo
+    var scaleX = this.cameras.main.width / back.width;
+    var scaleY = this.cameras.main.height / back.height;
+    
+    var scale = Math.min(scaleX, scaleY);
+    
+    back.setScale(scale);
+    
+    back.setPosition(
+        this.cameras.main.width / 2 - back.displayWidth / 2,
+        this.cameras.main.height / 2 - back.displayHeight / 2
+    );
+    
+    // Cambiar a la siguiente escena cuando todo esté listo
+   this.scene.start("MainMenuScene"); // Cambia "MainMenuScene" por escena principal
+  }
+
+}

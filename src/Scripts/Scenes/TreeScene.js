@@ -208,26 +208,6 @@ preload(){
     }
 
     changeScene(whatSelection){
-        switch (whatSelection) {
-            case 0:
-                console.log("T1B1");
-                break;
-            case 1:
-                console.log("T1B2");
-                break;
-            case 2:
-                console.log("T2B1");
-                break;
-            case 3:
-                console.log("T2B2");
-                break;
-            case 4:
-                console.log("T3B1");
-                break;
-            case 5:
-                console.log("T3B2");
-                break;
-        }
+        this.scene.start('GameScene',{selection:whatSelection});
     }
-
-}
+}   
