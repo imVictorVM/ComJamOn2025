@@ -1,4 +1,4 @@
-export default Ninfa;
+export default
 
 class Ninfa {
     constructor(scene, x, y, sprites, NinfaElegida,stats) {

@@ -2,7 +2,7 @@ import Player1 from "../Classes/Player1.js";
 import Player2 from "../Classes/Player2.js";
 import card from "../Classes/CardClass.js"
 import Ninfa from "../Classes/Ninfa.js"
-import stats from "../Classes/Stats.js"
+import Stats from "../Classes/Stats.js"
 export default class GameScene extends Phaser.Scene {
 constructor(){
     super({key: "GameScene"})
@@ -32,7 +32,7 @@ create(){
     switch(this.whichRama){
 
         case(0):
-            this.NinfaStats = new stats(1,2,3,1,2,3);
+            this.NinfaStats = new Stats(1,2,3,1,2,3);
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaCerezo1','NinfaCerezo1Feliz','NinfaCerezo1Triste','NinfaCerezo1Enfadado']; //Seteamos su array de sprites
             ninfa = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama,this.NinfaStats); //Creamos la ninfa
         break;

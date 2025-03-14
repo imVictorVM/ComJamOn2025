@@ -1,6 +1,5 @@
-export default Stats;
-
-class Stats {
+export default class Stats
+ {
     constructor(empatia,extorsion,estabilidadMental,creatividad,paciencia,inteligencia) {
        this.empatia = empatia;
        this.extorsion = extorsion;
