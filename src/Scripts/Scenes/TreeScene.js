@@ -133,7 +133,6 @@ preload(){
     update(t,dt){
         super.update(t,dt);
         if( this.Player1.moveleft()|| this.Player2.moveleft()){
-            console.log("move left");
             if(this.whatSelection != 0){
                 this.whatSelection -=1;
                 this.changeSelection(this.whatSelection);
@@ -141,7 +140,6 @@ preload(){
         }
 
         if(this.Player1.moveright()|| this.Player2.moveright()){
-            console.log("move right");
             if(this.whatSelection != 5){
                 this.whatSelection += 1;
                 this.changeSelection(this.whatSelection);
@@ -149,7 +147,6 @@ preload(){
         }
 
         if(this.Player1.select()|| this.Player2.select()){
-            console.log("select");
             this.changeScene(this.whatSelection);
         }
     }

@@ -77,7 +77,6 @@ export default class MainMenuScene extends Phaser.Scene {
     update(t,dt){
         super.update(t,dt);
         if( this.Player1.moveleft()|| this.Player2.moveleft()){
-            console.log("move left");
             if(this.whatSelection == 1){
                 this.whatSelection = 0;
                 this.changeSelection();
@@ -85,7 +84,6 @@ export default class MainMenuScene extends Phaser.Scene {
         }
 
         if(this.Player1.moveright()|| this.Player2.moveright()){
-            console.log("move right");
             if(this.whatSelection == 0){
                 this.whatSelection = 1;
                 this.changeSelection();
@@ -93,7 +91,6 @@ export default class MainMenuScene extends Phaser.Scene {
         }
 
         if(this.Player1.select()|| this.Player2.select()){
-            console.log("select");
             this.changeScene(this.whatSelection);
         }
     }
@@ -103,11 +100,9 @@ export default class MainMenuScene extends Phaser.Scene {
         
         if(whatSelection == 0){
             this.scene.start('TreeScene');
-            console.log("Jugar")
         }
         else if(whatSelection == 1){
             this.scene.start('CreditsScene');
-            console.log("Creditos")
         }
     }
 
