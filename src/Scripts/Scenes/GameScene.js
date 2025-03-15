@@ -297,32 +297,52 @@ checkPlayerElection(player, selection) {
 }
 
 
-changeScene(final){
-    switch (final) {
-        case 0: //Ninguno cumple los requisitos para pasar de ronda
-            console.log("RamaKaboom");
-        break;
+changeScene(){
+    
+    //Escondemos las barras de tiempo
+    this.timerPlayer1.HideTimer()
+    this.timerPlayer2.HideTimer()
 
-        case 1: //Cumplen los requisitos para pasar de 1 ronda pero no para la segunda
-            console.log("NosotrosKaboom");
-        break;
-
-        case 2: //Gana el player 1 pero no el player 2
-            console.log("Win jaja player 2 kaboom");
-        break;
-
-        case 3: //Gana el player 2 pero no el player 1
-            console.log("Win jaja player 1 kaboom");
-        break;
-
-        case 4: //Ganan ambos y se acepta poliamor
-            console.log("2 pa 1 cada cual que interprete lo que quiera");
-        break;
-
-        case 5: //Ganan ambos pero uno rechaza el poliamor
-            console.log("Todo hace kaboom");
-        break;
+    //Escondemos el timer 
+    this.countdownText.setVisible(false);
+    
+    if(this.fase == 1){ //Ninguno cumple los requisitos para pasar de ronda
+        //Seteo de la explosión en la posición de la rama
+        console.log("RamaKaboom");
     }
+    //Si pasan de fase
+    else{
+        if(this.affectionSystem.GetPlayer1() < 3 && this.affectionSystem.GetPlayer2() < 3){ //Cumplen los requisitos para pasar de 1 ronda pero no para la segunda
+            //Seteo 2 imagenes de la explosion uno en cada lado representando a los players
+            console.log("NosotrosKaboom");
+        }
+        else if(this.affectionSystem.GetPlayer1() > this.affectionSystem.GetPlayer2()){ //Gana el player 1 pero no el player 2
+            //Seteo 1 imagen de explosion en la posición del player 2
+            console.log("Win jaja player 2 kaboom");
+        }
+        else if(this.affectionSystem.GetPlayer1() < this.affectionSystem.GetPlayer2()){ //Gana el player 2 pero no el player 1
+            //Seteo 1 imagen de explosion en la posición del player 1
+            console.log("Win jaja player 1 kaboom");
+        }
+        //Si empatan
+        else{
+            var player1accepts;
+            var player2accepts;
+            //Hacer que aparezcan 2 botones (como las cartas) Aceptar, Rechazar en función del Input del jugador se modifican ambas var
+
+            if(player1accepts && player2accepts){ //Si ambos aceptan
+                //Lamentablemente no hay explosiones
+                console.log("2 pa 1 cada cual que interprete lo que quiera");
+            }
+            else { //Si alguno rechaza
+                //Explosión nuclear superMegaHiperRealistaQueSeCargaHastaTusGanasDeVivir
+                console.log("superMegaHiperRealistaQueSeCargaHastaTusGanasDeVivir");
+            }
+        }
+    }
+    //delay raro de spm
+    
+    //Llamar a la escena fianl
   }
 
   update(t,dt){
@@ -514,33 +534,36 @@ changeScene(final){
         }
     }
     End(){
-
-        this.wait = true;
-        this.delayTime = 1;
-
-        if(this.playerHasAnsweredGood>=1){
-            //cambiar sprite a sonrojo y lo que coño más sea
+        if(this.round >= 5){
+            this.changeScene();
         }
         else{
+            this.wait = true;
+            this.delayTime = 1;
+
+            if(this.playerHasAnsweredGood>=1){
+            //cambiar sprite a sonrojo y lo que coño más sea
+            }
+            else{
             //cambiar sprite a punto (1, 2 y 3)
-        }
-
-        console.log(this.affectionSystem.GetPlayer1());
-
-        setTimeout(() => {
-
-            if(this.affectionSystem.GetPlayer1() >=2 || this.affectionSystem.GetPlayer2() >=2){
-                this.fase = 2;
             }
 
-            this.round++; // Aumentamos la ronda
-            this.playerHasAnsweredGood = 0; // Reiniciamos contador
-            this.scene.restart(); // Reiniciamos la escena
-            console.log("reinicio");
-            this.wait = false; 
+            console.log(this.affectionSystem.GetPlayer1());
 
-        }, 2000); // 2000 milisegundos = 2 segundos de retraso
-        
+            setTimeout(() => {
+
+                if(this.affectionSystem.GetPlayer1() >=2 || this.affectionSystem.GetPlayer2() >=2){
+                    this.fase = 2;
+                }
+
+                this.round++; // Aumentamos la ronda
+                this.playerHasAnsweredGood = 0; // Reiniciamos contador
+                this.scene.restart(); // Reiniciamos la escena
+                console.log("reinicio");
+                this.wait = false; 
+
+            },  2000); // 2000 milisegundos = 2 segundos de retraso
+        }
 
     }
 }
