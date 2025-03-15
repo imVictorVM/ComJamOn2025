@@ -238,20 +238,12 @@ createCards(){
 
 //para comprobar la eleccion
 
-checkPlayerElection(player)
-{
-    for(var i =0; i < this.cardArray.length; i++){
-
-        if(this.cardArray[this.selectionPlayer1].stats.statsArray[i] == 1){
-
-            this.affectionSystem.AddAffection(this.ninfa.NinfaStats.statsArray[i],player);
-           console.log('patata');
+checkPlayerElection(player, selection) {
+    for (let i = 0; i < this.cardArray.length; i++) {
+        if (this.cardArray[selection].stats.statsArray[i] === 1) {
+            this.affectionSystem.AddAffection(this.ninfa.NinfaStats.statsArray[i], player);
         }
-
     }
-   
-    
-
 }
 
 
@@ -310,7 +302,7 @@ changeScene(final){
                 console.log("select");
                 //this.changeScene(this.selectionPlayer1);
                 //elegir carta
-                this.checkPlayerElection(1);
+                this.checkPlayerElection(1,this.selectionPlayer1);
                 this.cardArray[this.selectionPlayer1].selected = true;
                 console.log("has been selected");
             }
@@ -336,7 +328,7 @@ changeScene(final){
                 console.log("select");
                 //this.changeScene(this.selectionPlayer1);
                 //elegir carta
-                this.checkPlayerElection(2);
+                this.checkPlayerElection(2,this.selectionPlayer2);
                 this.cardArray[this.selectionPlayer2].selected = true;
                 console.log("has been selected 2");
             }
