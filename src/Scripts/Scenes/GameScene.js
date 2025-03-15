@@ -16,11 +16,13 @@ constructor(){
     this.spriteArray;
     this.initialTimer;
     this.startGame;
-    this.round;
-    this.fase;
+    this.round = 1;
+    this.fase = 1;
+    this.playerHasAnswered = 0;
 }
 
 init(ramaSelected){
+    
     this.whichRama = ramaSelected.selection;
     
 }
@@ -39,11 +41,12 @@ preload(){
 
 create(){
 
+
+
     //Tomamos las medidas de la pantalla para la camara
     const { width, height } = this.cameras.main;
 
-    this.round = 0;
-    this.fase = 0;
+    console.log("round" + this.round);
     
     //Startgame
     this.affectionSystem = new AffectionSystem();
@@ -336,6 +339,7 @@ changeScene(final){
                 this.checkPlayerElection(1,this.selectionPlayer1);
                 this.cardArray[this.selectionPlayer1].selected = true;
                 console.log("has been selected");
+                this.playerAnswered();
             }
 
             //PLAYER 2
@@ -364,11 +368,19 @@ changeScene(final){
                 this.checkPlayerElection(2,this.selectionPlayer2);
                 this.cardArray[this.selectionPlayer2].selected = true;
                 console.log("has been selected 2");
+                this.playerAnswered();
             }
         }
         else{
             this.countdown -= dt;
             this.countdownText.setText(Math.floor(this.countdown / 1000) + 1);
+        }
+
+        if (this.playerHasAnswered >= 2) {
+            this.round++; // Aumentamos la ronda
+            this.playerHasAnswered = 0; // Reiniciamos contador
+            this.scene.restart(); // Reiniciamos la escena
+            console.log("reinicio");
         }
         
     }
@@ -478,5 +490,10 @@ changeScene(final){
                 this.selectedcard6Player2.setVisible(true);
                 break;
         }
+    }
+    playerAnswered() {
+        this.playerHasAnswered++;
+        console.log("suma");
+        console.log(this.playerHasAnswered);
     }
 }
