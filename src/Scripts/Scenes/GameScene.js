@@ -19,7 +19,7 @@ constructor(){
     this.round = 1;
     this.fase = 1;
     this.playerHasAnswered = 0;
-    this.delatTime = 1;
+    this.delayTime = 1;
 }
 
 init(ramaSelected){
@@ -312,8 +312,8 @@ changeScene(final){
 
         if(this.startGame == true) {
             this.countdownText.setVisible(false);
-            this.timerPlayer1.decreaseValue(this.delatTime);
-            this.timerPlayer2.decreaseValue(this.delatTime);
+            this.timerPlayer1.decreaseValue(this.delayTime);
+            this.timerPlayer2.decreaseValue(this.delayTime);
             //PLAYER 1
             if( this.Player1.moveleft()){
                 console.log("move left");
@@ -336,7 +336,9 @@ changeScene(final){
 
                 //Elimina el Input del player 1
                 this.Player1.selectCard = true;
-
+                //TIMER
+                this.timerPlayer1.HideTimer(); //Pone a false la visibilidad del timer
+                this.delayTime = 2; //Aumenta la velocidad del otro timer
                 //elegir carta
                 this.checkPlayerElection(1,this.selectionPlayer1);
                 this.cardArray[this.selectionPlayer1].selected = true;
@@ -365,6 +367,9 @@ changeScene(final){
               
                 //Elimina el Input del player 1
                 this.Player2.selectCard = true;
+                //TIMER
+                this.timerPlayer2.HideTimer(); //Pone a false la visibilidad del timer
+                this.delayTime = 2; //Aumenta la velocidad del otro timer
 
                 //elegir carta
                 this.checkPlayerElection(2,this.selectionPlayer2);

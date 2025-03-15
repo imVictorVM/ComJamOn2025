@@ -42,7 +42,10 @@ export default class Timer extends Phaser.GameObjects.Graphics
         //Draw the slider
         this.bar.fillRect(this.x + 2, this.y + 2, d, 12);
 
-        console.log(this.bar);
+    }
 
+    HideTimer(){
+        this.value = 0;
+        this.draw();
     }
 }
