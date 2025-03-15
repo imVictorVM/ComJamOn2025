@@ -15,7 +15,17 @@ preload(){
 
     create(){
 
+        const fx=this.cameras.main.fadeIn(1000, 0, 0, 0);
         this.whatSelection = 0;
+
+        //FONDO 
+
+        this.fondo=this.add.image(
+            this.sys.game.canvas.width / 2,
+            this.sys.game.canvas.height / 2,
+            '0'
+       )
+       //.setScale(0.5);
         
         //ARBOL 1
         this.t1b1 = this.add.text(
@@ -136,6 +146,11 @@ preload(){
             if(this.whatSelection != 0){
                 this.whatSelection -=1;
                 this.changeSelection(this.whatSelection);
+                this.fondo=this.add.image(
+                    this.sys.game.canvas.width / 2,
+                    this.sys.game.canvas.height / 2,
+                    this.whatSelection
+               )
             }
         }
 
@@ -143,10 +158,26 @@ preload(){
             if(this.whatSelection != 5){
                 this.whatSelection += 1;
                 this.changeSelection(this.whatSelection);
+                this.fondo=this.add.image(
+                    this.sys.game.canvas.width / 2,
+                    this.sys.game.canvas.height / 2,
+                    this.whatSelection
+               )
             }
         }
 
         if(this.Player1.select()|| this.Player2.select()){
+
+           /* this.add.image(
+                this.sys.game.canvas.width / 2,
+                this.sys.game.canvas.height / 2,
+                'ficha'
+           )
+           .setScale(0.5);
+*/
+           
+
+
             this.changeScene(this.whatSelection);
         }
     }

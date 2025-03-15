@@ -45,7 +45,16 @@ export default class loadScene extends Phaser.Scene {
     // AQUÍ CARGAMOS TODOS LOS RECURSOS
     this.load.image('carta', 'src/Assets/cartaDebug.png');
     this.load.image('fondoMenuInicial', 'src/Assets/fondo.png');
-
+    this.load.image('creditos', 'src/Assets/boton-creditos.png');
+    this.load.image('empezar', 'src/Assets/boton-empezar.png');
+    this.load.image('ficha', 'src/Assets/fichaTecnica.png');
+    
+    this.load.image('0', 'src/Assets/cerezoIzquierda.png');
+    this.load.image('1', 'src/Assets/cerezoDerecha.png');
+    this.load.image('4', 'src/Assets/palmeraIzquierda.png');
+    this.load.image('5', 'src/Assets/palmeraDerecha.png');
+    this.load.image('2', 'src/Assets/sauceIzquierda.png');
+    this.load.image('3', 'src/Assets/sauceDerecha.png');
     ///////////////////////////
 
      // Evento para limpiar una vez que todo esté cargado

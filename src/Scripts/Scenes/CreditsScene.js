@@ -11,6 +11,7 @@ export default class CreditsScene extends Phaser.Scene {
     }
 
     create() {
+        const fx=this.cameras.main.fadeIn(1000, 0, 0, 0);
         // Add background color or image
         this.cameras.main.setBackgroundColor('#000000');
 

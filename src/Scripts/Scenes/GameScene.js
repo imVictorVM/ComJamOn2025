@@ -45,8 +45,6 @@ preload(){
 
 create(){
 
-
-
     //Tomamos las medidas de la pantalla para la camara
     const { width, height } = this.cameras.main;
 
