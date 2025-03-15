@@ -15,6 +15,7 @@ preload(){
 
     create(){
 
+        const fx=this.cameras.main.fadeIn(1000, 0, 0, 0);
         this.whatSelection = 0;
         
         //ARBOL 1

@@ -97,13 +97,43 @@ export default class MainMenuScene extends Phaser.Scene {
 
 
     changeScene(whatSelection){
-        
+
+        //BARRIDO DE CAMARA A LA IQUIERDA PARA MOSTRAR LA IMGEN DE FICHA TECNICA
+        /*const fx= this.cameras.main.postFX.addWipe();
+        let aux;
         if(whatSelection == 0){
-            this.scene.start('TreeScene');
+             aux= 'TreeScene';
+           // this.scene.start('TreeScene');
         }
         else if(whatSelection == 1){
+            aux= 'CreditsScene';
+            //this.scene.start('CreditsScene');
+        }
+        this.scene.transition({
+
+            target: aux,
+            duration: 2000,
+            moveBelow: true,
+            onUpdate: (progress) => {
+
+                fx.progress = progress;
+
+            }
+        });*/
+
+        //SHAKE DE CAMARA PARA LA EXPLOSION
+        //const fx= this.cameras.main.shake(500);
+        //let aux;
+        const fx=this.cameras.main.fadeOut(1000, 0, 0, 0);
+        if(whatSelection == 0){
+            // aux= 'TreeScene';
+             this.scene.start('TreeScene');
+        }
+        else if(whatSelection == 1){
+            //aux= 'CreditsScene';
             this.scene.start('CreditsScene');
         }
+     
     }
 
     changeSelection() {
