@@ -347,8 +347,8 @@ changeScene(){
         else{
             this.Player1.selectCard = false;
             this.Player2.selectCard = false;
-            this.add.image('acepto', 600, 950);
-            this.add.image('rechazo',1200, 950);
+            this.add.image(600, 950,'acepto');
+            this.add.image(1200, 950,'rechazo');
             this.selectedPlayer1 = this.add.text(
                 600,
                 1000,
@@ -399,7 +399,7 @@ changeScene(){
                 }
             }
             else if(this.Player1.select()){
-                if(this.selectedPlayer1.x == 400){
+                if(this.selectedPlayer1.x == 600){
                     this.player1accepts = true;
                 }
                 else this.player1accepts = false;
@@ -418,7 +418,7 @@ changeScene(){
                 }
             }
             else if(this.Player2.select()){
-                if( this.selectedPlayer2  == 400){
+                if( this.selectedPlayer2.x  == 600){
                     this.player2accepts= true;
                 }
                 else this.player2accepts = false;
