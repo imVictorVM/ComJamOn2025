@@ -18,6 +18,13 @@ export default class MainMenuScene extends Phaser.Scene {
 
         this.whatSelection = 0;
 
+        this.add.image(
+            this.sys.game.canvas.width / 2,
+            this.sys.game.canvas.height / 2,
+            'fondoMenuInicial'
+       )
+       .setScale(0.5);
+
         this.title =  this.add.text(
             this.sys.game.canvas.width / 5,
             this.sys.game.canvas.height / 5,
