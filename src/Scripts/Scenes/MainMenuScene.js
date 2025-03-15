@@ -124,7 +124,7 @@ export default class MainMenuScene extends Phaser.Scene {
         //SHAKE DE CAMARA PARA LA EXPLOSION
         //const fx= this.cameras.main.shake(500);
         //let aux;
-        const fx=this.cameras.main.fadeOut(1000, 0, 0, 0);
+        const fx=this.cameras.main.fadeOut(10000, 0, 0, 0);
         if(whatSelection == 0){
             // aux= 'TreeScene';
              this.scene.start('TreeScene');
