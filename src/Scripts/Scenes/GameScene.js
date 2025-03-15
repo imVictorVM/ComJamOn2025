@@ -5,6 +5,8 @@ import Ninfa from "../Classes/Ninfa.js"
 import Stats from "../Classes/Stats.js"
 import AffectionSystem from "../Classes/AffectionSystem.js";
 import Timer from "../Classes/Timer.js";
+import ReadDialog from "../Classes/ReadDialog.js";
+import DialogSystem from "../Classes/DialogSystem.js";
 
 export default class GameScene extends Phaser.Scene {
 constructor(){
@@ -34,12 +36,16 @@ preload(){
 }
 
 create(){
+
+    //Tomamos las medidas de la pantalla para la camara
+    const { width, height } = this.cameras.main;
+    
     //Startgame
     this.affectionSystem = new AffectionSystem();
     this.timerPlayer1 = new Timer(this,500,100);
     this.timerPlayer2 = new Timer(this,1500,100);
     this.startGame = false; //booleano para empezar el juego
-    this.countdown = 5 * 1000; //5 segundos
+    this.countdown = 3 * 1000; //5 segundos
     this.countdownText = this.add.text(
         this.sys.game.canvas.width / 2,
         this.sys.game.canvas.height / 2,
@@ -47,7 +53,26 @@ create(){
         fontSize: '80px', 
         color: 'white',      
     });
+
+    // Capa de fondo dialog
+    this.dialogBackground = this.add.graphics();
+    this.dialogBackground.fillStyle(0xffffff, 0.4); // Blanco, 50% de transparencia
+    this.dialogBackground.fillRect(0, 0, width, height);
+    this.dialogBackground.setVisible(false); // Oculto al inicio
+
+    this.reader = new ReadDialog(this);  // Instanciar ReadDialog
+
+            // Cargar el archivo JSON con los diálogos
+            this.reader.loadJSON('src/Scripts/Classes/Texto.json').then(() => {
+            });
+
+            // Inicializar el sistema de diálogos
+
+            this.dialogueSystem = new DialogSystem(this, this.inventory,this.reader.dialogData.Eventos);
+
+            
     
+
     //TIMER
     this.initialTimer = this.time.addEvent({ 
         delay: 5 * 1000, //1000 por milisegundos

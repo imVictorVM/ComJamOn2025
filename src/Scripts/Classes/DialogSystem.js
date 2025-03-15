@@ -1,5 +1,3 @@
-import Inventory from './AffectionSystem'
-
 
 export default class DialogSystem {
 
@@ -39,6 +37,8 @@ export default class DialogSystem {
         this.optionButtons = [];
         this.hasOptions = false;
         this.end = false;
+
+        
     }
 
     showEventDialogues(eventId, allDialogues) {
