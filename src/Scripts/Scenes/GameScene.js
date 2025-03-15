@@ -19,6 +19,7 @@ constructor(){
     this.round = 1;
     this.fase = 1;
     this.playerHasAnswered = 0;
+    this.delatTime = 1;
 }
 
 init(ramaSelected){
@@ -311,7 +312,8 @@ changeScene(final){
 
         if(this.startGame == true) {
             this.countdownText.setVisible(false);
-            
+            this.timerPlayer1.decreaseValue(this.delatTime);
+            this.timerPlayer2.decreaseValue(this.delatTime);
             //PLAYER 1
             if( this.Player1.moveleft()){
                 console.log("move left");
