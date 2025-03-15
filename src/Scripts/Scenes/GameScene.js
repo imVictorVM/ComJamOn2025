@@ -22,6 +22,7 @@ constructor(){
     this.delayTime = 1;
     this.wait = false;
     this.affectionSystem = new AffectionSystem();
+    this.isPoliamor = false;
 }
 
 init(ramaSelected){
@@ -306,6 +307,26 @@ changeScene(){
     //Escondemos el timer 
     this.countdownText.setVisible(false);
     
+    //Escondemos las referencias de ambos players (no me duele, me quema, me lastima)
+
+    //Player 1
+    this.selectedcard1Player1.setVisible(false);
+    this.selectedcard2Player1.setVisible(false);
+    this.selectedcard3Player1.setVisible(false);
+    this.selectedcard4Player1.setVisible(false);
+    this.selectedcard5Player1.setVisible(false);
+    this.selectedcard6Player1.setVisible(false);
+    //Player 2
+    this.selectedcard1Player2.setVisible(false);
+    this.selectedcard2Player2.setVisible(false);
+    this.selectedcard3Player2.setVisible(false);
+    this.selectedcard4Player2.setVisible(false);
+    this.selectedcard5Player2.setVisible(false);
+    this.selectedcard6Player2.setVisible(false);
+
+//Prueba
+   this.affectionSystem.Player1 = 4;
+   this.affectionSystem.Player2 = 4;
     if(this.fase == 1){ //Ninguno cumple los requisitos para pasar de ronda
         //Seteo de la explosión en la posición de la rama
         console.log("RamaKaboom");
@@ -326,18 +347,27 @@ changeScene(){
         }
         //Si empatan
         else{
-            var player1accepts;
-            var player2accepts;
-            //Hacer que aparezcan 2 botones (como las cartas) Aceptar, Rechazar en función del Input del jugador se modifican ambas var
-
-            if(player1accepts && player2accepts){ //Si ambos aceptan
-                //Lamentablemente no hay explosiones
-                console.log("2 pa 1 cada cual que interprete lo que quiera");
-            }
-            else { //Si alguno rechaza
-                //Explosión nuclear superMegaHiperRealistaQueSeCargaHastaTusGanasDeVivir
-                console.log("superMegaHiperRealistaQueSeCargaHastaTusGanasDeVivir");
-            }
+            this.Player1.selectCard = false;
+            this.Player2.selectCard = false;
+            this.add.image('acepto', 600, 950);
+            this.add.image('rechazo',1200, 950);
+            this.selectedPlayer1 = this.add.text(
+                600,
+                1000,
+                '----', { 
+                fontSize: '40px', 
+                color: 'blue',      
+            }).setVisible(true);
+            this.selectedPlayer2 = this.add.text(
+                1200,
+                1025,
+                '----', { 
+                fontSize: '40px', 
+                color: 'red',      
+            }).setVisible(true);
+            this.isPoliamor = true;
+            this.player1accepts = false;
+            this.player2accepts = false;
         }
     }
     //delay raro de spm
@@ -347,84 +377,132 @@ changeScene(){
 
   update(t,dt){
         super.update(t,dt);
-
-        if(this.startGame == true) {
-            this.countdownText.setVisible(false);
-            this.timerPlayer1.decreaseValue(this.delayTime);
-            this.timerPlayer2.decreaseValue(this.delayTime);
-            //PLAYER 1
-            if( this.Player1.moveleft()){
-                if(this.selectionPlayer1 != 0){
-                    this.selectionPlayer1 -=1;
-                    this.changeSelectionPlayer1(this.selectionPlayer1);
+        if(this.isPoliamor){
+            //Comprobación de que ambos hayan elegido una opción
+            if(this.Player1.selectCard && this.Player2.selectCard){
+                if(this.player1accepts && this.player2accepts){ //Si ambos aceptan
+                    //Lamentablemente no hay explosiones
+                    console.log("2 pa 1 cada cual que interprete lo que quiera");
+                }
+                else { //Si alguno rechaza
+                    //Explosión nuclear superMegaHiperRealistaQueSeCargaHastaTusGanasDeVivir
+                    console.log("ExplosiónNuclearSuperMegaHiperRealistaQueSeCargaHastaTusGanasDeVivir");
                 }
             }
-
-            if(this.Player1.moveright()){
-                if(this.selectionPlayer1 != 5){
-                    this.selectionPlayer1 += 1;
-                    this.changeSelectionPlayer1(this.selectionPlayer1);
+            //Input Player 1
+            if(this.Player1.moveleft()){
+                if( this.selectedPlayer1.x != 600){
+                    this.selectedPlayer1.x = 600;
                 }
             }
-
-            if(this.Player1.select() && this.cardArray[this.selectionPlayer1].selected == false){
-              
-                //Elimina el Input del player 1
+            else if(this.Player1.moveright()){
+                if(this.selectedPlayer1.x != 1200){
+                    this.selectedPlayer1.x = 1200;
+                }
+            }
+            else if(this.Player1.select()){
+                if(this.selectedPlayer1.x == 400){
+                    this.player1accepts = true;
+                }
+                else this.player1accepts = false;
                 this.Player1.selectCard = true;
-                //TIMER
-                this.timerPlayer1.HideTimer(); //Pone a false la visibilidad del timer
-                this.delayTime = 2; //Aumenta la velocidad del otro timer
-                //elegir carta
-                this.checkPlayerElection(1,this.selectionPlayer1);
-                this.cardArray[this.selectionPlayer1].selected = true;
-                
-                
-                
             }
 
-            //PLAYER 2
-            if( this.Player2.moveleft()){
-              
-                if(this.selectionPlayer2 != 0){
-                    this.selectionPlayer2 -=1;
-                    this.changeSelectionPlayer2(this.selectionPlayer2);
+            //Input Player 2
+            if(this.Player2.moveleft()){
+                if( this.selectedPlayer2.x != 600){
+                    this.selectedPlayer2.x = 600;
                 }
             }
-
-            if(this.Player2.moveright()){
-                
-                if(this.selectionPlayer2 != 5){
-                    this.selectionPlayer2 += 1;
-                    this.changeSelectionPlayer2(this.selectionPlayer2);
+            else if(this.Player2.moveright()){
+                if( this.selectedPlayer2.x != 1200){
+                    this.selectedPlayer2.x = 1200;
                 }
             }
-
-            if(this.Player2.select() && this.cardArray[this.selectionPlayer2].selected == false){
-              
-                //Elimina el Input del player 1
+            else if(this.Player2.select()){
+                if( this.selectedPlayer2  == 400){
+                    this.player2accepts= true;
+                }
+                else this.player2accepts = false;
                 this.Player2.selectCard = true;
-                //TIMER
-                this.timerPlayer2.HideTimer(); //Pone a false la visibilidad del timer
-                this.delayTime = 4; //Aumenta la velocidad del otro timer
-
-                //elegir carta
-                this.checkPlayerElection(2,this.selectionPlayer2);
-                this.cardArray[this.selectionPlayer2].selected = true;
             }
         }
         else{
-            this.countdown -= dt;
-            this.countdownText.setText(Math.floor(this.countdown / 1000) + 1);
-        }
-
-        if(this.timerPlayer1.value <=0 && this.timerPlayer2.value <=0 && !this.wait){
-
-            this.End();
-
-        } 
-
-        
-        
+            if(this.startGame == true) {
+                this.countdownText.setVisible(false);
+                this.timerPlayer1.decreaseValue(this.delayTime);
+                this.timerPlayer2.decreaseValue(this.delayTime);
+                //PLAYER 1
+                if( this.Player1.moveleft()){
+                    if(this.selectionPlayer1 != 0){
+                        this.selectionPlayer1 -=1;
+                        this.changeSelectionPlayer1(this.selectionPlayer1);
+                    }
+                }
+    
+                if(this.Player1.moveright()){
+                    if(this.selectionPlayer1 != 5){
+                        this.selectionPlayer1 += 1;
+                        this.changeSelectionPlayer1(this.selectionPlayer1);
+                    }
+                }
+    
+                if(this.Player1.select() && this.cardArray[this.selectionPlayer1].selected == false){
+                  
+                    //Elimina el Input del player 1
+                    this.Player1.selectCard = true;
+                    //TIMER
+                    this.timerPlayer1.HideTimer(); //Pone a false la visibilidad del timer
+                    this.delayTime = 2; //Aumenta la velocidad del otro timer
+                    //elegir carta
+                    this.checkPlayerElection(1,this.selectionPlayer1);
+                    this.cardArray[this.selectionPlayer1].selected = true;
+                    
+                    
+                    
+                }
+    
+                //PLAYER 2
+                if( this.Player2.moveleft()){
+                  
+                    if(this.selectionPlayer2 != 0){
+                        this.selectionPlayer2 -=1;
+                        this.changeSelectionPlayer2(this.selectionPlayer2);
+                    }
+                }
+    
+                if(this.Player2.moveright()){
+                    
+                    if(this.selectionPlayer2 != 5){
+                        this.selectionPlayer2 += 1;
+                        this.changeSelectionPlayer2(this.selectionPlayer2);
+                    }
+                }
+    
+                if(this.Player2.select() && this.cardArray[this.selectionPlayer2].selected == false){
+                  
+                    //Elimina el Input del player 1
+                    this.Player2.selectCard = true;
+                    //TIMER
+                    this.timerPlayer2.HideTimer(); //Pone a false la visibilidad del timer
+                    this.delayTime = 4; //Aumenta la velocidad del otro timer
+    
+                    //elegir carta
+                    this.checkPlayerElection(2,this.selectionPlayer2);
+                    this.cardArray[this.selectionPlayer2].selected = true;
+                }
+            }
+            else{
+                this.countdown -= dt;
+                this.countdownText.setText(Math.floor(this.countdown / 1000) + 1);
+            }
+    
+            if(this.timerPlayer1.value <=0 && this.timerPlayer2.value <=0 && !this.wait){
+    
+                this.End();
+    
+            }      
+        }  
     }
 
     changeSelectionPlayer1(whatSelection) {
@@ -534,7 +612,8 @@ changeScene(){
         }
     }
     End(){
-        if(this.round >= 5){
+        //Comprobamos que haya llegado a la última ronda y sacamos el final en cuestión
+        if(this.round >= 3){
             this.changeScene();
         }
         else{
