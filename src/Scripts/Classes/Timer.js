@@ -1,10 +1,11 @@
 export default class Timer extends Phaser.GameObjects.Graphics
  {
-    constructor(scene,x,y) {
+    constructor(scene,x,y,z) {
         super(scene, x, y);
         this.scene = scene;
         this.x = x;
         this.y = y;
+        this.z = z;
         this.bar = new Phaser.GameObjects.Graphics(this.scene);
         this.value = 2000; //Valor del timer, siempre el mismo
         this.p = 76 / 100 //Puntos del value
@@ -35,7 +36,7 @@ export default class Timer extends Phaser.GameObjects.Graphics
 
         //Checks the actual value of the time
         var d = Math.floor(this.p * this.value / 4);
-
+        d = d * this.z; //Sets the rotation
         //Draw the slider
         this.bar.fillRect(this.x + 2, this.y + 2, d, 12);
 

@@ -43,8 +43,9 @@ create(){
     
     //Startgame
     this.affectionSystem = new AffectionSystem();
-    this.timerPlayer1 = new Timer(this,300,100);
-    this.timerPlayer2 = new Timer(this,1200,100);
+    this.timerPlayer1 = new Timer(this,600,100,-1);
+    this.timerPlayer2 = new Timer(this,1200,100,1);
+    Phaser.Actions.RotateAround(this.timerPlayer1,{x: 300, y: 100}, 180);
     this.startGame = false; //booleano para empezar el juego
     this.countdown = 3 * 1000; //5 segundos
     this.countdown = 5 * 1000; //5 segundos
