@@ -300,7 +300,10 @@ changeScene(final){
 
             if(this.Player1.select() && this.cardArray[this.selectionPlayer1].selected == false){
                 console.log("select");
-                //this.changeScene(this.selectionPlayer1);
+
+                //Elimina el Input del player 1
+                this.Player1.selectCard = true;
+
                 //elegir carta
                 this.checkPlayerElection(1,this.selectionPlayer1);
                 this.cardArray[this.selectionPlayer1].selected = true;
@@ -325,8 +328,10 @@ changeScene(final){
             }
 
             if(this.Player2.select() && this.cardArray[this.selectionPlayer2].selected == false){
-                console.log("select");
-                //this.changeScene(this.selectionPlayer1);
+              
+                //Elimina el Input del player 1
+                this.Player2.selectCard = true;
+
                 //elegir carta
                 this.checkPlayerElection(2,this.selectionPlayer2);
                 this.cardArray[this.selectionPlayer2].selected = true;
