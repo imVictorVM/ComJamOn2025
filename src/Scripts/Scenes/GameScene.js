@@ -73,21 +73,21 @@ create(){
         break;
         
         case(2):
-            this.NinfaStats = new Stats(2,1,1,3,2,3);
+            this.NinfaStats = new Stats(0,-1,-1,1,0,1);
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauce1','NinfaSauce1Feliz','NinfaSauce1Triste','NinfaSauce1Enfadado']; //Seteamos su array de sprites
         break;
 
         case(3):
-            this.NinfaStats = new Stats(3,1,2,3,1,2);
+            this.NinfaStats = new Stats(1,-1,0,1,-1,0);
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauce2','NinfaSauce2Feliz','NinfaSauce2Triste','NinfaSauce2Enfadado']; //Seteamos su array de sprites
         break;
 
         case(4):
-            this.NinfaStats = new Stats(2,3,3,2,1,1);
+            this.NinfaStats = new Stats(0,1,1,0,-1,-1);
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera1','NinfaPalmera1Feliz','NinfaPalmera1Triste','NinfaPalmera1Enfadado']; //Seteamos su array de sprites
 
         case(5):
-            this.NinfaStats = new Stats(1,3,2,1,3,2);
+            this.NinfaStats = new Stats(-1,1,0,-1,1,0);
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera2','NinfaPalmera2Feliz','NinfaPalmera2Triste','NinfaPalmera2Enfadado']; //Seteamos su array de sprites
         break;
 
