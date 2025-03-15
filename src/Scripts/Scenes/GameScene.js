@@ -16,6 +16,8 @@ constructor(){
     this.spriteArray;
     this.initialTimer;
     this.startGame;
+    this.round;
+    this.fase;
 }
 
 init(ramaSelected){
@@ -39,6 +41,9 @@ create(){
 
     //Tomamos las medidas de la pantalla para la camara
     const { width, height } = this.cameras.main;
+
+    this.round = 0;
+    this.fase = 0;
     
     //Startgame
     this.affectionSystem = new AffectionSystem();
@@ -49,7 +54,7 @@ create(){
     this.countdownText = this.add.text(
         this.sys.game.canvas.width / 2,
         this.sys.game.canvas.height / 2,
-        '5', { 
+        '3', { 
         fontSize: '80px', 
         color: 'white',      
     });
@@ -75,7 +80,7 @@ create(){
 
     //TIMER
     this.initialTimer = this.time.addEvent({ 
-        delay: 5 * 1000, //1000 por milisegundos
+        delay: 3 * 1000, //1000 por milisegundos
         callback: () => {this.startGame = true} });
 
     //JUGADORES
