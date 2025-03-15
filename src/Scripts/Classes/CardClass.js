@@ -12,7 +12,4 @@ export default class Card extends Phaser.GameObjects.Sprite{
     setSprite(posX,posY){
        this.scene.add.sprite(posX, posY, this.sprite); //Añade el sprite de la rama en pantalla en la posición x e y
     }
-
-    
-
 }
