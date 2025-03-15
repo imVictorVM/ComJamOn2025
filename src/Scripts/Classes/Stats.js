@@ -1,84 +1,17 @@
 export default class Stats
  {
-    constructor(empatia,extroversion,estabilidadMental,creatividad,paciencia,inteligencia) {
+    constructor(empatia,extroversion,confianza,creatividad,paciencia,inteligencia) {
+
+        
+
        this.empatia = empatia;
        this.extroversion = extroversion;
-       this.estabilidadMental = estabilidadMental;
+       this.confianza = confianza;
        this.creatividad = creatividad;
        this.paciencia = paciencia;
        this.inteligencia = inteligencia;
+       
+       this.statsArray[this.empatia,this.extroversion,this.confianza,this.creatividad,this.paciencia];
     } 
-    ///Estos métodos se llaman en función de la estadística que tiene la carta y llamará a lo encargado de la reputación pasandole un parámetro u otro dependiendo de las stats de la ninfa
-    compareEmpatia(){
-
-        if(this.empatia == 1){
-            //Llamar al método pasandole un tremendo -1
-        }
-        else if(this.empatia == 2){
-            //Llamara al método pasandole un fantástico 0
-        }
-      /*  else //Llamar al método pasandole alto 1*/
-
-    }
-
-    compareExtroversion(){
-
-        if(this.extroversion == 1){
-            //Llamar al método pasandole un tremendo -1
-        }
-        else if(this.extroversion == 2){
-            //Llamara al método pasandole un fantástico 0
-        }
-      /*  else //Llamar al método pasandole alto 1*/
-      
-    }
-
-    compareEstabilidadMental(){
-
-        if(this.estabilidadMental == 1){
-            //Llamar al método pasandole un tremendo -1
-        }
-        else if(this.estabilidadMental == 2){
-            //Llamara al método pasandole un fantástico 0
-        }
-      /*  else //Llamar al método pasandole alto 1*/
-      
-    }
-
-
-    compareCreatividad(){
-
-        if(this.creatividad == 1){
-            //Llamar al método pasandole un tremendo -1
-        }
-        else if(this.creatividad == 2){
-            //Llamara al método pasandole un fantástico 0
-        }
-      /*  else //Llamar al método pasandole alto 1*/
-      
-    }
-
-    comparePaciencia(){
-
-        if(this.paciencia == 1){
-            //Llamar al método pasandole un tremendo -1
-        }
-        else if(this.paciencia == 2){
-            //Llamara al método pasandole un fantástico 0
-        }
-      /*  else //Llamar al método pasandole alto 1*/
-      
-    }
-
-    compareInteligencia(){
-
-        if(this.inteligencia == 1){
-            //Llamar al método pasandole un tremendo -1
-        }
-        else if(this.inteligencia == 2){
-            //Llamara al método pasandole un fantástico 0
-        }
-      /*  else //Llamar al método pasandole alto 1*/
-      
-    }
+   
 }

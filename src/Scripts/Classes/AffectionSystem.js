@@ -21,17 +21,21 @@ export default class AffectionSystem{
     }
 
     //aumentos o disminuciones de los valores de afinidad
-    AddPlayer1(valor) {
+    AddAffection(valor,player) {
 
-        this.Player1 += valor;
+        if(player == 1){
+
+            this.Player1 += valor;
+        }
+        else if (player == 2){
+            this.Player2 += valor;
+        }
+
+        
         
     }
 
-    AddPlayer2(valor) {
-
-        this.Player2 += valor;
-        
-    }
+   
 
     GetPlayer1(){
         return this.Player1;
