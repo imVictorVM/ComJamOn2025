@@ -64,6 +64,7 @@ export default class loadScene extends Phaser.Scene {
 
     this.load.image('confirmar', 'src/Assets/confirmar.png');
     this.load.image('volver', 'src/Assets/volver.png');
+    this.load.image('titulo', 'src/Assets/titulo.png');
     ///////////////////////////
 
      // Evento para limpiar una vez que todo esté cargado
