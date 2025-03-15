@@ -11,7 +11,7 @@ export default class Stats
        this.paciencia = paciencia;
        this.inteligencia = inteligencia;
        
-       this.statsArray[this.empatia,this.extroversion,this.confianza,this.creatividad,this.paciencia];
+       this.statsArray = [this.empatia,this.extroversion,this.confianza,this.creatividad,this.paciencia];
     } 
    
 }
