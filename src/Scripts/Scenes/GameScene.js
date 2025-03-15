@@ -16,10 +16,13 @@ constructor(){
     this.spriteArray;
     this.initialTimer;
     this.startGame;
-    this.delayTime // Valor que se resta en los timers;
+    this.round = 1;
+    this.fase = 1;
+    this.playerHasAnswered = 0;
 }
 
 init(ramaSelected){
+    
     this.whichRama = ramaSelected.selection;
     
 }
@@ -38,22 +41,23 @@ preload(){
 
 create(){
 
+
+
     //Tomamos las medidas de la pantalla para la camara
     const { width, height } = this.cameras.main;
+
+    console.log("round" + this.round);
     
     //Startgame
     this.affectionSystem = new AffectionSystem();
     this.timerPlayer1 = new Timer(this,600,100,-1);
     this.timerPlayer2 = new Timer(this,1200,100,1);
-    Phaser.Actions.RotateAround(this.timerPlayer1,{x: 300, y: 100}, 180);
     this.startGame = false; //booleano para empezar el juego
     this.countdown = 3 * 1000; //5 segundos
-    this.countdown = 5 * 1000; //5 segundos
-    this.delayTime = 1;
     this.countdownText = this.add.text(
         this.sys.game.canvas.width / 2,
         this.sys.game.canvas.height / 2,
-        '5', { 
+        '3', { 
         fontSize: '80px', 
         color: 'white',      
     });
@@ -79,7 +83,7 @@ create(){
 
     //TIMER
     this.initialTimer = this.time.addEvent({ 
-        delay: 5 * 1000, //1000 por milisegundos
+        delay: 3 * 1000, //1000 por milisegundos
         callback: () => {this.startGame = true} });
 
     //JUGADORES
@@ -307,9 +311,7 @@ changeScene(final){
 
         if(this.startGame == true) {
             this.countdownText.setVisible(false);
-            //Timers
-            this.timerPlayer1.decreaseValue(this.delayTime);
-            this.timerPlayer2.decreaseValue(this.delayTime);
+            
             //PLAYER 1
             if( this.Player1.moveleft()){
                 console.log("move left");
@@ -337,6 +339,7 @@ changeScene(final){
                 this.checkPlayerElection(1,this.selectionPlayer1);
                 this.cardArray[this.selectionPlayer1].selected = true;
                 console.log("has been selected");
+                this.playerAnswered();
             }
 
             //PLAYER 2
@@ -365,11 +368,19 @@ changeScene(final){
                 this.checkPlayerElection(2,this.selectionPlayer2);
                 this.cardArray[this.selectionPlayer2].selected = true;
                 console.log("has been selected 2");
+                this.playerAnswered();
             }
         }
         else{
             this.countdown -= dt;
             this.countdownText.setText(Math.floor(this.countdown / 1000) + 1);
+        }
+
+        if (this.playerHasAnswered >= 2) {
+            this.round++; // Aumentamos la ronda
+            this.playerHasAnswered = 0; // Reiniciamos contador
+            this.scene.restart(); // Reiniciamos la escena
+            console.log("reinicio");
         }
         
     }
@@ -479,5 +490,10 @@ changeScene(final){
                 this.selectedcard6Player2.setVisible(true);
                 break;
         }
+    }
+    playerAnswered() {
+        this.playerHasAnswered++;
+        console.log("suma");
+        console.log(this.playerHasAnswered);
     }
 }
