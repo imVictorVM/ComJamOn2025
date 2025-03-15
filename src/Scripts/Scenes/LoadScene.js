@@ -47,7 +47,13 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('fondoMenuInicial', 'src/Assets/fondo.png');
     this.load.image('creditos', 'src/Assets/boton-creditos.png');
     this.load.image('empezar', 'src/Assets/boton-empezar.png');
-    this.load.image('ficha', 'src/Assets/fichaTecnica.png');
+
+    this.load.image('ficha0', 'src/Assets/fichaTecnica.png');
+    this.load.image('ficha1', 'src/Assets/fichaTecnica.png');
+    this.load.image('ficha2', 'src/Assets/fichaTecnica.png');
+    this.load.image('ficha3', 'src/Assets/fichaTecnica.png');
+    this.load.image('ficha4', 'src/Assets/fichaTecnica.png');
+    this.load.image('ficha5', 'src/Assets/fichaTecnica.png');
     
     this.load.image('0', 'src/Assets/cerezoIzquierda.png');
     this.load.image('1', 'src/Assets/cerezoDerecha.png');
@@ -55,6 +61,9 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('5', 'src/Assets/palmeraDerecha.png');
     this.load.image('2', 'src/Assets/sauceIzquierda.png');
     this.load.image('3', 'src/Assets/sauceDerecha.png');
+
+    this.load.image('confirmar', 'src/Assets/confirmar.png');
+    this.load.image('volver', 'src/Assets/volver.png');
     ///////////////////////////
 
      // Evento para limpiar una vez que todo esté cargado
