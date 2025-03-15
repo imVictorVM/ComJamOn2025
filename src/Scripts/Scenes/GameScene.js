@@ -16,7 +16,6 @@ constructor(){
     this.spriteArray;
     this.initialTimer;
     this.startGame;
-    this.delayTime // Valor que se resta en los timers;
     this.round = 1;
     this.fase = 1;
     this.playerHasAnswered = 0;
@@ -51,12 +50,10 @@ create(){
     
     //Startgame
     this.affectionSystem = new AffectionSystem();
-    this.timerPlayer1 = new Timer(this,300,100);
-    this.timerPlayer2 = new Timer(this,1200,100);
+    this.timerPlayer1 = new Timer(this,500,100);
+    this.timerPlayer2 = new Timer(this,1500,100);
     this.startGame = false; //booleano para empezar el juego
     this.countdown = 3 * 1000; //5 segundos
-    this.countdown = 5 * 1000; //5 segundos
-    this.delayTime = 1;
     this.countdownText = this.add.text(
         this.sys.game.canvas.width / 2,
         this.sys.game.canvas.height / 2,
@@ -314,9 +311,7 @@ changeScene(final){
 
         if(this.startGame == true) {
             this.countdownText.setVisible(false);
-            //Timers
-            this.timerPlayer1.decreaseValue(this.delayTime);
-            this.timerPlayer2.decreaseValue(this.delayTime);
+            
             //PLAYER 1
             if( this.Player1.moveleft()){
                 console.log("move left");
