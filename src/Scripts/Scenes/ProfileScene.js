@@ -70,7 +70,7 @@ preload(){
     update(t,dt){
         super.update(t,dt);
         if( this.Player1.moveleft()|| this.Player2.moveleft()){
-            if(this.whatSelection != 1){
+            if(this.whatSelection != 0){
                 this.whatSelection -=1;
 
               this.pulsado1=false;
@@ -91,7 +91,17 @@ preload(){
             
            
         }
-      
+        if(this.whatSelection == 0)
+            {
+                this.confirmar.setTint(0x6677EE)
+                this.volver.clearTint()
+            }
+
+            if(this.whatSelection == 1)
+                {
+                    this.volver.setTint(0x6677EE)
+                    this.confirmar.clearTint()
+                }
 
         if((this.Player1.select()|| this.Player2.select())){
 
