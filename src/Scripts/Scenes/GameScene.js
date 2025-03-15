@@ -21,6 +21,7 @@ constructor(){
     this.playerHasAnsweredGood = 0;
     this.delayTime = 1;
     this.wait = false;
+    this.affectionSystem = new AffectionSystem();
 }
 
 init(ramaSelected){
@@ -49,9 +50,11 @@ create(){
     const { width, height } = this.cameras.main;
 
     console.log("round" + this.round);
+    console.log("fase" + this.fase);
+    
     
     //Startgame
-    this.affectionSystem = new AffectionSystem();
+    
     this.timerPlayer1 = new Timer(this,600,100,-1);
     this.timerPlayer2 = new Timer(this,1200,100,1);
     this.startGame = false; //booleano para empezar el juego
@@ -135,8 +138,19 @@ create(){
     //Creación de la Ninfa con sus estadísticas
     this.ninfa  = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama, this.NinfaStats); //Creamos la ninfa
 
-    //Crear cartas
-    this.createCards();      
+    if(this.fase ==1){
+
+         //Crear cartas
+        this.createCards();   
+
+    }
+
+    if(this.fase == 2){
+
+
+
+    }
+      
 }
 
 //metodo para ocultar mierda
@@ -511,7 +525,13 @@ changeScene(final){
             //cambiar sprite a punto (1, 2 y 3)
         }
 
+        console.log(this.affectionSystem.GetPlayer1());
+
         setTimeout(() => {
+
+            if(this.affectionSystem.GetPlayer1() >=2 || this.affectionSystem.GetPlayer2() >=2){
+                this.fase = 2;
+            }
 
             this.round++; // Aumentamos la ronda
             this.playerHasAnsweredGood = 0; // Reiniciamos contador
