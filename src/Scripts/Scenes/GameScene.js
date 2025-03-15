@@ -4,6 +4,7 @@ import card from "../Classes/CardClass.js"
 import Ninfa from "../Classes/Ninfa.js"
 import Stats from "../Classes/Stats.js"
 import AffectionSystem from "../Classes/AffectionSystem.js";
+import Timer from "../Classes/Timer.js";
 
 export default class GameScene extends Phaser.Scene {
 constructor(){
@@ -11,7 +12,7 @@ constructor(){
     this.whichRama;
     //Array the sprites
     this.spriteArray;
-    this.timer;
+    this.initialTimer;
     this.startGame;
 }
 
@@ -35,6 +36,8 @@ preload(){
 create(){
     //Startgame
     this.affectionSystem = new AffectionSystem();
+    this.timerPlayer1 = new Timer(this,500,100);
+    this.timerPlayer2 = new Timer(this,1500,100);
     this.startGame = false; //booleano para empezar el juego
     this.countdown = 5 * 1000; //5 segundos
     this.countdownText = this.add.text(
@@ -46,7 +49,7 @@ create(){
     });
     
     //TIMER
-    this.timer = this.time.addEvent({ 
+    this.initialTimer = this.time.addEvent({ 
         delay: 5 * 1000, //1000 por milisegundos
         callback: () => {this.startGame = true} });
 
@@ -58,8 +61,7 @@ create(){
     this.selectionPlayer1 = 0;
     this.selectionPlayer2 = 5;
     
-    //Creación de la respectiva Ninfa en función de la rama seleccionada por el jugador
-    console.log(this.whichRama);
+    //Creación de las estadísticas de la Ninfa en función de la rama seleccionada por el jugador
     switch(this.whichRama){
 
         case(0):
@@ -95,15 +97,11 @@ create(){
 
     }
 
+    //Creación de la Ninfa con sus estadísticas
     this.ninfa  = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama, this.NinfaStats); //Creamos la ninfa
 
     //Crear cartas
-    this.createCards();
-
-
-    
-
-        
+    this.createCards();      
 }
 
 //metodo para ocultar mierda
