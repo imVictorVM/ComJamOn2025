@@ -33,12 +33,5 @@ export default class Ninfa{
     }
 
     //Recibe las estadísticas de la carta y comprueba sus estadísticas en función de las de la ninfa
-    ReadCardStats(cardStats){
-        if(cardStats.empatia == 1) this.NinfaStats.compareEmpatia();
-        if(cardStats.extroversion == 1) this.NinfaStats.compareExtroversion();
-        if(cardStats.estabilidadMental == 1) this.NinfaStats.compareEstabilidadMental();
-        if(cardStats.creatividad == 1) this.NinfaStats.compareCreatividad();
-        if(cardStats.paciencia == 1) this.NinfaStats.comparePaciencia();
-        if(cardStats.inteligencia == 1) this.NinfaStats.compareInteligencia();
-    }
+  
 }

@@ -2,7 +2,6 @@ import LoadScene from "./Scenes/LoadScene.js";
 import MainMenuScene from "./Scenes/MainMenuScene.js";
 import TreeScene from "./Scenes/TreeScene.js";
 import CreditsScene from "./Scenes/CreditsScene.js";
-import PruebaDialog from "./Scenes/PruebaDialog.js"; 
 import GameScene from "./Scenes/GameScene.js"
 
 let config = {
@@ -17,7 +16,7 @@ let config = {
 		height: 1080,
 		zoom: 1
 	},
-	scene: [LoadScene,MainMenuScene,TreeScene,CreditsScene,GameScene,PruebaDialog],
+	scene: [LoadScene,MainMenuScene,TreeScene,CreditsScene,GameScene],
 	physics: { 
 		default: 'arcade', 
 		arcade: { 
