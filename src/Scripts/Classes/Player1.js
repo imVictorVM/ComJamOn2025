@@ -18,15 +18,15 @@ init(){
 }
 
 moveleft(){
-    return Phaser.Input.Keyboard.JustDown(this.leftMovKey);
+    if(!this.selectCard) return Phaser.Input.Keyboard.JustDown(this.leftMovKey);
 }
 
 moveright(){
-    return Phaser.Input.Keyboard.JustDown(this.rightMovKey);
+    if(!this.selectCard) return Phaser.Input.Keyboard.JustDown(this.rightMovKey);
 }
 
 select(){
-   return Phaser.Input.Keyboard.JustDown(this.selectKey);
+    if(!this.selectCard) return Phaser.Input.Keyboard.JustDown(this.selectKey);
 }
 
 

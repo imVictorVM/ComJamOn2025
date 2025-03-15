@@ -3,6 +3,6 @@ export default class Player extends Phaser.GameObjects.Sprite {
         super(scene, x, y, sprite); 
         scene.add.existing(this);
         this.setDisplaySize(150, 150); //tamaño
-      
+        this.selectCard = false;
     }
 }
