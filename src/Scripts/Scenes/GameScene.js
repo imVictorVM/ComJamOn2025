@@ -18,8 +18,9 @@ constructor(){
     this.startGame;
     this.round = 1;
     this.fase = 1;
-    this.playerHasAnswered = 0;
+    this.playerHasAnsweredGood = 0;
     this.delayTime = 1;
+    this.wait = false;
 }
 
 init(ramaSelected){
@@ -274,6 +275,9 @@ checkPlayerElection(player, selection) {
     for (let i = 0; i < this.cardArray.length; i++) {
         if (this.cardArray[selection].stats.statsArray[i] === 1) {
             this.affectionSystem.AddAffection(this.ninfa.NinfaStats.statsArray[i], player);
+            if(this.ninfa.NinfaStats.statsArray[i]==1) {
+                this.playerHasAnsweredGood++;
+            }
         }
     }
 }
@@ -316,7 +320,6 @@ changeScene(final){
             this.timerPlayer2.decreaseValue(this.delayTime);
             //PLAYER 1
             if( this.Player1.moveleft()){
-                console.log("move left");
                 if(this.selectionPlayer1 != 0){
                     this.selectionPlayer1 -=1;
                     this.changeSelectionPlayer1(this.selectionPlayer1);
@@ -324,7 +327,6 @@ changeScene(final){
             }
 
             if(this.Player1.moveright()){
-                console.log("move right");
                 if(this.selectionPlayer1 != 5){
                     this.selectionPlayer1 += 1;
                     this.changeSelectionPlayer1(this.selectionPlayer1);
@@ -332,8 +334,7 @@ changeScene(final){
             }
 
             if(this.Player1.select() && this.cardArray[this.selectionPlayer1].selected == false){
-                console.log("select");
-
+              
                 //Elimina el Input del player 1
                 this.Player1.selectCard = true;
                 //TIMER
@@ -342,13 +343,14 @@ changeScene(final){
                 //elegir carta
                 this.checkPlayerElection(1,this.selectionPlayer1);
                 this.cardArray[this.selectionPlayer1].selected = true;
-                console.log("has been selected");
-                this.playerAnswered();
+                
+                
+                
             }
 
             //PLAYER 2
             if( this.Player2.moveleft()){
-                console.log("move left");
+              
                 if(this.selectionPlayer2 != 0){
                     this.selectionPlayer2 -=1;
                     this.changeSelectionPlayer2(this.selectionPlayer2);
@@ -356,7 +358,7 @@ changeScene(final){
             }
 
             if(this.Player2.moveright()){
-                console.log("move right");
+                
                 if(this.selectionPlayer2 != 5){
                     this.selectionPlayer2 += 1;
                     this.changeSelectionPlayer2(this.selectionPlayer2);
@@ -369,13 +371,11 @@ changeScene(final){
                 this.Player2.selectCard = true;
                 //TIMER
                 this.timerPlayer2.HideTimer(); //Pone a false la visibilidad del timer
-                this.delayTime = 2; //Aumenta la velocidad del otro timer
+                this.delayTime = 4; //Aumenta la velocidad del otro timer
 
                 //elegir carta
                 this.checkPlayerElection(2,this.selectionPlayer2);
                 this.cardArray[this.selectionPlayer2].selected = true;
-                console.log("has been selected 2");
-                this.playerAnswered();
             }
         }
         else{
@@ -383,12 +383,13 @@ changeScene(final){
             this.countdownText.setText(Math.floor(this.countdown / 1000) + 1);
         }
 
-        if (this.playerHasAnswered >= 2) {
-            this.round++; // Aumentamos la ronda
-            this.playerHasAnswered = 0; // Reiniciamos contador
-            this.scene.restart(); // Reiniciamos la escena
-            console.log("reinicio");
-        }
+        if(this.timerPlayer1.value <=0 && this.timerPlayer2.value <=0 && !this.wait){
+
+            this.End();
+
+        } 
+
+        
         
     }
 
@@ -403,7 +404,7 @@ changeScene(final){
                 this.selectedcard6Player1.setVisible(false);
                 break;
             case 1:
-                console.log("entra");
+               
                 this.selectedcard1Player1.setVisible(false);
                 this.selectedcard2Player1.setVisible(true);
                 this.selectedcard3Player1.setVisible(false);
@@ -498,9 +499,28 @@ changeScene(final){
                 break;
         }
     }
-    playerAnswered() {
-        this.playerHasAnswered++;
-        console.log("suma");
-        console.log(this.playerHasAnswered);
+    End(){
+
+        this.wait = true;
+        this.delayTime = 1;
+
+        if(this.playerHasAnsweredGood>=1){
+            //cambiar sprite a sonrojo y lo que coño más sea
+        }
+        else{
+            //cambiar sprite a punto (1, 2 y 3)
+        }
+
+        setTimeout(() => {
+
+            this.round++; // Aumentamos la ronda
+            this.playerHasAnsweredGood = 0; // Reiniciamos contador
+            this.scene.restart(); // Reiniciamos la escena
+            console.log("reinicio");
+            this.wait = false; 
+
+        }, 2000); // 2000 milisegundos = 2 segundos de retraso
+        
+
     }
 }
