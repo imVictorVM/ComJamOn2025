@@ -166,23 +166,24 @@ create(){
             case(2):
                 this.NinfaStats = new Stats(-1,-1,1,0,1,0);
                 this.ninfaName = "Trix";
-                this.spriteArray = ['RamaTrix','RamaTrixKawaii','RamaTrix.1.','RamaTrix.2','RamaTrix.3','Trix','TrixEnfadado','TrixSonrojado']; //Seteamos su array de sprites
+                this.spriteArray = ['RamaTrix','RamaTrixKawaii','RamaTrix.1','RamaTrix.2','RamaTrix.3','Trix','TrixEnfadado','TrixSonrojado']; //Seteamos su array de sprites
             break;
     
             case(3):
                 this.NinfaStats = new Stats(-1,0,1,-1,0,1);
-                this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauce2','NinfaSauce2Feliz','NinfaSauce2Triste','NinfaSauce2Enfadado']; //Seteamos su array de sprites
+                this.ninfaName = "Salena"
+                this.spriteArray = ['RamaSalena','RamaSalenaKawaii','RamaSalena.1','RamaSalena.2','RamaSalena.3.','RamaSalena','RamaSalena.3','RamaSalenaKawaii']; //Seteamos su array de sprites
             break;
     
             case(4):
                 this.NinfaStats = new Stats(1,1,0,-1,-1,0);
                 this.ninfaName = "Phoebe"
-                this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera1','NinfaPalmera1Feliz','NinfaPalmera1Triste','NinfaPalmera1Enfadado']; //Seteamos su array de sprites
+                this.spriteArray = ['RamaPhoebe','RamaPhoebeKawaii','RamaPhoebe.1','RamaPhoebe.2.','RamaPhoebe.3','Phoebe','PhoebeEnfadado','PhoebeSonrojado']; //Seteamos su array de sprites
     
             case(5):
                 this.NinfaStats = new Stats(1,0,-1,1,0,-1);
                 this.ninfaName = "Pam"
-                this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera2','NinfaPalmera2Feliz','NinfaPalmera2Triste','NinfaPalmera2Enfadado']; //Seteamos su array de sprites
+                this.spriteArray = ['RamaPam','RamaPamKawaii','RamaPam.1','RamaPam.2','RamaPam.3','RamaPam','RamaPam.3','RamaPamKawaii']; //Seteamos su array de sprites
             break;
     
             
