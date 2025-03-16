@@ -24,15 +24,15 @@ export default class CreditsScene extends Phaser.Scene {
         `;
 
 
-        this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, creditsText, {
-            fontSize: '32px',
+        this.add.text(this.sys.game.canvas.width / 2.5, this.sys.game.canvas.height / 2.5, creditsText, {
+            fontSize: '50px',
             fill: '#ffffff',
             align: 'center'
         }).setOrigin(0.5, 0.5);
 
         // Add a button to go back to the main menu
-        this.backButton = this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 1.2, 'Back to Main Menu', {
-            fontSize: '24px',
+        this.backButton = this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 1.4, '"S" O "K" PARA VOLVER ATRÁS', {
+            fontSize: '40px',
             fill: '#ffffff'
         }).setOrigin(0.5, 0.5);
 
