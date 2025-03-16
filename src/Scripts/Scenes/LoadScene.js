@@ -48,7 +48,7 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('creditos', 'src/Assets/boton-creditos.png');
     this.load.image('empezar', 'src/Assets/boton-empezar.png');
 
-    this.load.image('ficha0', 'src/Assets/fichaTecnica.png');
+    this.load.image('ficha0', 'src/Assets/ficha0.jpg');
     this.load.image('ficha1', 'src/Assets/fichaTecnica.png');
     this.load.image('ficha2', 'src/Assets/fichaTecnica.png');
     this.load.image('ficha3', 'src/Assets/fichaTecnica.png');

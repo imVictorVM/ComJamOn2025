@@ -5,7 +5,7 @@ export default class ProfileScene extends Phaser.Scene {
     constructor(){
         super({key: "ProfileScene"})
         this.whichProfile;
-        this.whatSelection = 0;
+        this.whatSelection = 1;
     }
 
 init(profileSelected){
@@ -20,7 +20,10 @@ preload(){
 }
 
     create(){
-        this.whatSelection = 0;
+        //JUGADORES
+        this.Player1 = new Player1(this, 100, 100, 'player1');
+        this.Player2 = new Player2(this, 100, 100, 'player2');       
+   
         const fx=this.cameras.main.fadeIn(1000, 0, 0, 0);
         
         //FONDO 
@@ -30,7 +33,7 @@ preload(){
             this.sys.game.canvas.height / 2,
             'ficha'+this.whichProfile
        )
-       .setScale(2);
+       .setScale(0.5);
     
         
         //CONFIRMAR
@@ -40,8 +43,7 @@ preload(){
             'confirmar'
        )
        .setScale(0.5);
-       this.confirmar.x+= this.sys.game.canvas.width /3;
-       this.confirmar.y+=  this.sys.game.canvas.height / 3;
+   
 
         //VOLVER
         this.volver=this.add.image(
@@ -50,20 +52,17 @@ preload(){
             'volver'
        )
        .setScale(0.5);
-       this.volver.x+= this.sys.game.canvas.width / 2;
-       this.volver.y+=  this.sys.game.canvas.height / 2;
+
 
        //this.confirmar.setTint(0x000000)
        ///this.confirmar.setTint=true;
       // this.confirmar.setTint=false;
       // this.volver.setTint(0x000000)
 
-        //JUGADORES
-        this.Player1 = new Player1(this, 100, 100, 'player1');
-        this.Player2 = new Player2(this, 100, 100, 'player2');       
+        
 
     
-       this.pulsado1=false;
+       this.pulsado1=true;
       
     }
 
@@ -73,7 +72,7 @@ preload(){
             if(this.whatSelection != 0){
                 this.whatSelection -=1;
 
-              this.pulsado1=false;
+                this.pulsado1= true;
                
             }
             
@@ -84,7 +83,8 @@ preload(){
         if(this.Player1.moveright()|| this.Player2.moveright()){
             if(this.whatSelection != 1){
                 this.whatSelection += 1;
-               this.pulsado1= true;
+                this.pulsado1=false;
+               
 
             }
             
@@ -93,14 +93,15 @@ preload(){
         }
         if(this.whatSelection == 0)
             {
-                this.confirmar.setTint(0x6677EE)
-                this.volver.clearTint()
+                this.volver.setTint(0x6677EE)
+                this.confirmar.clearTint()
             }
 
             if(this.whatSelection == 1)
                 {
-                    this.volver.setTint(0x6677EE)
-                    this.confirmar.clearTint()
+                    this.confirmar.setTint(0x6677EE)
+                this.volver.clearTint()
+                   
                 }
 
         if((this.Player1.select()|| this.Player2.select())){
