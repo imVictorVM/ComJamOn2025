@@ -3,7 +3,7 @@ import Player from "./Player.js";
 export default class Player2 extends Player {
     constructor(scene, x, y, sprite = 'player') {
         super(scene, x, y, sprite); 
-        scene.add.existing(this);
+
         this.setDisplaySize(150, 150); //tamaño
  
 
