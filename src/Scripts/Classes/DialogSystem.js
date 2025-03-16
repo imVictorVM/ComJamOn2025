@@ -54,10 +54,13 @@ export default class DialogSystem {
         const eventDialogues = allDialogues[eventId];
         if (!eventDialogues) return;
 
+   //     console.log("Metodo showEventDialogues antes" + this.dialogIndex);
 
         this.end = false;
         this.dialogues = eventDialogues.dialogs;
         this.dialogIndex = 0;
+
+//        console.log("Metodo showEventDialogues despues" + this.dialogIndex);
 
         // Muestra la capa oscura desde la escena principal
         this.scene.events.emit('showDialogueBackground');
@@ -66,6 +69,8 @@ export default class DialogSystem {
     }
 
     showNextDialogue() {
+    //    console.log("Indice Actual " + this.dialogIndex);
+    //    console.log("Tamaño" + this.dialogues.length);
         if (this.dialogIndex < this.dialogues.length) {
             const { character, text, options = [] } = this.dialogues[this.dialogIndex];
 
@@ -134,7 +139,6 @@ export default class DialogSystem {
                 let baseYPosition = dialogueBoxYPosition -100; //Punto fijo en y
 
                 options.reverse().forEach((option, index) => {
-                    console.log("index" + index);
                     const buttonText = `→ ${option.response}`;
                     const initialXPosition = this.centerX + 910; // Punto fijo en X
 
@@ -179,7 +183,6 @@ export default class DialogSystem {
         } else if (this.dialogIndex !=0) {
             // Fin del diálogo
             this.end = true;
-            this.scene.events.emit('endDialogue');
             this.scene.events.emit('hideDialogueBackground'); 
             this.dialogueText.setText('');
             this.characterNameText.setText('');
@@ -194,19 +197,13 @@ export default class DialogSystem {
 
     handleOptionSelection(gain, player,option) {
 
-        console.log("gain" + gain);
+      
         this.affectionSystem.AddAffection(gain, player);
         
         if (option.next) {
-
+          //  console.log("OPCION " + option.next);
             this.showEventDialogues(option.next, this.Dialogues);
         }
-        else{
-
-            this.showNextDialogue();
-
-        }
-
     }
 
     onPointerDown(optionIndex) {

@@ -28,7 +28,7 @@ constructor(){
     this.respuestaP1 = false;
     this.respuestaP2 = false;
     this.start = true;
-
+    this.CallbackCreated = false;
     this.musicaGame;
 }
 
@@ -86,8 +86,6 @@ create(){
     //Tomamos las medidas de la pantalla para la camara
     const { width, height } = this.cameras.main;
 
-    console.log("round" + this.round);
-    console.log("fase" + this.fase);
     
     if(this.whichRama == 0 || this.whichRama == 1)
     {
@@ -218,12 +216,9 @@ create(){
 
 selectCardQuestion()
 {
-    console.log("entra al switch")
-    console.log(this.round)
     switch(this.round){
         case 1:
            this.cardQuestion= this.cardJson.Pregunta1;
-           console.log(this.cardQuestion)
             break;
         case 2:
             this.cardQuestion= this.cardJson.Pregunta2;
@@ -452,18 +447,20 @@ createAnswers(){
     // Inicializar el sistema de diálogos
    
     // Eventos para mostrar/ocultar capa de fondo
-    this.events.on('showDialogueBackground', () => {
-        this.dialogBackground.setVisible(true);
-    });
-    this.events.on('hideDialogueBackground', () => {
-        this.dialogBackground.setVisible(false);
-    });   
-    this.events.on('OnPointerDown',()=>{
-        this.dialogueSystem.onPointerDown();
-    }) 
+    if(!this.CallbackCreated){
+        this.events.on('showDialogueBackground', () => {
+            this.dialogBackground.setVisible(true);
+        });
+        this.events.on('hideDialogueBackground', () => {
+            this.dialogBackground.setVisible(false);
+        });   
+        this.events.on('OnPointerDown',()=>{
+            this.dialogueSystem.onPointerDown();
+        }) 
+        this.CallbackCreated = true;
+    }
     // Mostrar dialogos
             this.dialogueSystem = new DialogSystem(this, this.affectionSystem,this.reader.dialogData.Eventos);
-            console.log(this.contadorFase2);
             this.eventoId1 = `${this.ninfaName}${this.contadorFase2}.${1}`;  
             this.eventoId2 = `${this.ninfaName}${this.contadorFase2}.${2}`;
 
@@ -719,7 +716,6 @@ changeScene(){
                     else if(this.Player1.select()){
                         if(!this.Player1.selectCard){
                             if(!this.respuestaP1){
-                                console.log("AAAAAAAA");
                                 this.events.emit("selectAnswer");
                                 this.dialogueSystem.handleOptionSelection(this.dialogueSystem.actualOption.gain,1,this.dialogueSystem.actualOption)
                                 this.events.emit("OnPointerDown");
@@ -757,7 +753,6 @@ changeScene(){
                     else if(this.Player2.select()){
                         if(!this.Player2.selectCard){
                             if(!this.respuestaP2){
-                                console.log("BBBBBBBB");
                                 this.events.emit("selectAnswer");
                                 this.dialogueSystem.handleOptionSelection(this.dialogueSystem.actualOption.gain,2,this.dialogueSystem.actualOption)
                                 this.events.emit("OnPointerDown");
@@ -921,8 +916,6 @@ changeScene(){
             else{
             //cambiar sprite a punto (1, 2 y 3)
             }
-
-            console.log(this.affectionSystem.GetPlayer1());
            
             setTimeout(() => {
 
@@ -933,7 +926,6 @@ changeScene(){
                 this.round++; // Aumentamos la ronda
                 this.playerHasAnsweredGood = 0; // Reiniciamos contador
                 this.scene.restart(); // Reiniciamos la escena
-                console.log("reinicio");
                 this.wait = false; 
 
             },  2000); // 2000 milisegundos = 2 segundos de retraso
