@@ -34,7 +34,7 @@ preload(){
             this.sys.game.canvas.height / 2,
             'ficha'+this.whichProfile
        )
-       .setScale(0.5);
+       //.setScale(0.5);
     
         
         //CONFIRMAR
@@ -43,7 +43,6 @@ preload(){
             this.sys.game.canvas.height / 2,
             'confirmar'+  this.whichProfile
        )
-       .setScale(0.5);
    
 
         //VOLVER
@@ -52,7 +51,6 @@ preload(){
             this.sys.game.canvas.height / 2,
             'volver'+this.whichProfile
        )
-       .setScale(0.5);
 
 
        //this.confirmar.setTint(0x000000)
