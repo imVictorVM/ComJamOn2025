@@ -67,6 +67,10 @@ preload(){
 
 create(){
 
+    this.corazonbackground = this.add.image(
+        this.sys.game.canvas.width / 2,
+        this.sys.game.canvas.height / 2,
+        'fondoCorazon')
     // Detener la música anterior si está en reproducción
     if (this.sound.get('musicaMenu')) {
         this.sound.get('musicaMenu').stop();
@@ -94,6 +98,13 @@ create(){
             this.musicaGame.play();
         }
     }
+
+    this.corazonbackground = this.add.image(
+        this.sys.game.canvas.width / 2,
+        this.sys.game.canvas.height / 2,
+        'fondoCorazon')
+
+    this.corazonbackground.setVisible(false);
 
     //CREAMOS JSON
     this.cardJson = this.cache.json.get('cardJson');
@@ -545,19 +556,111 @@ changeScene(){
             
         }
         else if(this.affectionSystem.GetPlayer1() > this.affectionSystem.GetPlayer2()){ //Gana el player 1 pero no el player 2
-            //Seteo 1 imagen de explosion en la posición del player 2
-            console.log("Win jaja player 2 kaboom");
+            this.dialogueSystem.showEventDialogues(this.ninfaName + "EndOne", this.reader.dialogData.Eventos);
+            this.events.emit("OnPointerDown");
+            this.j1.setVisible(true);
+            this.background.setVisible(false);
+            this.corazonbackground.setVisible(true);
+            setTimeout(() => {
+                this.j1.setVisible(false);
+                this.ninfa.sprite.setVisible(false);
+                this.j2.setVisible(true);
+                this.corazonbackground.setVisible(false);
+                this.dialogBackground.setVisible(false);
+            },4000);
+            setTimeout(() => {
+                const fx= this.cameras.main.shake(500);
+                this.explosion = new Explosion(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2.5,this.explosionArray);
+               
+            },4500);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(2);
+            },4600);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(3);
+            },4700);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(4);
+            },4800);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(5);
+            },4900);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(6);
+            },5000);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(7);
+            },5100);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(8);
+            },5200);
+            setTimeout(() => {
+                this.scene.start('CreditsScene')
+            },5300);
         }
         else if(this.affectionSystem.GetPlayer1() < this.affectionSystem.GetPlayer2()){ //Gana el player 2 pero no el player 1
-            //Seteo 1 imagen de explosion en la posición del player 1
-            console.log("Win jaja player 1 kaboom");
+            this.dialogueSystem.showEventDialogues(this.ninfaName + "EndOne", this.reader.dialogData.Eventos);
+            this.events.emit("OnPointerDown");
+            this.j2.setVisible(true);
+            this.background.setVisible(false);
+            this.corazonbackground.setVisible(true);
+            setTimeout(() => {
+                this.j2.setVisible(false);
+                this.ninfa.sprite.setVisible(false);
+                this.j1.setVisible(true);
+                this.corazonbackground.setVisible(false);
+                this.dialogBackground.setVisible(false);
+            },4000);
+            setTimeout(() => {
+                const fx= this.cameras.main.shake(500);
+                this.explosion = new Explosion(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2.5,this.explosionArray);
+               
+            },4500);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(2);
+            },4600);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(3);
+            },4700);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(4);
+            },4800);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(5);
+            },4900);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(6);
+            },5000);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(7);
+            },5100);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(8);
+            },5200);
+            setTimeout(() => {
+                this.scene.start('CreditsScene')
+            },5300);
         }
         //Si empatan
         else{
             this.Player1.selectCard = false;
             this.Player2.selectCard = false;
-            this.add.image(600, 950,'acepto');
-            this.add.image(1200, 950,'rechazo');
+            this.add.image(600, 950,'confirmar1');
+            this.add.image(1200, 950,'volver1');
             this.selectedPlayer1 = this.add.image(600,1000,'jugador1').setVisible(true);
    
             this.selectedPlayer2 = this.add.image(1200,1025,'jugador2').setVisible(true);

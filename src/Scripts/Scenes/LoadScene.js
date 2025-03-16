@@ -30,7 +30,7 @@ export default class loadScene extends Phaser.Scene {
     this.load.on("progress", (value) => {
       
     
-      this.add.image(0, 0, 'imLoad').setOrigin(0, 0);
+      //this.add.image(0, 0, 'imLoad').setOrigin(0, 0);
       progressBar.clear();
       progressBar.fillStyle(0xffffff, 1);
       progressBar.fillRect(
