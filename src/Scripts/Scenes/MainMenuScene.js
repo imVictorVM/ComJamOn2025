@@ -51,6 +51,13 @@ export default class MainMenuScene extends Phaser.Scene {
     
            .setScale(0.75);
 
+        this.instrucciones=this.add.image(
+        this.sys.game.canvas.width / 1.45,
+        this.sys.game.canvas.height / 1.3,
+        'instrucciones'
+        )
+        .setScale(0.5);
+
         
     }
 
