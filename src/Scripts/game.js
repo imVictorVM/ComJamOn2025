@@ -31,7 +31,7 @@ let config = {
 			right: true
 		}
 	},
-	title: "JuegoDeLigar_buildbena(1)",
+	title: "Cortejos Enramados",
 	version: "1.0.0",
 	transparent: false
 };
