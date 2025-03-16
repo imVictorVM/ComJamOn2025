@@ -59,17 +59,25 @@ create(){
 
     if(this.whichRama == 0 || this.whichRama == 1){
         // Reproducir la nueva música
-        this.musicaGame = this.sound.add('musicaCerezo', { loop: true });
-        this.musicaGame.play();
+         // Crear la instancia de la música si no existe
+         if (!this.sound.get('musicaCerezo')) {
+            this.musicaGame = this.sound.add('musicaCerezo', { loop: true });
+            this.musicaGame.play();
+        }
+
     }
     else if(this.whichRama == 2 || this.whichRama == 3){
-        this.musicaGame = this.sound.add('musicaSauce', { loop: true });
-        this.musicaGame.play();
+        if (!this.sound.get('musicaSauce')) {
+            this.musicaGame = this.sound.add('musicaSauce', { loop: true });
+            this.musicaGame.play();
+        }
             
     }
     else {
-        this.musicaGame = this.sound.add('musicaPalmera', { loop: true });
-        this.musicaGame.play();
+        if (!this.sound.get('musicaPalmera')) {
+            this.musicaGame = this.sound.add('musicaPalmera', { loop: true });
+            this.musicaGame.play();
+        }
     }
 
     //CREAMOS JSON
@@ -232,77 +240,54 @@ selectCardQuestion()
 
 
 //metodo para ocultar mierda
-createCards(){
-    //Proximamente se puede pasar como parametro la pool de cartas(respuestas) dado una pregunta
-    //Lo que habra que cambiar son las estadisticas que se pueden leer del json correspondiente
-    //la posicion de las cartas es fija, asi como su tamaño.
-    //crear array
-    this.cardArray = [
-        this.card1 = new card(this,this.sys.game.canvas.width / 10, this.sys.game.canvas.height / 2,this.cardQuestion.carta1.sprite, 700, 500,
-            this.cardQuestion.carta1.stats.extroversion,
-            this.cardQuestion.carta1.stats.confianza,
-            this.cardQuestion.carta1.stats.creatividad,
-            this.cardQuestion.carta1.stats.paciencia,
-            this.cardQuestion.carta1.stats.empatia),
-        
-            this.card2 = new card(this,this.sys.game.canvas.width / 8, this.sys.game.canvas.height / 2,this.cardQuestion.carta2.sprite,700, 500,
-            this.cardQuestion.carta2.stats.extroversion,
-            this.cardQuestion.carta2.stats.confianza,
-            this.cardQuestion.carta2.stats.creatividad,
-            this.cardQuestion.carta2.stats.paciencia,
-            this.cardQuestion.carta2.stats.empatia),
-        this.card3 = new card(this,this.sys.game.canvas.width / 6, this.sys.game.canvas.height / 2,this.cardQuestion.carta3.sprite,700, 500,
-            this.cardQuestion.carta3.stats.extroversion,
-            this.cardQuestion.carta3.stats.confianza,
-            this.cardQuestion.carta3.stats.creatividad,
-            this.cardQuestion.carta3.stats.paciencia,
-            this.cardQuestion.carta3.stats.empatia),
-        this.card4 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta4.sprite,700, 500,
-            this.cardQuestion.carta4.stats.extroversion,
-            this.cardQuestion.carta4.stats.confianza,
-            this.cardQuestion.carta4.stats.creatividad,
-            this.cardQuestion.carta4.stats.paciencia,
-            this.cardQuestion.carta4.stats.empatia),
-        this.card5 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta5.sprite,700, 500,
-            this.cardQuestion.carta5.stats.extroversion,
-            this.cardQuestion.carta5.stats.confianza,
-            this.cardQuestion.carta5.stats.creatividad,
-            this.cardQuestion.carta5.stats.paciencia,
-            this.cardQuestion.carta5.stats.empatia),
-        this.card6 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta6.sprite,700, 500,
-            this.cardQuestion.carta6.stats.extroversion,
-            this.cardQuestion.carta6.stats.confianza,
-            this.cardQuestion.carta6.stats.creatividad,
-            this.cardQuestion.carta6.stats.paciencia,
-            this.cardQuestion.carta6.stats.empatia)
-    ];
-   // Función para obtener números únicos aleatorios en un rango
-function getRandomUniqueNumbers(count, min, max) {
-    let numbers = Array.from({ length: max - min + 1 }, (_, i) => i + min);
-    return numbers.sort(() => Math.random() - 0.5).slice(0, count);
-}
+createCards() {
+    function getRandomUniqueNumbers(count, min, max) {
+        let numbers = [];
+        while (numbers.length < count) {
+            let num = Math.floor(Math.random() * (max - min + 1)) + min;
+            if (!numbers.includes(num)) numbers.push(num); // Evita duplicados
+        }
+        return numbers;
+    }
 
-// Generar 5 índices únicos entre 1 y 5
-let uniqueIndices = getRandomUniqueNumbers(5, 1, 5);
 
-// Crear array de cartas
-this.cardArray = uniqueIndices.map((i, index) => {
-    let cartaKey = `carta${i}`; // Genera la clave dinámica "carta1", "carta2", etc.
-    let cartaData = this.cardQuestion[cartaKey]; // Obtiene los datos de la carta
-    
-    return new card(
-        this,
-        this.sys.game.canvas.width / (index + 2), // Posición basada en el índice
-        this.sys.game.canvas.height / 2,
-        cartaData.sprite, // Sprite de la carta seleccionada
-        500, 700, // Tamaño fijo
-        cartaData.stats.extroversion,
-        cartaData.stats.confianza,
-        cartaData.stats.creatividad,
-        cartaData.stats.paciencia,
-        cartaData.stats.empatia
-    );
-});
+    let uniqueIndices = getRandomUniqueNumbers(6, 1, 6);
+    console.log("Índices generados:", uniqueIndices);
+
+    // Configuración de tamaño y posición
+    let cardWidth = 200;  
+    let cardHeight = 280;  
+    let spacing = 100;  // Reducción de espacio entre cartas
+    let yPos = 820;     // Ubicación en la parte inferior
+
+    // Calcular punto de inicio para centrar mejor
+    let totalWidth = (6 * cardWidth) + (5 * spacing); 
+    let startX = (this.sys.game.canvas.width - totalWidth) / 2 + (cardWidth / 2);
+
+    // Crear cartas
+    this.cardArray = uniqueIndices.map((i, index) => {
+        let cartaKey = `carta${i}`;
+        let cartaData = this.cardQuestion[cartaKey];
+
+        let posX = startX + (index * (cardWidth + spacing)); // Posición centrada
+
+        return new card(
+            this,
+            posX,
+            yPos,
+            cartaData.sprite,
+            cardWidth,
+            cardHeight,
+            cartaData.stats.extroversion,
+            cartaData.stats.confianza,
+            cartaData.stats.creatividad,
+            cartaData.stats.paciencia,
+            cartaData.stats.empatia
+        );
+    })
+
+
+
     //Crear cartas
      //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
    // this.card1.setSprite(250, 250);
