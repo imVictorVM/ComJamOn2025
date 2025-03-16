@@ -30,6 +30,7 @@ constructor(){
     this.start = true;
     this.CallbackCreated = false;
     this.musicaGame;
+    this.poninter = 2;
 }
 
 init(ramaSelected){
@@ -112,17 +113,16 @@ create(){
             )
         }
     
+    //VS
+    this.vs = this.add.image(this.sys.canvas.width/2, 140, 'VS').setVisible(false);
+    this.vs.setScale(0.3,0.3);
+    //J1
+    this.j1 = this.add.image(300, 140, 'J1').setVisible(false);
+    this.j1.setScale(0.3,0.3);
+    //J2
+    this.j2 = this.add.image(this.sys.canvas.width - 300, 140,'J2').setVisible(false);
+    this.j2.setScale(0.3,0.3)
 
-    //Startgame
-    this.startGame = false; //booleano para empezar el juego
-    this.countdown = 3 * 1000; //5 segundos
-    this.countdownText = this.add.text(
-        this.sys.game.canvas.width / 2,
-        this.sys.game.canvas.height / 2,
-        '3', { 
-        fontSize: '80px', 
-        color: 'white',      
-    });
 
     // Capa de fondo dialog
     this.dialogBackground = this.add.graphics();
@@ -140,13 +140,6 @@ create(){
 
             this.dialogueSystem = new DialogSystem(this, this.inventory,this.reader.dialogData.Eventos);
 
-            
-    
-
-    //TIMER
-    this.initialTimer = this.time.addEvent({ 
-        delay: 3 * 1000, //1000 por milisegundos
-        callback: () => {this.startGame = true} });
 
     //JUGADORES
             this.Player1 = new Player1(this, 100, 100, 'player1');
@@ -155,52 +148,72 @@ create(){
     //selections
     this.selectionPlayer1 = 0;
     this.selectionPlayer2 = 5;
+
+        switch(this.whichRama){
+
+            case(0):
+                this.NinfaStats = new Stats(0,1,-1,0,1,-1);
+                this.ninfaName = "Avery";
+                this.spriteArray = ['RamaAvery','RamaAveryKawaii','RamaAvery.1','RamaAvery.2','RamaAvery.3','Avery','AveryEnfadado','AverySonrojado']; //Seteamos su array de sprites
+            break;
     
+            case(1):
+                this.NinfaStats = new Stats(0,-1,0,1,-1,1);
+                this.ninfaName = "Cerine";
+                this.spriteArray = ['RamaCerine','RamaCerineKawaii','RamaCerine.1','RamaCerine.2','RamaCerine.3','Cerine','CerineEnfadado','CerineSonrojado']; //Seteamos su array de sprites
+            break;
+            
+            case(2):
+                this.NinfaStats = new Stats(-1,-1,1,0,1,0);
+                this.ninfaName = "Trix";
+                this.spriteArray = ['RamaTrix','RamaTrixKawaii','RamaTrix.1.','RamaTrix.2','RamaTrix.3','Trix','TrixEnfadado','TrixSonrojado']; //Seteamos su array de sprites
+            break;
+    
+            case(3):
+                this.NinfaStats = new Stats(-1,0,1,-1,0,1);
+                this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauce2','NinfaSauce2Feliz','NinfaSauce2Triste','NinfaSauce2Enfadado']; //Seteamos su array de sprites
+            break;
+    
+            case(4):
+                this.NinfaStats = new Stats(1,1,0,-1,-1,0);
+                this.ninfaName = "Phoebe"
+                this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera1','NinfaPalmera1Feliz','NinfaPalmera1Triste','NinfaPalmera1Enfadado']; //Seteamos su array de sprites
+    
+            case(5):
+                this.NinfaStats = new Stats(1,0,-1,1,0,-1);
+                this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera2','NinfaPalmera2Feliz','NinfaPalmera2Triste','NinfaPalmera2Enfadado']; //Seteamos su array de sprites
+            break;
+    
+            
+    
+        }
+    
+        //Creación de la Ninfa con sus estadísticas
+        this.ninfa  = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2.5, this.spriteArray,this.whichRama, this.NinfaStats); //Creamos la ninfa
     //Creación de las estadísticas de la Ninfa en función de la rama seleccionada por el jugador
-    switch(this.whichRama){
-
-        case(0):
-            this.NinfaStats = new Stats(0,1,-1,0,1,-1);
-            this.ninfaName = "Avery";
-            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaCerezo1','NinfaCerezo1Feliz','NinfaCerezo1Triste','NinfaCerezo1Enfadado']; //Seteamos su array de sprites
-        break;
-
-        case(1):
-            this.NinfaStats = new Stats(0,-1,0,1,-1,1);
-            this.ninfaName = "Cerine";
-            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaCerezo2','NinfaCerezo2Feliz','NinfaCerezo2Triste','NinfaCerezo2Enfadado']; //Seteamos su array de sprites
-        break;
-        
-        case(2):
-            this.NinfaStats = new Stats(-1,-1,1,0,1,0);
-            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauce1','NinfaSauce1Feliz','NinfaSauce1Triste','NinfaSauce1Enfadado']; //Seteamos su array de sprites
-        break;
-
-        case(3):
-            this.NinfaStats = new Stats(-1,0,1,-1,0,1);
-            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauce2','NinfaSauce2Feliz','NinfaSauce2Triste','NinfaSauce2Enfadado']; //Seteamos su array de sprites
-        break;
-
-        case(4):
-            this.NinfaStats = new Stats(1,1,0,-1,-1,0);
-            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera1','NinfaPalmera1Feliz','NinfaPalmera1Triste','NinfaPalmera1Enfadado']; //Seteamos su array de sprites
-
-        case(5):
-            this.NinfaStats = new Stats(1,0,-1,1,0,-1);
-            this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera2','NinfaPalmera2Feliz','NinfaPalmera2Triste','NinfaPalmera2Enfadado']; //Seteamos su array de sprites
-        break;
-
-        
-
-    }
-
-    //Creación de la Ninfa con sus estadísticas
-    this.ninfa  = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama, this.NinfaStats); //Creamos la ninfa
+   
 
     if(this.fase == 1){
             
         this.timerPlayer1 = new Timer(this,600,100,-1);
         this.timerPlayer2 = new Timer(this,1200,100,1);
+       
+        //TIMER
+        this.initialTimer = this.time.addEvent({ 
+        delay: 3 * 1000, //1000 por milisegundos
+        callback: () => {this.startGame = true} });
+        this.vs.setVisible(true);
+            //Startgame
+    this.startGame = false; //booleano para empezar el juego
+    this.countdown = 3 * 1000; //5 segundos
+    this.countdownText = this.add.text(
+        900,
+        70,
+        '3', { 
+        fontSize: '150px', 
+        color: 'white',      
+    });
+        
         this.selectCardQuestion();
          //Crear cartas
         this.createCards();   
@@ -208,6 +221,10 @@ create(){
 
     if(this.fase == 2){
         //Crear las respuestas
+        this.ninfa.changeSprite(5);
+        this.vs.setVisible(false);
+        this.j1.setVisible(true);
+        this.startGame = true
         this.createAnswers();
     }
       
@@ -321,7 +338,7 @@ createAnswers(){
 
     //Instanciar ReadDialog
     this.reader = new ReadDialog(this);  
-
+    this.startGame = true;
     // Cargar el archivo JSON con los diálogos
     this.reader.loadJSON('src/Scripts/Classes/Texto.json').then(() => {
     });
@@ -565,6 +582,7 @@ changeScene(){
                         this.events.emit("OnPointerDown");
                         this.start = false;
                         this.Player2.selectCard = true;
+                        this.ninfa.sprite.setVisible(true);
                         this.changeSelectionFase2(this.dialogueSystem.actualOptionIndex)
                     }
 
@@ -586,9 +604,19 @@ changeScene(){
                     else if(this.Player1.select()){
                         if(!this.Player1.selectCard){
                             if(!this.respuestaP1){
+                                let originalPoints = this.affectionSystem.GetPlayer1();
                                 this.events.emit("selectAnswer");
                                 this.dialogueSystem.handleOptionSelection(this.dialogueSystem.actualOption.gain,1,this.dialogueSystem.actualOption)
                                 this.events.emit("OnPointerDown");
+                                if(this.affectionSystem.GetPlayer1() > originalPoints){
+                                    this.ninfa.changeSprite(7);
+                                }
+                                else if(this.affectionSystem.GetPlayer1() == originalPoints){
+                                    this.ninfa.changeSprite(5);
+                                }
+                                else{
+                                    this.ninfa.changeSprite(6);
+                                }
                                 this.respuestaP1 = true;
                             }
                             else{
@@ -602,6 +630,9 @@ changeScene(){
                                 }
                                 this.dialogueSystem.actualOptionIndex = 0;
                                 this.changeSelectionFase2(this.dialogueSystem.actualOptionIndex);
+                                this.ninfa.changeSprite(5);
+                                this.j1.setVisible(false);
+                                this.j2.setVisible(true);
                                 this.Player1.selectCard = true;
                                 this.Player2.selectCard = false;
                             }
@@ -623,15 +654,27 @@ changeScene(){
                     else if(this.Player2.select()){
                         if(!this.Player2.selectCard){
                             if(!this.respuestaP2){
+                                let originalPoints = this.affectionSystem.GetPlayer2();
                                 this.events.emit("selectAnswer");
                                 this.dialogueSystem.handleOptionSelection(this.dialogueSystem.actualOption.gain,2,this.dialogueSystem.actualOption)
                                 this.events.emit("OnPointerDown");
+                                if(this.affectionSystem.GetPlayer2() > originalPoints){
+                                    this.ninfa.changeSprite(7);
+                                }
+                                else if(this.affectionSystem.GetPlayer2() == originalPoints){
+                                    this.ninfa.changeSprite(5);
+                                }
+                                else{
+                                    this.ninfa.changeSprite(6);
+                                }
                                 this.respuestaP2 = true;
                             }
                             else{
                                 this.dialogueSystem.actualOptionIndex = 0;
                                 this.Player2.selectCard = true;
                                 this.events.emit("OnPointerDown");
+                                this.ninfa.changeSprite(5);
+                                this.j2.setVisible(false);
                                 this.End();
                             }
                         }
@@ -782,23 +825,42 @@ changeScene(){
 
             if(this.playerHasAnsweredGood>=1){
             //cambiar sprite a sonrojo y lo que coño más sea
+            if(this.fase == 1) this.ninfa.changeSprite(1);
             }
             else{
             //cambiar sprite a punto (1, 2 y 3)
+            if(this.fase == 1){
+            this.ninfa.changeSprite(2);
+            setTimeout(() => {
+                this.ninfa.changeSprite(3);
+            },1000);
+    
+            setTimeout(() => {
+                this.ninfa.changeSprite(4);
+            },2000);
+ 
+            }
             }
            
-            setTimeout(() => {
+            if(this.fase == 1){
+                setTimeout(() => {
 
-                if(this.affectionSystem.GetPlayer1() >=2 || this.affectionSystem.GetPlayer2() >=2){
-                    this.fase = 2;
-                }
-
+                    if(this.affectionSystem.GetPlayer1() >=2 || this.affectionSystem.GetPlayer2() >=2){
+                        this.fase = 2;
+                    }
+                    this.round++; // Aumentamos la ronda
+                    this.playerHasAnsweredGood = 0; // Reiniciamos contador
+                    this.scene.restart(); // Reiniciamos la escena
+                    this.wait = false; 
+    
+                },  3000); // 3000 milisegundos = 3 segundos de retraso
+            }
+            else{
                 this.round++; // Aumentamos la ronda
                 this.playerHasAnsweredGood = 0; // Reiniciamos contador
                 this.scene.restart(); // Reiniciamos la escena
                 this.wait = false; 
-
-            },  2000); // 2000 milisegundos = 2 segundos de retraso
+            }
         }
 
     }
