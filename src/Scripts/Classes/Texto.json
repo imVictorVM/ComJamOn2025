@@ -603,41 +603,607 @@
                 }
             ]
         },
-        "fragmento_0.3.1": {
+        "Trix1.1": {
             "dialogs": [
                 {},
-            { "character": "Eshe", "text": "Esa es una respuesta bastante ingenua." },
-            { "character": "Eshe", "text": "No me la esperaba de ti." },
-            { "character": "Shai", "text": "En situaciones así de extremas solo podemos mantener la esperanza." },
-            { "character": "Shai", "text": "El momento en el que dejemos de confiar en que podemos superar esto, es el momento en el que Apofis ha ganado." },
-            { "character": "Tarik", "text": "Creo que Shai tiene razón." },
-            { "character": "Tarik", "text": "Solo espero que tengas razón y no se alargue mucho más." },
-            { "character": "Eshe", "text": "Si eso es lo que ambos pensáis confiaré en vosotros." },
-            { "character": "Eshe", "text": "Pero voy a seguir vigilando a la gente sospechosa por mi cuenta." },
-            { "character": "Eshe", "text": "Y si tengo que clavarle una flecha a alguien lo haré." }
+                {
+                    "character": "Trix",
+                    "text": "...",
+                    "options": [
+                        { 
+                            "response": "...", 
+                            "gain": 1, "next": "Trix1.1.1" 
+                        },
+                        { 
+                            "response": "¿Hola? ¿Sabes hablar?", 
+                            "gain": -1, "next": "Trix1.1.2" 
+                        },
+                        { 
+                            "response": "Hola, buenos días. ", 
+                            "gain": 0, "next": "Trix1.1.3" 
+                        }
+                    ]
+                }
             ]
         },
-
-        "fragmento_0.3.2": {
+        "Trix1.1.1":{
             "dialogs": [
-            {},
-            { "character": "Tarik", "text": "Lo que dices tiene sentido." },
-            { "character": "Tarik", "text": "Pero es bastante desesperanzador." },
-            { "character": "Eshe", "text": "Mejor tristes que muertos, hermano." },
-            { "character": "Shai", "text": "Tampoco es de mi agrado dejar a gente desprotegida." },
-            { "character": "Shai", "text": "Pero si no tenemos cuidado no podremos ayudar a nadie." },
-            { "character": "Tarik", "text": "Bueno, si esta es la decisión de la mayoría tendré que acatarla." },
-            { "character": "Tarik", "text": "Ven conmigo a la entrada Eshe." },
-            { "character": "Tarik", "text": "Tú tienes mejor criterio para estas cosas." }
+                {},
+                {
+                    "character": "Trix",
+                    "text": "..."
+                }
+            ]
+        },
+        "Trix1.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Claro que sé. Que quiera hacerlo ya es otra cosa."
+                }
+            ]
+        },
+        "Trix1.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Buenos dias, supongo."
+                }
+            ]
+        },
+        "Trix1.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Hola, me llamo Beatrix, pero llámame Trix. No me gusta mucho mi nombre.",
+                    "options": [
+                        { 
+                            "response": "Encantad@ Trix, un gusto.", 
+                            "gain": 0, "next": "Trix1.2.1" 
+                        },
+                        { 
+                            "response": "Oh! Trix es un nombre muy bonito, encantad@", 
+                            "gain": 1, "next": "Trix1.2.2" 
+                        },
+                        { 
+                            "response": "Hola Beatrix, ¿Qué tal todo?", 
+                            "gain": -1, "next": "Trix1.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Trix1.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Un placer."
+                }
+            ]
+        },
+        "Trix1.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Gracias, el tuyo también lo es."
+                }
+            ]
+        },
+        "Trix1.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Te he dicho que me llames Trix, ¿eres sordo?"
+                }
+            ]
+        },
+        "Trix2.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Bueno, ya que estáis aquí hablemos. ¿Qué te gusta hacer en tu tiempo libre?",
+                    "options": [
+                        { 
+                            "response": "No hay nada que me apasione ", 
+                            "gain": 0, "next": "Trix2.1.1" 
+                        },
+                        { 
+                            "response": "Tengo mil hobbies y me falta tiempo para hacerlos todos", 
+                            "gain": 1, "next": "Trix2.1.2" 
+                        },
+                        { 
+                            "response": "Estar contigo sin parar", 
+                            "gain": -1, "next": "Trix2.1.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Trix2.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Bueno, una respuesta un poco aburrida."
+                }
+            ]
+        },
+        "Trix2.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Nos parecemos en eso, entonces."
+                }
+            ]
+        },
+        "Trix2.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Nos conocemos de menos de 1 día, ¿Cómo?"
+                }
+            ]
+        },
+        "Trix2.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Me miras muy intensamente, ¿Tienes algo que decirme?",
+                    "options": [
+                        { 
+                            "response": "Perdona por perturbar tu paz.", 
+                            "gain": 1, "next": "Cerine2.2.1" 
+                        },
+                        { 
+                            "response": "Tú y yo y mi cuarto.", 
+                            "gain": 0, "next": "Cerine2.2.2" 
+                        },
+                        { 
+                            "response": "Elige tú el plan", 
+                            "gain": -1, "next": "Cerine2.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Trix2.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Buena idea, la luna está preciosa."
+                }
+            ]
+        },
+        "Trix2.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Pero si tu cuarto no habla."
+                }
+            ]
+        },
+        "Trix2.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "He preguntado yo primero."
+                }
+            ]
+        },
+        "Trix3.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Si esto llevase a algún lado, ¿Dónde nos verías?",
+                    "options": [
+                        { 
+                            "response": "Ni idea, voy donde me lleva la corriente.", 
+                            "gain": 0 , "next": "Trix3.1.1" 
+                        },
+                        { 
+                            "response": "Creo que es demasiado pronto para hablar de eso.", 
+                            "gain": -1, "next": "Trix3.1.2"  
+                        },
+                        { 
+                            "response": "Junt@s en una casita con jardín.", 
+                            "gain": 1, "next": "Trix3.1.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Trix3.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Pero, ¿no piensas más allá?"
+                }
+            ]
+        },
+        "Trix.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Entonces, no nos ves futuro."
+                }
+            ]
+        },
+        "Trix3.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Mi futuro ideal."
+                }
+            ]
+        },
+        "Trix3.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Si el mundo nos quisiese separar, que harias",
+                    "options": [
+                        { 
+                            "response": "Así es la vida, espabila.", 
+                            "gain": -1 ,"next": "Trix3.2.1" 
+                        },
+                        { 
+                            "response": "Intentaría negociar con quien sea.", 
+                            "gain": 0, "next": "Trix3.2.2" 
+                        },
+                        { 
+                            "response": "Ni el mar, ni los oceános prodían romper nuestro amor.", 
+                            "gain": 1, "next": "Trix3.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Trix3.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "¿No te importaría lo más mínimo?"
+                }
+            ]
+        },
+        "Trix3.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Pero eso puede que no arregle nada."
+                }
+            ]
+        },
+        "Trix3.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Se nota que lo darías todo."
+                }
+            ]
+        },
+        "Phoebe1.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "...",
+                    "options": [
+                        { 
+                            "response": "...", 
+                            "gain": 1, "next": "Phoebe1.1.1" 
+                        },
+                        { 
+                            "response": "¿Hola? ¿Sabes hablar?", 
+                            "gain": -1, "next": "Phoebe1.1.2" 
+                        },
+                        { 
+                            "response": "Hola, buenos días. ", 
+                            "gain": 0, "next": "Phoebe1.1.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Phoebe1.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "..."
+                }
+            ]
+        },
+        "Phoebe1.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Claro que sé. Que quiera hacerlo ya es otra cosa."
+                }
+            ]
+        },
+        "Phoebe1.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Buenos dias, supongo."
+                }
+            ]
+        },
+        "Phoebe1.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Hola, me llamo Beatrix, pero llámame Trix. No me gusta mucho mi nombre.",
+                    "options": [
+                        { 
+                            "response": "Encantad@ Trix, un gusto.", 
+                            "gain": 0, "next": "Phoebe1.2.1" 
+                        },
+                        { 
+                            "response": "Oh! Trix es un nombre muy bonito, encantad@", 
+                            "gain": 1, "next": "Phoebe1.2.2" 
+                        },
+                        { 
+                            "response": "Hola Beatrix, ¿Qué tal todo?", 
+                            "gain": -1, "next": "Phoebe1.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Phoebe1.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Un placer."
+                }
+            ]
+        },
+        "Phoebe1.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Gracias, el tuyo también lo es."
+                }
+            ]
+        },
+        "Phoebe1.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Te he dicho que me llames Trix, ¿eres sordo?"
+                }
+            ]
+        },
+        "Phoebe2.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Bueno, ya que estáis aquí hablemos. ¿Qué te gusta hacer en tu tiempo libre?",
+                    "options": [
+                        { 
+                            "response": "No hay nada que me apasione ", 
+                            "gain": 0, "next": "Phoebe2.1.1" 
+                        },
+                        { 
+                            "response": "Tengo mil hobbies y me falta tiempo para hacerlos todos", 
+                            "gain": 1, "next": "Phoebe2.1.2" 
+                        },
+                        { 
+                            "response": "Estar contigo sin parar", 
+                            "gain": -1, "next": "Phoebe2.1.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Phoebe2.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Bueno, una respuesta un poco aburrida."
+                }
+            ]
+        },
+        "Phoebe.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Nos parecemos en eso, entonces."
+                }
+            ]
+        },
+        "Phoebe2.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Nos conocemos de menos de 1 día, ¿Cómo?"
+                }
+            ]
+        },
+        "Phoebe2.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Me miras muy intensamente, ¿Tienes algo que decirme?",
+                    "options": [
+                        { 
+                            "response": "Perdona por perturbar tu paz.", 
+                            "gain": 1, "next": "Phoebe2.2.1" 
+                        },
+                        { 
+                            "response": "Tú y yo y mi cuarto.", 
+                            "gain": 0, "next": "Phoebe2.2.2" 
+                        },
+                        { 
+                            "response": "Elige tú el plan", 
+                            "gain": -1, "next": "Phoebe2.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Phoebe2.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Buena idea, la luna está preciosa."
+                }
+            ]
+        },
+        "Phoebe2.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Pero si tu cuarto no habla."
+                }
+            ]
+        },
+        "Phoebe2.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "He preguntado yo primero."
+                }
+            ]
+        },
+        "Phoebe3.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Si esto llevase a algún lado, ¿Dónde nos verías?",
+                    "options": [
+                        { 
+                            "response": "Ni idea, voy donde me lleva la corriente.", 
+                            "gain": 0 , "next": "Phoebe3.1.1" 
+                        },
+                        { 
+                            "response": "Creo que es demasiado pronto para hablar de eso.", 
+                            "gain": -1, "next": "Phoebe3.1.2"  
+                        },
+                        { 
+                            "response": "Junt@s en una casita con jardín.", 
+                            "gain": 1, "next": "Phoebe3.1.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Phoebe3.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Pero, ¿no piensas más allá?"
+                }
+            ]
+        },
+        "Phoebe.3.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Entonces, no nos ves futuro."
+                }
+            ]
+        },
+        "Phoebe3.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Mi futuro ideal."
+                }
+            ]
+        },
+        "Phoebe.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Si el mundo nos quisiese separar, que harias",
+                    "options": [
+                        { 
+                            "response": "Así es la vida, espabila.", 
+                            "gain": -1 ,"next": "Phoebe3.2.1" 
+                        },
+                        { 
+                            "response": "Intentaría negociar con quien sea.", 
+                            "gain": 0, "next": "Phoebe3.2.2" 
+                        },
+                        { 
+                            "response": "Ni el mar, ni los oceános prodían romper nuestro amor.", 
+                            "gain": 1, "next": "Phoebe3.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Phoebe3.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "¿No te importaría lo más mínimo?"
+                }
+            ]
+        },
+        "Phoebe3.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Pero eso puede que no arregle nada."
+                }
+            ]
+        },
+        "Phoebe3.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Se nota que lo darías todo."
+                }
             ]
         }
-    }
-
-       
-    
-
-    
-    
+    }    
 }
      
 
