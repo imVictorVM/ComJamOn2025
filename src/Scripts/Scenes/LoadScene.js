@@ -55,6 +55,8 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('ficha4', 'src/Assets/ficha4.jpg');
     this.load.image('ficha5', 'src/Assets/ficha5.jpg');
     
+
+    
     this.load.image('fondo0', 'src/Assets/cerezoIzquierda.png');
     this.load.image('fondo1', 'src/Assets/cerezoDerecha.png');
     this.load.image('fondo4', 'src/Assets/palmeraIzquierda.png');
@@ -213,6 +215,11 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('VS', 'src/Assets/VS.png')
     this.load.image('J1', 'src/Assets/J1.png')
     this.load.image('J2', 'src/Assets/J2.png')
+    this.load.image('prompt1', 'src/Assets/prompt1.png')
+    this.load.image('prompt2', 'src/Assets/prompt2.png')
+    this.load.image('prompt3', 'src/Assets/prompt3.png')
+    this.load.image('prompt4', 'src/Assets/prompt4.png')
+    this.load.image('prompt5', 'src/Assets/prompt5.png')
     //////////////////////////
     //AUDIOS
     this.load.audio('cambiarBoton', 'src/Sounds/SFX/click_boton.wav');
