@@ -61,6 +61,7 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('fondo5', 'src/Assets/palmeraDerecha.png');
     this.load.image('fondo2', 'src/Assets/sauceIzquierda.png');
     this.load.image('fondo3', 'src/Assets/sauceDerecha.png');
+    this.load.image('fondoCorazon','src/Assets/fondoCorazon.jpg')
 
     this.load.image('confirmar0', 'src/Assets/confirmar0.png');
     this.load.image('volver0', 'src/Assets/volver0.png');
@@ -70,9 +71,10 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('volver2', 'src/Assets/volver2.png');
     this.load.image('confirmar3', 'src/Assets/confirmar3.png');
     this.load.image('volver3', 'src/Assets/volver3.png');
-
-
-
+    this.load.image('confirmar4', 'src/Assets/confirmar4.png');
+    this.load.image('volver4', 'src/Assets/volver4.png');
+    this.load.image('confirmar5', 'src/Assets/confirmar5.png');
+    this.load.image('volver5', 'src/Assets/volver5.png');
 
     this.load.image('titulo', 'src/Assets/titulo.png');
 
@@ -82,7 +84,7 @@ export default class loadScene extends Phaser.Scene {
 
     this.load.image('instrucciones', 'src/Assets/instrucciones.png');
 
-
+    //CardImages
     this.load.image('carta1.1', 'src/Assets/carta1.1.png');
     this.load.image('carta1.2', 'src/Assets/carta1.2.png');
     this.load.image('carta1.3', 'src/Assets/carta1.3.png');
@@ -114,16 +116,78 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('carta5.5', 'src/Assets/carta5.5.png');
     this.load.image('carta5.6', 'src/Assets/carta5.6.png');
 
+    //Frames explosion (cargarlas en este orden)
+    this.load.image('explo1', 'src/Assets/1.png');
+    this.load.image('explo2', 'src/Assets/2.png');
+    this.load.image('explo3', 'src/Assets/3.png');
+    this.load.image('explo4', 'src/Assets/4.png');
+    this.load.image('explo5', 'src/Assets/5.png');
+    this.load.image('explo6', 'src/Assets/6.png');
+    this.load.image('explo7', 'src/Assets/7.png');
+    this.load.image('explo8', 'src/Assets/8.png');
+    this.load.image('explo9', 'src/Assets/9.jpg');
+    this.load.image('exploWhite', 'src/Assets/white.jpg');
+    this.load.image('exploBlackout', 'src/Assets/blackout.jpg');
+
+    //Players
     this.load.image('jugador1', 'src/Assets/jugador1.png');
     this.load.image('jugador2', 'src/Assets/jugador2.png');
 
+    //json
     this.load.json("cardJson", 'src/Scripts/Classes/Phase1Cards.json');
 
-    this.load.json("fondoCorazon", 'src/Scripts/Classes/fondoCorazon.json');
+    ///////////////////////////
+    //Imagenes de los personajes
+    
+    //Cerezo
 
+    //Avery Rama
+    this.load.image('RamaAvery', 'src/Assets/RamaAvery.png')
+    this.load.image('RamaAveryKawaii', 'src/Assets/RamaAveryKawaii.png')
+    this.load.image('RamaAvery.1', 'src/Assets/RamaAvery.1.png')
+    this.load.image('RamaAvery.2', 'src/Assets/RamaAvery.2.png')
+    this.load.image('RamaAvery.3', 'src/Assets/RamaAvery.3.png')
+    //Avery
+    this.load.image('Avery', 'src/Assets/Avery.png')
+    this.load.image('AveryEnfadado', 'src/Assets/AveryEnfadado.png')
+    this.load.image('AverySonrojado', 'src/Assets/AverySonrojado.png')
 
+    //Cerine Rama
+    this.load.image('RamaCerine', 'src/Assets/RamaCerine.png')
+    this.load.image('RamaCerineKawaii', 'src/Assets/RamaCerineKawaii.png')
+    this.load.image('RamaCerine.1', 'src/Assets/RamaCerine.1.png')
+    this.load.image('RamaCerine.2', 'src/Assets/RamaCerine.2.png')
+    this.load.image('RamaCerine.3', 'src/Assets/RamaCerine.3.png')
+
+    //Cerine
+    this.load.image('Cerine', 'src/Assets/Cerine.png')
+    this.load.image('CerineEnfadado', 'src/Assets/CerineEnfadada.png')
+    this.load.image('CerineSonrojado', 'src/Assets/CerineSonrojada.png')
+
+    //Sauce
+
+    //Rama Trix
+    this.load.image('RamaTrix', 'src/Assets/RamaTrix.png')
+    this.load.image('RamaTrixKawaii', 'src/Assets/RamaTrixKawaii.png')
+    this.load.image('RamaTrix.1', 'src/Assets/RamaTrix.1.png')
+    this.load.image('RamaTrix.2', 'src/Assets/RamaTrix.2.png')
+    this.load.image('RamaTrix.3', 'src/Assets/RamaTrix.3.png')
+
+    //Trix
+    this.load.image('Trix', 'src/Assets/Trix.png')
+    this.load.image('TrixEnfadado', 'src/Assets/TrixEnfadada.png')
+    this.load.image('TrixSonrojado', 'src/Assets/TrixSonrojada.png')
+
+    //Palmera
 
     ///////////////////////////
+
+    //UI
+
+    this.load.image('VS', 'src/Assets/VS.png')
+    this.load.image('J1', 'src/Assets/J1.png')
+    this.load.image('J2', 'src/Assets/J2.png')
+    //////////////////////////
     //AUDIOS
     this.load.audio('cambiarBoton', 'src/Sounds/SFX/click_boton.wav');
     this.load.audio('cambiarRama', 'src/Sounds/SFX/pasar_hojas.wav');
