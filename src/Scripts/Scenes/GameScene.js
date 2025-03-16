@@ -194,38 +194,38 @@ createCards(){
     console.log(this.cardQuestion.carta1.sprite);
     //crear array
     this.cardArray = [
-        this.card1 = new card(this,this.sys.game.canvas.width / 1.1, this.sys.game.canvas.height / 1.1,this.cardQuestion.carta1.sprite,
+        this.card1 = new card(this,this.sys.game.canvas.width / 10, this.sys.game.canvas.height / 2,this.cardQuestion.carta1.sprite, 700, 500,
             this.cardQuestion.carta1.stats.extroversion,
             this.cardQuestion.carta1.stats.confianza,
             this.cardQuestion.carta1.stats.creatividad,
             this.cardQuestion.carta1.stats.paciencia,
             this.cardQuestion.carta1.stats.empatia),
         
-            this.card2 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta2.sprite,
+            this.card2 = new card(this,this.sys.game.canvas.width / 8, this.sys.game.canvas.height / 2,this.cardQuestion.carta2.sprite,700, 500,
             this.cardQuestion.carta2.stats.extroversion,
             this.cardQuestion.carta2.stats.confianza,
             this.cardQuestion.carta2.stats.creatividad,
             this.cardQuestion.carta2.stats.paciencia,
             this.cardQuestion.carta2.stats.empatia),
-        this.card3 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta3.sprite,
+        this.card3 = new card(this,this.sys.game.canvas.width / 6, this.sys.game.canvas.height / 2,this.cardQuestion.carta3.sprite,700, 500,
             this.cardQuestion.carta3.stats.extroversion,
             this.cardQuestion.carta3.stats.confianza,
             this.cardQuestion.carta3.stats.creatividad,
             this.cardQuestion.carta3.stats.paciencia,
             this.cardQuestion.carta3.stats.empatia),
-        this.card4 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta4.sprite,
+        this.card4 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta4.sprite,700, 500,
             this.cardQuestion.carta4.stats.extroversion,
             this.cardQuestion.carta4.stats.confianza,
             this.cardQuestion.carta4.stats.creatividad,
             this.cardQuestion.carta4.stats.paciencia,
             this.cardQuestion.carta4.stats.empatia),
-        this.card5 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta5.sprite,
+        this.card5 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta5.sprite,700, 500,
             this.cardQuestion.carta5.stats.extroversion,
             this.cardQuestion.carta5.stats.confianza,
             this.cardQuestion.carta5.stats.creatividad,
             this.cardQuestion.carta5.stats.paciencia,
             this.cardQuestion.carta5.stats.empatia),
-        this.card6 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta6.sprite,
+        this.card6 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta6.sprite,700, 500,
             this.cardQuestion.carta6.stats.extroversion,
             this.cardQuestion.carta6.stats.confianza,
             this.cardQuestion.carta6.stats.creatividad,
@@ -235,10 +235,11 @@ createCards(){
 
     //Crear cartas
      //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
-    this.card1.setSprite(500, 500);
-    //this.card1.setScale(0.5, 0.5);
-    this.card1.displayWidth = this.card1.width * 0.25;
-    this.card1.displayHeight = this.card1.height * 0.25;
+   // this.card1.setSprite(250, 250);
+    //this.card1.setScale(2, 2); // Duplica el tamaño del sprite
+    //this.card1.setSize(200, 300); // Ajusta el tamaño a 200x300 píxeles
+    //this.card1.displayWidth = this.card1.width * 0;
+    //this.card1.displayHeight = this.card1.height * 0;
 
     this.selectedcard1Player1 = this.add.text(
         this.sys.game.canvas.width / 8,
@@ -257,8 +258,10 @@ createCards(){
         color: 'red',      
     }).setVisible(false);
 
-   
-    this.card2.setSprite(this.sys.game.canvas.width / 5, this.sys.game.canvas.height / 2);
+    //this.card2.setSprite(500, 500);
+    //this.card2.setSprite(this.sys.game.canvas.width / 5, this.sys.game.canvas.height / 2);
+    //this.card2.displayWidth = this.card1.width * 0.15;
+    //this.card2.displayHeight = this.card1.height * 0.15;
 
     this.selectedcard2Player1 = this.add.text(
         this.sys.game.canvas.width / 5,
@@ -275,8 +278,11 @@ createCards(){
         fontSize: '40px', 
         color: 'red',      
     }).setVisible(false);
-
-    this.card3.setSprite(this.sys.game.canvas.width / 3, this.sys.game.canvas.height / 2);
+    
+    //this.card3.setSprite(500, 500);
+    //this.card3.setSprite(this.sys.game.canvas.width / 3, this.sys.game.canvas.height / 2);
+    //this.card3.displayWidth = this.card1.width * 0.15;
+    //this.card3.displayHeight = this.card1.height * 0.15;
 
     this.selectedcard3Player1 = this.add.text(
         this.sys.game.canvas.width / 3,
@@ -293,9 +299,11 @@ createCards(){
         fontSize: '40px', 
         color: 'red',      
     }).setVisible(false);
-
-    this.card4.setSprite(this.sys.game.canvas.width / 1.5, this.sys.game.canvas.height / 2);
-
+    
+    //this.card4.setSprite(500, 500);
+    //this.card4.setSprite(this.sys.game.canvas.width / 1.5, this.sys.game.canvas.height / 2);
+   // this.card4.displayWidth = this.card1.width * 0.15;
+    //this.card4.displayHeight = this.card1.height * 0.15;
     this.selectedcard4Player1 = this.add.text(
         this.sys.game.canvas.width / 1.5,
         this.sys.game.canvas.height / 1.3,
@@ -311,8 +319,12 @@ createCards(){
         fontSize: '40px', 
         color: 'red',      
     }).setVisible(false);
-    
-    this.card5.setSprite(this.sys.game.canvas.width / 1.35, this.sys.game.canvas.height / 2);
+
+    //this.card1.setSprite(500, 500);
+    //this.card5.setSprite(this.sys.game.canvas.width / 1.35, this.sys.game.canvas.height / 2);
+
+   // this.card5.displayWidth = this.card1.width * 0.15;
+    //this.card5.displayHeight = this.card1.height * 0.15;
 
     this.selectedcard5Player1 = this.add.text(
         this.sys.game.canvas.width / 1.35,
@@ -329,9 +341,11 @@ createCards(){
         fontSize: '40px', 
         color: 'red',      
     }).setVisible(false);
-
-    this.card6.setSprite(this.sys.game.canvas.width / 1.15, this.sys.game.canvas.height / 2);
-
+   
+   // this.card6.setSprite(500, 500);
+    //this.card6.setSprite(this.sys.game.canvas.width / 1.15, this.sys.game.canvas.height / 2);
+    //this.card6.displayWidth = this.card1.width * 0.15;
+   // this.card6.displayHeight = this.card1.height * 0.15;
     this.selectedcard6Player1 = this.add.text(
         this.sys.game.canvas.width / 1.15,
         this.sys.game.canvas.height / 1.3,
