@@ -6,35 +6,74 @@ export default class CreditsScene extends Phaser.Scene {
         super({ key: 'CreditsScene' });
     }
 
-    preload() {
-        // Load any assets needed for the credits scene here
-    }
+
 
     create() {
         const fx=this.cameras.main.fadeIn(1000, 0, 0, 0);
         // Add background color or image
         this.cameras.main.setBackgroundColor('#000000');
 
+        this.add.image(
+            this.sys.game.canvas.width / 2,
+            this.sys.game.canvas.height / 2,
+            'cerezo'
+       )
+
+        
+
+       // Add a title text
+       this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 8, 'CORTEJOS ENRAMADOS', {
+        fontSize: '100px',
+        fill: '#000000',
+        fontStyle: 'bold',
+        fontFamily: 'Georgia' 
+
+       }).setOrigin(0.5, 0.5);
+
         // Add credits text
         const creditsText = `
-            Game Development: Your Name
-            Art: Artist Name
-            Music: Musician Name
-            Special Thanks: Toñete
+            
+
+            Juego realizado para la ComJamOn 2025
+            por el equipo de desarrollo:
+            David Benito
+            Asher Carrero
+            Andrea González
+            Nerea Espinosa
+            Víctor Valenzuela
+            Seyam Acuba
+            Nicole Vergara
+
+            Agradecimientos a: Toñete
         `;
 
 
-        this.add.text(this.sys.game.canvas.width / 2.5, this.sys.game.canvas.height / 2.5, creditsText, {
+        const credits = this.add.text(this.sys.game.canvas.width / 2.1, this.sys.game.canvas.height, creditsText, {
             fontSize: '50px',
-            fill: '#ffffff',
-            align: 'center'
+            fill: '#000000',
+            align: 'center',
+            fontFamily: 'Georgia'
         }).setOrigin(0.5, 0.5);
 
+        // Tween to move the credits text from bottom to top
+        this.tweens.add({
+            targets: credits,
+            y: this.sys.game.canvas.height / 2.3,
+            ease: 'Linear',
+            duration: 5000, // Duration of the tween in milliseconds
+            onComplete: () => {
+                // Optional: Add any additional actions to perform when the tween completes
+                this.backButton.setVisible(true);
+            }
+        });
+
         // Add a button to go back to the main menu
-        this.backButton = this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 1.4, '"S" O "K" PARA VOLVER ATRÁS', {
-            fontSize: '40px',
-            fill: '#ffffff'
-        }).setOrigin(0.5, 0.5);
+        this.backButton = this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 1.2, '"S" O "K" PARA VOLVER ATRÁS', {
+            fontSize: '50px',
+            fill: '#000000',
+            fontFamily: 'Georgia'
+        }).setOrigin(0.5, 0.5).setVisible(false);
+
 
        this.Player1 = new Player1(this, 100, 100, 'player1');
        this.Player2 = new Player2(this, 100, 100, 'player2');       
