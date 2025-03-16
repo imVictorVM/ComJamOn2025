@@ -25,6 +25,9 @@ constructor(){
     this.isPoliamor = false;
     this.contadorFase2 = 1;
     this.ninfaName;
+    this.respuestaP1 = false;
+    this.respuestaP2 = false;
+    this.start = true;
 }
 
 init(ramaSelected){
@@ -58,9 +61,6 @@ create(){
     
     
     //Startgame
-    
-    this.timerPlayer1 = new Timer(this,600,100,-1);
-    this.timerPlayer2 = new Timer(this,1200,100,1);
     this.startGame = false; //booleano para empezar el juego
     this.countdown = 3 * 1000; //5 segundos
     this.countdownText = this.add.text(
@@ -144,7 +144,10 @@ create(){
     //Creación de la Ninfa con sus estadísticas
     this.ninfa  = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama, this.NinfaStats); //Creamos la ninfa
 
-    if(this.fase ==1){
+    if(this.fase == 1){
+            
+        this.timerPlayer1 = new Timer(this,600,100,-1);
+        this.timerPlayer2 = new Timer(this,1200,100,1);
         this.selectCardQuestion();
          //Crear cartas
         this.createCards();   
@@ -381,8 +384,6 @@ createAnswers(){
     this.reader.loadJSON('src/Scripts/Classes/Texto.json').then(() => {
     });
     // Inicializar el sistema de diálogos
-
-    this.dialogueSystem = new DialogSystem(this, this.affectionSystem,this.reader.dialogData.Eventos);
    
     // Eventos para mostrar/ocultar capa de fondo
     this.events.on('showDialogueBackground', () => {
@@ -396,6 +397,7 @@ createAnswers(){
     }) 
     // Mostrar dialogos
             this.dialogueSystem = new DialogSystem(this, this.affectionSystem,this.reader.dialogData.Eventos);
+            console.log(this.contadorFase2);
             this.eventoId1 = `${this.ninfaName}${this.contadorFase2}.${1}`;  
             this.eventoId2 = `${this.ninfaName}${this.contadorFase2}.${2}`;
 
@@ -405,7 +407,12 @@ createAnswers(){
             else{
                 console.log("No se ha encontrado el " + this.eventoId1);
             }
-            this.contadorFase2++;
+            ++this.contadorFase2;
+            this.start = true; //Seteamos start a true;
+            this.Player2.selectCard = false;
+            this.Player1.selectCard = false;
+            this.respuestaP1 = false;
+            this.respuestaP2 = false;
 }
 
 //para comprobar la eleccion
@@ -612,88 +619,90 @@ changeScene(){
                         this.checkPlayerElection(2,this.selectionPlayer2);
                         this.cardArray[this.selectionPlayer2].selected = true;
                     }
+                        
+                    if(this.timerPlayer1.value <=0 && this.timerPlayer2.value <=0 && !this.wait){
+    
+                        this.End();
+    
+                    }  
                 }    
                 else{
-                    //Si el valor del timer es el máximo lee el diálogo (indica que es el principio)
-                    if(this.timerPlayer1.value == this.timerPlayer1.GetMaxValue()){
-                        if (this.reader.dialogData.Eventos[this.eventoId1]) {
-                            this.dialogueSystem.showEventDialogues(this.eventoId1, this.reader.dialogData.Eventos);
-                            this.events.emit("OnPointerDown");
-                            this.Player2.selectCard = true;
-                        }   
-                        else{
-                            console.log("No se ha encontrado el " + this.eventoId1);
-                        }
-                        this.timerPlayer2.HideTimer(); //Escondemos el segundo Timer 
-                        this.timerPlayer2.value = this.timerPlayer2.GetMaxValue() //Asignamos nuevamente el valor máximo
+                    //Primer frame del update
+                    if(this.start){
+                        this.events.emit("OnPointerDown");
+                        this.start = false;
+                        this.Player2.selectCard = true;
                         this.changeSelectionFase2(this.dialogueSystem.actualOptionIndex)
-                    }
-                    //Si el player 1 ha terminado y el valor del player 2 es el máximo (indica que lee el diálogo del p2 SOLO 1 vez)
-                    if(this.timerPlayer1.value <= 0 && this.timerPlayer2.value == this.timerPlayer2.GetMaxValue()){
-                        if (this.reader.dialogData.Eventos[this.eventoId2]) {
-                            this.dialogueSystem.showEventDialogues(this.eventoId2, this.reader.dialogData.Eventos);
-                            this.events.emit("OnPointerDown");
-                          
-                        }   
-                        else{
-                            console.log("No se ha encontrado el " + this.eventoId1);
-                        }
-                        this.dialogueSystem.actualOptionIndex = 0;
-                        this.changeSelectionFase2(this.dialogueSystem.actualOptionIndex)
-                        this.Player2.selectCard = false;
-                    }
-                    //Resta el tiempo del timer1 mientras le quede tiempo
-                    if(this.timerPlayer1.value > 0 ){
-                        this.timerPlayer1.decreaseValue(this.delayTime);
-                    }
-                     //Resta el tiempo del timer2 mientras le quede tiempo
-                    else {
-                        this.timerPlayer2.decreaseValue(this.delayTime);
                     }
 
                     //MAPEO DE INPUTS
 
                     //P1
                     if(this.Player1.moveleft()){
-                        if(this.dialogueSystem.actualOptionIndex != 0){
+                        if(this.dialogueSystem.actualOptionIndex != 0 && !this.respuestaP1){
                             this.dialogueSystem.actualOptionIndex--;
                             this.changeSelectionFase2(this.dialogueSystem.actualOptionIndex)
                         }
                     }
                     else if(this.Player1.moveright()){
-                        if(this.dialogueSystem.actualOptionIndex != 2){
+                        if(this.dialogueSystem.actualOptionIndex != 2 && !this.respuestaP1){
                             this.dialogueSystem.actualOptionIndex++;
                             this.changeSelectionFase2(this.dialogueSystem.actualOptionIndex)
                         }
                     }
                     else if(this.Player1.select()){
                         if(!this.Player1.selectCard){
-                            this.events.emit("selectAnswer");
-                            this.dialogueSystem.handleOptionSelection(this.dialogueSystem.actualOption.gain,1,this.dialogueSystem.actualOption)
-                            this.timerPlayer1.HideTimer();
-                            this.Player1.selectCard = true;
+                            if(!this.respuestaP1){
+                                console.log("AAAAAAAA");
+                                this.events.emit("selectAnswer");
+                                this.dialogueSystem.handleOptionSelection(this.dialogueSystem.actualOption.gain,1,this.dialogueSystem.actualOption)
+                                this.events.emit("OnPointerDown");
+                                this.respuestaP1 = true;
+                            }
+                            else{
+                                if (this.reader.dialogData.Eventos[this.eventoId2]) {
+                                    this.dialogueSystem.showEventDialogues(this.eventoId2, this.reader.dialogData.Eventos);
+                                    this.events.emit("OnPointerDown");
+                                  
+                                }   
+                                else{
+                                    console.log("No se ha encontrado el " + this.eventoId1);
+                                }
+                                this.dialogueSystem.actualOptionIndex = 0;
+                                this.changeSelectionFase2(this.dialogueSystem.actualOptionIndex);
+                                this.Player1.selectCard = true;
+                                this.Player2.selectCard = false;
+                            }
                         }
                     }
                     //P2
                     if(this.Player2.moveleft()){
-                        if(this.dialogueSystem.actualOptionIndex != 0){
+                        if(this.dialogueSystem.actualOptionIndex != 0 && !this.respuestaP2){
                             this.dialogueSystem.actualOptionIndex--;
                             this.changeSelectionFase2(this.dialogueSystem.actualOptionIndex)
                         }
                     }
                     else if(this.Player2.moveright()){
-                        if(this.dialogueSystem.actualOptionIndex != 2){
+                        if(this.dialogueSystem.actualOptionIndex != 2 && !this.respuestaP2){
                             this.dialogueSystem.actualOptionIndex++;
                             this.changeSelectionFase2(this.dialogueSystem.actualOptionIndex)
                         }
                     }
                     else if(this.Player2.select()){
                         if(!this.Player2.selectCard){
-                            this.events.emit("selectAnswer");
-                            this.dialogueSystem.handleOptionSelection(this.dialogueSystem.actualOption.gain,2,this.dialogueSystem.actualOption)
-                            this.timerPlayer2.HideTimer();
-                            this.Player2.selectCard = true;
-                            this.events.emit("OnPointerDown");
+                            if(!this.respuestaP2){
+                                console.log("BBBBBBBB");
+                                this.events.emit("selectAnswer");
+                                this.dialogueSystem.handleOptionSelection(this.dialogueSystem.actualOption.gain,2,this.dialogueSystem.actualOption)
+                                this.events.emit("OnPointerDown");
+                                this.respuestaP2 = true;
+                            }
+                            else{
+                                this.dialogueSystem.actualOptionIndex = 0;
+                                this.Player2.selectCard = true;
+                                this.events.emit("OnPointerDown");
+                                this.End();
+                            }
                         }
                     }
                   
@@ -703,12 +712,6 @@ changeScene(){
                 this.countdown -= dt;
                 this.countdownText.setText(Math.floor(this.countdown / 1000) + 1);
             }
-    
-            if(this.timerPlayer1.value <=0 && this.timerPlayer2.value <=0 && !this.wait){
-    
-                this.End();
-    
-            }  
         }  
     }
 
@@ -854,7 +857,7 @@ changeScene(){
             }
 
             console.log(this.affectionSystem.GetPlayer1());
-
+           
             setTimeout(() => {
 
                 if(this.affectionSystem.GetPlayer1() >=2 || this.affectionSystem.GetPlayer2() >=2){
