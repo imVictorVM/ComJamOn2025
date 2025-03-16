@@ -61,7 +61,7 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('fondo5', 'src/Assets/palmeraDerecha.png');
     this.load.image('fondo2', 'src/Assets/sauceIzquierda.png');
     this.load.image('fondo3', 'src/Assets/sauceDerecha.png');
-    this.load.image('fondoCorazon','src/Assets/fondoCorazon.png')
+    this.load.image('fondoCorazon','src/Assets/fondoCorazon.jpg')
 
     this.load.image('confirmar0', 'src/Assets/confirmar0.png');
     this.load.image('volver0', 'src/Assets/volver0.png');
@@ -112,6 +112,18 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('carta5.5', 'src/Assets/carta5.5.png');
     this.load.image('carta5.6', 'src/Assets/carta5.6.png');
 
+    //Frames explosion (cargarlas en este orden)
+    this.load.image('explo1', 'src/Assets/1.png');
+    this.load.image('explo2', 'src/Assets/2.png');
+    this.load.image('explo3', 'src/Assets/3.png');
+    this.load.image('explo4', 'src/Assets/4.png');
+    this.load.image('explo5', 'src/Assets/5.png');
+    this.load.image('explo6', 'src/Assets/6.png');
+    this.load.image('explo7', 'src/Assets/7.png');
+    this.load.image('explo8', 'src/Assets/8.png');
+    this.load.image('explo9', 'src/Assets/9.jpg');
+    this.load.image('exploWhite', 'src/Assets/white.jpg');
+    this.load.image('exploBlackout', 'src/Assets/blackout.jpg');
 
     //Players
     this.load.image('jugador1', 'src/Assets/jugador1.png');
@@ -119,7 +131,6 @@ export default class loadScene extends Phaser.Scene {
 
     //json
     this.load.json("cardJson", 'src/Scripts/Classes/Phase1Cards.json');
-    this.load.json("fondoCorazon", 'src/Scripts/Classes/fondoCorazon.json');
 
     ///////////////////////////
     //Imagenes de los personajes
