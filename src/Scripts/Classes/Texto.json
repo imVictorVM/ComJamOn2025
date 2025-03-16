@@ -1,62 +1,285 @@
 {
     "Eventos": {
-
-        "Prueba": {
-
-            "dialogs": [
-
-                {},
-                {"text": "Hola me muero"}
-            ]
-
-        },
         
-
-        "evento0.3": {
+        "Avery1.1": {
             "dialogs": [
                 {},
-                { "character": "Tarik", "text": "Shai, ha llegado nueva gente con provisiones." },
-                { "character": "Tarik", "text": "Están pidiendo refugio en el templo." },
-                { "character": "Eshe", "text": "Cada vez hay más gente." },
-                { "character": "Eshe", "text": "Vamos a acabar quedándonos sin espacio." },
-                { "character": "Shai", "text": "Confío en que este asedio no dure tanto como para llegar a ese punto." },
-                { "character": "Eshe", "text": "Está bien ser positivo." },
-                { "character": "Eshe", "text": "Pero dejar entrar a la gente en el templo indiscriminadamente no me parece la mejor idea." },
-                { "character": "Eshe", "text": "He visto a gente sospechosa en los alrededores." },
-                { "character": "Tarik", "text": "No digas eso, Eshe." },
-                { "character": "Eshe", "text": "Es la verdad." },
-                { "character": "Eshe", "text": "Lo último que necesitamos es que alguien nos robe." },
-                { "character": "Eshe", "text": "Y he visto a un chico de pelo rojo que no me inspira confianza." },
-                { "character": "Eshe", "text": "Apesta a magia extraña." },
-                { "character": "Tarik", "text": "¿Qué propones que hagamos entonces?" },
-                { "character": "Tarik", "text": "¿Cerrar las puertas del templo y dejar que gente inocente muera?" },
-                { "character": "Tarik", "text": "Se supone que los templos de los dioses ofrecen protección a sus creyentes." },
-                { "character": "Eshe", "text": "Eso no es lo que estaba diciendo." },
-                { "character": "Eshe", "text": "Solo creo que deberíamos tener más cuidado." },
                 {
-                    "character": "Shai",
-                    "text": "Eshe, confía en Ra.",
+                    "character": "Avery",
+                    "text": "Insertar pregunta1",
                     "options": [
                         { 
                             "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
-                            "gain": 0, "next": "fragmento_0.3.2",
-                            "god": "Ra" 
+                            "gain": 0
                         },
                         { 
                             "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
-                            "gain": -1, "next": "fragmento_0.3.1",
-                            "god": "Ra" 
+                            "gain": -1
                         },
                         { 
                             "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
-                            "gain": 1, "next": "fragmento_0.3.1",
-                            "god": "Ra" 
+                            "gain": 1
                         }
                     ]
                 }
             ]
         },
-
+          
+        "Avery1.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Insertar pregunta1",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "Avery2.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Insertar pregunta2",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "Avery2.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Insertar pregunta2",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "Avery3.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Insertar pregunta3",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0 
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1 
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "Avery3.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Insertar pregunta3",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0 
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1 
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "Cerine1.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Cerine",
+                    "text": "Insertar pregunta1",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1
+                        }
+                    ]
+                }
+            ]
+        },
+          
+        "Cerine1.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Cerine",
+                    "text": "Insertar pregunta1",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "Cerine2.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Cerine",
+                    "text": "Insertar pregunta2",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "Cerine2.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Cerine",
+                    "text": "Insertar pregunta2",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "Cerine3.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Cerine",
+                    "text": "Insertar pregunta3",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0 
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1 
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "Cerine3.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Cerine",
+                    "text": "Insertar pregunta3",
+                    "options": [
+                        { 
+                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
+                            "gain": 0 
+                        },
+                        { 
+                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
+                            "gain": -1 
+                        },
+                        { 
+                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
+                            "gain": 1
+                        }
+                    ]
+                }
+            ]
+        },
+     
         "fragmento_0.3.1": {
             "dialogs": [
                 {},

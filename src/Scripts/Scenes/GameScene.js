@@ -23,6 +23,8 @@ constructor(){
     this.wait = false;
     this.affectionSystem = new AffectionSystem();
     this.isPoliamor = false;
+    this.contadorFase2 = 1;
+    this.ninfaName;
 }
 
 init(ramaSelected){
@@ -103,11 +105,13 @@ create(){
 
         case(0):
             this.NinfaStats = new Stats(-1,0,1,-1,0,1);
+            this.ninfaName = "Avery";
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaCerezo1','NinfaCerezo1Feliz','NinfaCerezo1Triste','NinfaCerezo1Enfadado']; //Seteamos su array de sprites
         break;
 
         case(1):
             this.NinfaStats = new Stats(1,0,-1,0,1,-1);
+            this.ninfaName = "Cerine";
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaCerezo2','NinfaCerezo2Feliz','NinfaCerezo2Triste','NinfaCerezo2Enfadado']; //Seteamos su array de sprites
         break;
         
@@ -138,16 +142,13 @@ create(){
     this.ninfa  = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama, this.NinfaStats); //Creamos la ninfa
 
     if(this.fase ==1){
-
          //Crear cartas
         this.createCards();   
-
     }
 
     if(this.fase == 2){
-
-
-
+        //Crear las respuestas
+        this.createAnswers();
     }
       
 }
@@ -280,10 +281,55 @@ createCards(){
         fontSize: '40px', 
         color: 'red',      
     }).setVisible(true);
+
+    this.totalOptions = 5; //Max of cards created - 1
+}
+
+createAnswers(){
+
+    //Creación del diálogo background
+
+    this.dialogBackground = this.add.graphics();
+    this.dialogBackground.fillStyle(0xffffff, 0.4); // Blanco, 50% de transparencia
+    this.dialogBackground.fillRect(0, 0, 300, 300);
+    this.dialogBackground.setVisible(false); // Oculto al inicio
+
+    //Instanciar ReadDialog
+    this.reader = new ReadDialog(this);  
+
+    // Cargar el archivo JSON con los diálogos
+    this.reader.loadJSON('src/Scripts/Classes/Texto.json').then(() => {
+    });
+    // Inicializar el sistema de diálogos
+
+    this.dialogueSystem = new DialogSystem(this, this.affectionSystem,this.reader.dialogData.Eventos);
+
+    // Click
+    this.input.on('pointerup', () => this.dialogueSystem.onPointerDown(), this);
+   
+    // Eventos para mostrar/ocultar capa de fondo
+    this.events.on('showDialogueBackground', () => {
+        this.dialogBackground.setVisible(true);
+    });
+    this.events.on('hideDialogueBackground', () => {
+        this.dialogBackground.setVisible(false);
+    });    
+
+    // Mostrar dialogos
+            this.dialogueSystem = new DialogSystem(this, this.affectionSystem,this.reader.dialogData.Eventos);
+            this.eventoId1 = `${this.ninfaName}${this.contadorFase2}.${1}`;  
+            this.eventoId2 = `${this.ninfaName}${this.contadorFase2}.${2}`;
+       
+            if (this.reader.dialogData.Eventos[this.eventoId1]) {
+                this.dialogueSystem.showEventDialogues(this.eventoId1, this.reader.dialogData.Eventos);
+            }   
+            else{
+                console.log("No se ha encontrado el " + this.eventoId1);
+            }
+            this.contadorFase2++;
 }
 
 //para comprobar la eleccion
-
 checkPlayerElection(player, selection) {
     for (let i = 0; i < this.cardArray.length; i++) {
         if (this.cardArray[selection].stats.statsArray[i] === 1) {
@@ -322,9 +368,6 @@ changeScene(){
     this.selectedcard5Player2.setVisible(false);
     this.selectedcard6Player2.setVisible(false);
 
-//Prueba
-   this.affectionSystem.Player1 = 4;
-   this.affectionSystem.Player2 = 4;
     if(this.fase == 1){ //Ninguno cumple los requisitos para pasar de ronda
         //Seteo de la explosión en la posición de la rama
         console.log("RamaKaboom");
@@ -428,68 +471,106 @@ changeScene(){
         else{
             if(this.startGame == true) {
                 this.countdownText.setVisible(false);
-                this.timerPlayer1.decreaseValue(this.delayTime);
-                this.timerPlayer2.decreaseValue(this.delayTime);
-                //PLAYER 1
-                if( this.Player1.moveleft()){
-                    if(this.selectionPlayer1 != 0){
-                        this.selectionPlayer1 -=1;
-                        this.changeSelectionPlayer1(this.selectionPlayer1);
+                if(this.fase == 1){
+                    this.timerPlayer1.decreaseValue(this.delayTime);
+                    this.timerPlayer2.decreaseValue(this.delayTime);
+                    //PLAYER 1
+                    if( this.Player1.moveleft()){
+                        if(this.selectionPlayer1 != 0){
+                            this.selectionPlayer1 -=1;
+                            this.changeSelectionPlayer1(this.selectionPlayer1);
+                        }
                     }
-                }
-    
-                if(this.Player1.moveright()){
-                    if(this.selectionPlayer1 != 5){
-                        this.selectionPlayer1 += 1;
-                        this.changeSelectionPlayer1(this.selectionPlayer1);
+        
+                    if(this.Player1.moveright()){
+                        if(this.selectionPlayer1 != 5){
+                            this.selectionPlayer1 += 1;
+                            this.changeSelectionPlayer1(this.selectionPlayer1);
+                        }
                     }
-                }
-    
-                if(this.Player1.select() && this.cardArray[this.selectionPlayer1].selected == false){
-                  
-                    //Elimina el Input del player 1
-                    this.Player1.selectCard = true;
-                    //TIMER
-                    this.timerPlayer1.HideTimer(); //Pone a false la visibilidad del timer
-                    this.delayTime = 2; //Aumenta la velocidad del otro timer
-                    //elegir carta
-                    this.checkPlayerElection(1,this.selectionPlayer1);
-                    this.cardArray[this.selectionPlayer1].selected = true;
-                    
-                    
-                    
-                }
-    
-                //PLAYER 2
-                if( this.Player2.moveleft()){
-                  
-                    if(this.selectionPlayer2 != 0){
-                        this.selectionPlayer2 -=1;
-                        this.changeSelectionPlayer2(this.selectionPlayer2);
+        
+                    if(this.Player1.select() && this.cardArray[this.selectionPlayer1].selected == false){
+                      
+                        //Elimina el Input del player 1
+                        this.Player1.selectCard = true;
+                        //TIMER
+                        this.timerPlayer1.HideTimer(); //Pone a false la visibilidad del timer
+                        this.delayTime = 2; //Aumenta la velocidad del otro timer
+                        //elegir carta
+                        this.checkPlayerElection(1,this.selectionPlayer1);
+                        this.cardArray[this.selectionPlayer1].selected = true;
+                        
+                        
+                        
                     }
-                }
-    
-                if(this.Player2.moveright()){
-                    
-                    if(this.selectionPlayer2 != 5){
-                        this.selectionPlayer2 += 1;
-                        this.changeSelectionPlayer2(this.selectionPlayer2);
+        
+                    //PLAYER 2
+                    if( this.Player2.moveleft()){
+                      
+                        if(this.selectionPlayer2 != 0){
+                            this.selectionPlayer2 -=1;
+                            this.changeSelectionPlayer2(this.selectionPlayer2);
+                        }
                     }
+        
+                    if(this.Player2.moveright()){
+                        
+                        if(this.selectionPlayer2 != 5){
+                            this.selectionPlayer2 += 1;
+                            this.changeSelectionPlayer2(this.selectionPlayer2);
+                        }
+                    }
+        
+                    if(this.Player2.select() && this.cardArray[this.selectionPlayer2].selected == false){
+                      
+                        //Elimina el Input del player 1
+                        this.Player2.selectCard = true;
+                        //TIMER
+                        this.timerPlayer2.HideTimer(); //Pone a false la visibilidad del timer
+                        this.delayTime = 4; //Aumenta la velocidad del otro timer
+        
+                        //elegir carta
+                        this.checkPlayerElection(2,this.selectionPlayer2);
+                        this.cardArray[this.selectionPlayer2].selected = true;
+                    }
+                }    
+                else{
+                    //Si el valor del timer es el máximo lee el diálogo (indica que es el principio)
+                    if(this.timerPlayer1.value == this.timerPlayer1.GetMaxValue()){
+                        console.log("Solo 1 vez")
+                        if (this.reader.dialogData.Eventos[this.eventoId1]) {
+                            this.dialogueSystem.showEventDialogues(this.eventoId1, this.reader.dialogData.Eventos);
+                        }   
+                        else{
+                            console.log("No se ha encontrado el " + this.eventoId1);
+                        }
+                        this.timerPlayer2.HideTimer(); //Escondemos el segundo Timer 
+                        this.timerPlayer2.value = this.timerPlayer2.GetMaxValue() //Asignamos nuevamente el valor máximo
+                    }
+                    //Si el player 1 ha terminado y el valor del player 2 es el máximo (indica que lee el diálogo del p2 SOLO 1 vez)
+                    if(this.timerPlayer1.value <= 0 && this.timerPlayer2.value == this.timerPlayer2.GetMaxValue()){
+                        //Hacer que desaparezcan los fokin dialogos en pantalla
+                        console.log("Solo 1 vez P2")
+                        if (this.reader.dialogData.Eventos[this.eventoId2]) {
+                            this.dialogueSystem.showEventDialogues(this.eventoId2, this.reader.dialogData.Eventos);
+                        }   
+                        else{
+                            console.log("No se ha encontrado el " + this.eventoId1);
+                        }
+                        
+                    }
+                    //Resta el tiempo del timer1 mientras le quede tiempo
+                    if(this.timerPlayer1.value > 0 ){
+                        this.timerPlayer1.decreaseValue(this.delayTime);
+                    }
+                     //Resta el tiempo del timer2 mientras le quede tiempo
+                    else {
+                       console.log("Resto al P2");
+                        this.timerPlayer2.decreaseValue(this.delayTime);
+                    }
+
                 }
-    
-                if(this.Player2.select() && this.cardArray[this.selectionPlayer2].selected == false){
-                  
-                    //Elimina el Input del player 1
-                    this.Player2.selectCard = true;
-                    //TIMER
-                    this.timerPlayer2.HideTimer(); //Pone a false la visibilidad del timer
-                    this.delayTime = 4; //Aumenta la velocidad del otro timer
-    
-                    //elegir carta
-                    this.checkPlayerElection(2,this.selectionPlayer2);
-                    this.cardArray[this.selectionPlayer2].selected = true;
-                }
-            }
+            }                         
             else{
                 this.countdown -= dt;
                 this.countdownText.setText(Math.floor(this.countdown / 1000) + 1);
@@ -499,7 +580,7 @@ changeScene(){
     
                 this.End();
     
-            }      
+            }  
         }  
     }
 

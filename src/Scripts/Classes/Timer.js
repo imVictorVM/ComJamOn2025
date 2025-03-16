@@ -48,4 +48,8 @@ export default class Timer extends Phaser.GameObjects.Graphics
         this.value = 0;
         this.draw();
     }
+
+    GetMaxValue(){
+        return 2000;
+    }
 }
