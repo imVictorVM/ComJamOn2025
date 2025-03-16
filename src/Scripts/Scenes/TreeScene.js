@@ -15,6 +15,11 @@ preload(){
 
     create(){
 
+        //JUGADORES
+        this.Player1 = new Player1(this, 100, 100, 'player1');
+        this.Player2 = new Player2(this, 100, 100, 'player2');
+
+        
         this.sfxCambiarRama = this.sound.add("cambiarRama");
 
         const fx=this.cameras.main.fadeIn(1000, 0, 0, 0);
@@ -53,9 +58,7 @@ preload(){
             'fondo5'
         ).setVisible(false);
 
-        //JUGADORES
-        this.Player1 = new Player1(this, 100, 100, 'player1');
-        this.Player2 = new Player2(this, 100, 100, 'player2');       
+               
 
 
     }
