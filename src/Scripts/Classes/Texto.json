@@ -665,7 +665,7 @@
                             "gain": 0, "next": "Trix1.2.1" 
                         },
                         { 
-                            "response": "Oh! Trix es un nombre muy bonito, encantad@", 
+                            "response": "¡Oh! Trix es un nombre muy bonito, encantad@", 
                             "gain": 1, "next": "Trix1.2.2" 
                         },
                         { 
@@ -699,7 +699,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Te he dicho que me llames Trix, ¿eres sordo?"
+                    "text": "Te he dicho que me llames Trix, ¿eres sord@?"
                 }
             ]
         },
@@ -708,18 +708,18 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Bueno, ya que estáis aquí hablemos. ¿Qué te gusta hacer en tu tiempo libre?",
+                    "text": "¿Cuánto tiempo vas a estar aqui?",
                     "options": [
                         { 
-                            "response": "No hay nada que me apasione ", 
+                            "response": "No lo había pensado antes.", 
                             "gain": 0, "next": "Trix2.1.1" 
                         },
                         { 
-                            "response": "Tengo mil hobbies y me falta tiempo para hacerlos todos", 
+                            "response": "Yo me quedaría todo lo que pueda, sin sobrepasarme.", 
                             "gain": 1, "next": "Trix2.1.2" 
                         },
                         { 
-                            "response": "Estar contigo sin parar", 
+                            "response": "Para siempre y por siempre.", 
                             "gain": -1, "next": "Trix2.1.3" 
                         }
                     ]
@@ -731,7 +731,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Bueno, una respuesta un poco aburrida."
+                    "text": "Bueno, es importante pensar que quieres hacer."
                 }
             ]
         },
@@ -740,7 +740,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Nos parecemos en eso, entonces."
+                    "text": "Gracias por respetar mi espacio."
                 }
             ]
         },
@@ -749,7 +749,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Nos conocemos de menos de 1 día, ¿Cómo?"
+                    "text": "Nos acabamos de conocer, ¿Qué dices?"
                 }
             ]
         },
@@ -761,16 +761,16 @@
                     "text": "Me miras muy intensamente, ¿Tienes algo que decirme?",
                     "options": [
                         { 
-                            "response": "Perdona por perturbar tu paz.", 
-                            "gain": 1, "next": "Cerine2.2.1" 
+                            "response": "Si quieres te lo digo, si nos tomamos algo.", 
+                            "gain": -1, "next": "Cerine2.2.1" 
                         },
                         { 
-                            "response": "Tú y yo y mi cuarto.", 
-                            "gain": 0, "next": "Cerine2.2.2" 
+                            "response": "A veces es mejor no hablar y solo admirar.", 
+                            "gain": 1, "next": "Cerine2.2.2" 
                         },
                         { 
-                            "response": "Elige tú el plan", 
-                            "gain": -1, "next": "Cerine2.2.3" 
+                            "response": "Que tienes un pelo muy bonito.", 
+                            "gain": 0, "next": "Cerine2.2.3" 
                         }
                     ]
                 }
@@ -781,7 +781,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Buena idea, la luna está preciosa."
+                    "text": "No tengo ganas."
                 }
             ]
         },
@@ -790,7 +790,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Pero si tu cuarto no habla."
+                    "text": "Entiendo tu punto."
                 }
             ]
         },
@@ -799,7 +799,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "He preguntado yo primero."
+                    "text": "¿Gracias?"
                 }
             ]
         },
@@ -808,18 +808,18 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Si esto llevase a algún lado, ¿Dónde nos verías?",
+                    "text": "¿Suicidio doble?",
                     "options": [
                         { 
-                            "response": "Ni idea, voy donde me lleva la corriente.", 
-                            "gain": 0 , "next": "Trix3.1.1" 
+                            "response": "Voy a llamar al 112.", 
+                            "gain": -1 , "next": "Trix3.1.1" 
                         },
                         { 
-                            "response": "Creo que es demasiado pronto para hablar de eso.", 
-                            "gain": -1, "next": "Trix3.1.2"  
+                            "response": "No, gracias, pero... ¿Estás bien?", 
+                            "gain": 0, "next": "Trix3.1.2"  
                         },
                         { 
-                            "response": "Junt@s en una casita con jardín.", 
+                            "response": "No hay mejor persona que tú para ello.", 
                             "gain": 1, "next": "Trix3.1.3" 
                         }
                     ]
@@ -831,7 +831,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Pero, ¿no piensas más allá?"
+                    "text": "Tranquil@, era una broma."
                 }
             ]
         },
@@ -840,7 +840,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Entonces, no nos ves futuro."
+                    "text": "Sí."
                 }
             ]
         },
@@ -849,7 +849,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Mi futuro ideal."
+                    "text": "Buena referencia."
                 }
             ]
         },
@@ -858,18 +858,18 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Si el mundo nos quisiese separar, que harias",
+                    "text": "¿Conoces a Johannes Mambiron?",
                     "options": [
                         { 
-                            "response": "Así es la vida, espabila.", 
+                            "response": "Oh! Claro que si, el escritor de nóvela negra.", 
                             "gain": -1 ,"next": "Trix3.2.1" 
                         },
                         { 
-                            "response": "Intentaría negociar con quien sea.", 
+                            "response": "No, la verdad.", 
                             "gain": 0, "next": "Trix3.2.2" 
                         },
                         { 
-                            "response": "Ni el mar, ni los oceános prodían romper nuestro amor.", 
+                            "response": "Sí, me encantó su fanfic bokuaka del mes pasado.", 
                             "gain": 1, "next": "Trix3.2.3" 
                         }
                     ]
@@ -881,7 +881,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "¿No te importaría lo más mínimo?"
+                    "text": "No es de novela negra, ¿Me has intentado engañar?"
                 }
             ]
         },
@@ -890,7 +890,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Pero eso puede que no arregle nada."
+                    "text": "Bueno, que pena."
                 }
             ]
         },
@@ -899,7 +899,7 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Se nota que lo darías todo."
+                    "text": "Yo soy más de sakuatsu pero ese estuvo muy bien también."
                 }
             ]
         },
