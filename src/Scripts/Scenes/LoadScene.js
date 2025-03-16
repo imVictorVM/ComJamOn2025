@@ -49,7 +49,7 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('empezar', 'src/Assets/boton-empezar.png');
 
     this.load.image('ficha0', 'src/Assets/ficha0.jpg');
-    this.load.image('ficha1', 'src/Assets/fichaTecnica.png');
+    this.load.image('ficha1', 'src/Assets/ficha1.png');
     this.load.image('ficha2', 'src/Assets/fichaTecnica.png');
     this.load.image('ficha3', 'src/Assets/fichaTecnica.png');
     this.load.image('ficha4', 'src/Assets/fichaTecnica.png');
@@ -71,6 +71,43 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('cerezo', 'src/Assets/cerezo.jpg');
     this.load.image('sauce', 'src/Assets/sauce.jpg');
     this.load.image('palmera', 'src/Assets/palmera.jpg');
+
+
+    this.load.image('carta1.1', 'src/Assets/carta1.1.png');
+    this.load.image('carta1.2', 'src/Assets/carta1.2.png');
+    this.load.image('carta1.3', 'src/Assets/carta1.3.png');
+    this.load.image('carta1.4', 'src/Assets/carta1.4.png');
+    this.load.image('carta1.5', 'src/Assets/carta1.5.png');
+    this.load.image('carta1.6', 'src/Assets/carta1.6.png');
+    this.load.image('carta2.1', 'src/Assets/carta2.1.png');
+    this.load.image('carta2.2', 'src/Assets/carta2.2.png');
+    this.load.image('carta2.3', 'src/Assets/carta2.3.png');
+    this.load.image('carta2.4', 'src/Assets/carta2.4.png');
+    this.load.image('carta2.5', 'src/Assets/carta2.5.png');
+    this.load.image('carta2.5', 'src/Assets/carta2.5.png');
+    this.load.image('carta3.1', 'src/Assets/carta3.1.png');
+    this.load.image('carta3.2', 'src/Assets/carta3.2.png');
+    this.load.image('carta3.3', 'src/Assets/carta3.3.png');
+    this.load.image('carta3.4', 'src/Assets/carta3.4.png');
+    this.load.image('carta3.5', 'src/Assets/carta3.5.png');
+    this.load.image('carta3.6', 'src/Assets/carta3.6.png');
+    this.load.image('carta4.1', 'src/Assets/carta4.1.png');
+    this.load.image('carta4.2', 'src/Assets/carta4.2.png');
+    this.load.image('carta4.3', 'src/Assets/carta4.3.png');
+    this.load.image('carta4.4', 'src/Assets/carta4.4.png');
+    this.load.image('carta4.5', 'src/Assets/carta4.5.png');
+    this.load.image('carta4.6', 'src/Assets/carta4.6.png');
+    this.load.image('carta5.1', 'src/Assets/carta5.1.png');
+    this.load.image('carta5.2', 'src/Assets/carta5.2.png');
+    this.load.image('carta5.3', 'src/Assets/carta5.3.png');
+    this.load.image('carta5.4', 'src/Assets/carta5.4.png');
+    this.load.image('carta5.5', 'src/Assets/carta5.5.png');
+    this.load.image('carta5.6', 'src/Assets/carta5.6.png');
+
+
+
+
+
     ///////////////////////////
     //AUDIOS
     this.load.audio('cambiarBoton', 'src/Sounds/SFX/click_boton.wav');
