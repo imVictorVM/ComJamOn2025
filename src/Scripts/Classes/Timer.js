@@ -34,7 +34,7 @@ export default class Timer extends Phaser.GameObjects.Graphics
 
         //  Set color of the time bar
 
-        this.bar.fillStyle(0xff0000);
+        this.bar.fillStyle(0x0000ff);
 
         //Checks the actual value of the time
         var d = Math.floor(this.p * this.value / 4);

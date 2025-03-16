@@ -20,15 +20,18 @@ export default class Ninfa{
         //Seteo del sprite de la rama en escena
         this.baseSprite = this.spriteList[0]; //Setea inicialmente el sprite de la rama
 
-        this.sprite = this.scene.add.sprite(this.x, this.y, this.baseSprite); //Añade el sprite de la rama en pantalla en la posición x e y
+        this.sprite = this.scene.add.sprite(this.x, this.y, this.baseSprite).setScale(0.4,0.4); //Añade el sprite de la rama en pantalla en la posición x e y
+        //this.sprite.setVisible(false);
 
     }
 
 
     // Cambiar Sprite (De rama a Ninfa,expresiones,sonroje...)
-    // Chuleta de sprites: (rama,ramaSonrojada,rama1punto,rama2puntos,rama3puntos,Ninfa,NinfaFeliz,NinfaTriste,NinfaEnfadada)
+    // Chuleta de sprites: (rama,ramaSonrojada,rama1punto,rama2puntos,rama3puntos,Ninfa,NinfaEnfadada,NinfaTriste)
     changeSprite(n)
     {
+        this.sprite.setVisible(true);
+        console.log(this.spriteList[n]);
         this.sprite.setTexture(this.spriteList[n]);
     }
 
