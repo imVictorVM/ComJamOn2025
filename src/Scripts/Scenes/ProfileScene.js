@@ -20,6 +20,7 @@ preload(){
 }
 
     create(){
+        this.whatSelection = 1;
         //JUGADORES
         this.Player1 = new Player1(this, 100, 100, 'player1');
         this.Player2 = new Player2(this, 100, 100, 'player2');       
