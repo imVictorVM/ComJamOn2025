@@ -659,8 +659,8 @@ changeScene(){
         else{
             this.Player1.selectCard = false;
             this.Player2.selectCard = false;
-            this.add.image(600, 950,'confirmar1');
-            this.add.image(1200, 950,'volver1');
+            this.add.image(300, -700,'confirmar1');
+            this.add.image(2000, 1300,'volver1');
             this.selectedPlayer1 = this.add.image(600,1000,'jugador1').setVisible(true);
    
             this.selectedPlayer2 = this.add.image(1200,1025,'jugador2').setVisible(true);
@@ -686,6 +686,9 @@ changeScene(){
                         this.sys.game.canvas.height / 2,
                         'fondoCorazon'
                     )
+                    setTimeout(() => {
+                        this.scene.start('CreditsScene')
+                        },1300);
                 }
                 else { //Si alguno rechaza
                            //Seteo de la explosión en la posición de la rama
