@@ -160,25 +160,27 @@ create(){
 
 selectCardQuestion()
 {
+    console.log("entra al switch")
+    console.log(this.round)
     switch(this.round){
-        case 0:
-           this.cardQuestion= this.cardJson.Pregunta1;
-            break;
         case 1:
-            this.cardQuestion= this.cardJson["Pregunta2"];
+           this.cardQuestion= this.cardJson.Pregunta1;
+           console.log(this.cardQuestion)
             break;
         case 2:
-            this.cardQuestion= this.cardJson["Pregunta3"];
+            this.cardQuestion= this.cardJson.Pregunta2;
             break;
         case 3:
-            this.cardQuestion= this.cardJson["Pregunta4"];
+            this.cardQuestion= this.cardJson.Pregunta3;
             break;
         case 4:
-            this.cardQuestion= this.cardJson["Pregunta5"];
+            this.cardQuestion= this.cardJson.Pregunta4;
             break;
         case 5:
-            this.cardQuestion= this.cardJson["Pregunta6"];
-    
+            this.cardQuestion= this.cardJson.Pregunta5;
+            break;
+        case 6:
+            this.cardQuestion= this.cardJson.Pregunta6;
             break;
     }
 }
@@ -189,17 +191,17 @@ createCards(){
     //Proximamente se puede pasar como parametro la pool de cartas(respuestas) dado una pregunta
     //Lo que habra que cambiar son las estadisticas que se pueden leer del json correspondiente
     //la posicion de las cartas es fija, asi como su tamaño.
-    
+    console.log(this.cardQuestion.carta1.sprite);
     //crear array
     this.cardArray = [
-
         this.card1 = new card(this,this.sys.game.canvas.width / 1.1, this.sys.game.canvas.height / 1.1,this.cardQuestion.carta1.sprite,
             this.cardQuestion.carta1.stats.extroversion,
             this.cardQuestion.carta1.stats.confianza,
             this.cardQuestion.carta1.stats.creatividad,
             this.cardQuestion.carta1.stats.paciencia,
             this.cardQuestion.carta1.stats.empatia),
-        this.card2 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta2.sprite,
+        
+            this.card2 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta2.sprite,
             this.cardQuestion.carta2.stats.extroversion,
             this.cardQuestion.carta2.stats.confianza,
             this.cardQuestion.carta2.stats.creatividad,
@@ -233,8 +235,10 @@ createCards(){
 
     //Crear cartas
      //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
-    this.card1.setSprite(this.sys.game.canvas.width / 8, this.sys.game.canvas.height / 2);
-    this.card1.setScale(0.5);
+    this.card1.setSprite(500, 500);
+    //this.card1.setScale(0.5, 0.5);
+    this.card1.displayWidth = this.card1.width * 0.25;
+    this.card1.displayHeight = this.card1.height * 0.25;
 
     this.selectedcard1Player1 = this.add.text(
         this.sys.game.canvas.width / 8,
