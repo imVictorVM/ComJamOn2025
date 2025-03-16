@@ -15,17 +15,43 @@ preload(){
 
     create(){
 
+
+
         const fx=this.cameras.main.fadeIn(1000, 0, 0, 0);
         this.whatSelection = 0;
 
         //FONDO 
 
-        this.fondo=this.add.image(
+        this.fondo0=this.add.image(
             this.sys.game.canvas.width / 2,
             this.sys.game.canvas.height / 2,
-            '0'
-       )
-
+            'fondo0'
+        );
+        this.fondo1=this.add.image(
+            this.sys.game.canvas.width / 2,
+            this.sys.game.canvas.height / 2,
+            'fondo1'
+        ).setVisible(false);
+        this.fondo2=this.add.image(
+        this.sys.game.canvas.width / 2,
+        this.sys.game.canvas.height / 2,
+        'fondo2'
+        ).setVisible(false);
+        this.fondo3=this.add.image(
+            this.sys.game.canvas.width / 2,
+            this.sys.game.canvas.height / 2,
+            'fondo3'
+        ).setVisible(false);
+        this.fondo4=this.add.image(
+            this.sys.game.canvas.width / 2,
+            this.sys.game.canvas.height / 2,
+            'fondo4'
+        ).setVisible(false);
+        this.fondo5=this.add.image(
+            this.sys.game.canvas.width / 2,
+            this.sys.game.canvas.height / 2,
+            'fondo5'
+        ).setVisible(false);
 
         //JUGADORES
         this.Player1 = new Player1(this, 100, 100, 'player1');
@@ -40,24 +66,16 @@ preload(){
             if(this.whatSelection != 0){
                 this.whatSelection -=1;
               
-                console.log(this.whatSelection)
-                this.fondo=this.add.image(
-                    this.sys.game.canvas.width / 2,
-                    this.sys.game.canvas.height / 2,
-                    this.whatSelection
-               )
+                console.log(this.whatSelection);
+                this.changeFondo(this.whatSelection);
             }
         }
 
         if(this.Player1.moveright()|| this.Player2.moveright()){
             if(this.whatSelection != 5){
                 this.whatSelection += 1;
-            
-                this.fondo=this.add.image(
-                    this.sys.game.canvas.width / 2,
-                    this.sys.game.canvas.height / 2,
-                    this.whatSelection
-               )
+                console.log(this.whatSelection);
+                this.changeFondo(this.whatSelection);
             }
         }
 
@@ -72,5 +90,58 @@ preload(){
     changeScene(whatSelection){
         this.scene.start('ProfileScene',{selection:whatSelection});
         
+    }
+
+    changeFondo(whatSelection) {
+        switch(whatSelection){
+            case 0:
+                this.fondo0.setVisible(true);
+                this.fondo1.setVisible(false);
+                this.fondo2.setVisible(false);
+                this.fondo3.setVisible(false);
+                this.fondo4.setVisible(false);
+                this.fondo5.setVisible(false);
+                break;
+            case 1:
+                this.fondo0.setVisible(false);
+                this.fondo1.setVisible(true);
+                this.fondo2.setVisible(false);
+                this.fondo3.setVisible(false);
+                this.fondo4.setVisible(false);
+                this.fondo5.setVisible(false);
+                break;
+            case 2:
+                this.fondo0.setVisible(false);
+                this.fondo1.setVisible(false);
+                this.fondo2.setVisible(true);
+                this.fondo3.setVisible(false);
+                this.fondo4.setVisible(false);
+                this.fondo5.setVisible(false);
+                break;
+            case 3:
+                this.fondo0.setVisible(false);
+                this.fondo1.setVisible(false);
+                this.fondo2.setVisible(false);
+                this.fondo3.setVisible(true);
+                this.fondo4.setVisible(false);
+                this.fondo5.setVisible(false);
+                break;
+            case 4:
+                this.fondo0.setVisible(false);
+                this.fondo1.setVisible(false);
+                this.fondo2.setVisible(false);
+                this.fondo3.setVisible(false);
+                this.fondo4.setVisible(true);
+                this.fondo5.setVisible(false);
+                break;
+            case 5:
+                this.fondo0.setVisible(false);
+                this.fondo1.setVisible(false);
+                this.fondo2.setVisible(false);
+                this.fondo3.setVisible(false);
+                this.fondo4.setVisible(false);
+                this.fondo5.setVisible(true);
+                break;
+        }
     }
 }   
