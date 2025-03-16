@@ -40,7 +40,7 @@ preload(){
         this.confirmar=this.add.image(
             this.sys.game.canvas.width / 2,
             this.sys.game.canvas.height / 2,
-            'confirmar'
+            'confirmar'+  this.whichProfile
        )
        .setScale(0.5);
    
@@ -49,7 +49,7 @@ preload(){
         this.volver=this.add.image(
             this.sys.game.canvas.width / 2,
             this.sys.game.canvas.height / 2,
-            'volver'
+            'volver'+this.whichProfile
        )
        .setScale(0.5);
 
