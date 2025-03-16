@@ -20,6 +20,15 @@ preload(){
 }
 
     create(){
+
+        // Crear la instancia de la música si no existe
+         if (!this.sound.get('musicaMenu')) {
+            this.menuMusic = this.sound.add('musicaMenu', { loop: true });
+            this.menuMusic.play();
+        }
+
+
+
         this.whatSelection = 1;
         //JUGADORES
         this.Player1 = new Player1(this, 100, 100, 'player1');
@@ -91,13 +100,13 @@ preload(){
            
         }
         if (this.whatSelection == 0) {
-            this.volver.setTint(0xFFFFFF);  // Blanco brillante
-            this.confirmar.setTint(0xBBBBBB); // Gris más oscuro para diferenciar
-        }
-        
-        if (this.whatSelection == 1) {    
             this.confirmar.setTint(0xFFFFFF);
             this.volver.setTint(0xBBBBBB);
+        }
+        
+        if (this.whatSelection == 1) {     
+            this.volver.setTint(0xFFFFFF);  // Blanco brillante
+            this.confirmar.setTint(0xBBBBBB); // Gris más oscuro para diferenciar
         }
 
         if((this.Player1.select()|| this.Player2.select())){

@@ -29,6 +29,7 @@ constructor(){
     this.respuestaP2 = false;
     this.start = true;
     this.CallbackCreated = false;
+    this.musicaGame;
 }
 
 init(ramaSelected){
@@ -51,6 +52,26 @@ preload(){
 
 create(){
 
+    // Detener la música anterior si está en reproducción
+    if (this.sound.get('musicaMenu')) {
+        this.sound.get('musicaMenu').stop();
+    }
+
+    if(this.whichRama == 0 || this.whichRama == 1){
+        // Reproducir la nueva música
+        this.musicaGame = this.sound.add('musicaCerezo', { loop: true });
+        this.musicaGame.play();
+    }
+    else if(this.whichRama == 2 || this.whichRama == 3){
+        this.musicaGame = this.sound.add('musicaSauce', { loop: true });
+        this.musicaGame.play();
+            
+    }
+    else {
+        this.musicaGame = this.sound.add('musicaPalmera', { loop: true });
+        this.musicaGame.play();
+    }
+
     //CREAMOS JSON
     this.cardJson = this.cache.json.get('cardJson');
 
@@ -58,7 +79,32 @@ create(){
     const { width, height } = this.cameras.main;
 
     
+    if(this.whichRama == 0 || this.whichRama == 1)
+    {
+        this.add.image(
+            this.sys.game.canvas.width / 2,
+            this.sys.game.canvas.height / 2,
+            'cerezo'
+       )
+    }
+    else if(this.whichRama == 2 || this.whichRama == 3)
+        {
+            this.add.image(
+                this.sys.game.canvas.width / 2,
+                this.sys.game.canvas.height / 2,
+                'sauce'
+            )
+        }
+    else if(this.whichRama == 4 || this.whichRama == 5)
+        {
+            this.add.image(
+                this.sys.game.canvas.width / 2,
+                this.sys.game.canvas.height / 2,
+                'palmera'
+            )
+        }
     
+
     //Startgame
     this.startGame = false; //booleano para empezar el juego
     this.countdown = 3 * 1000; //5 segundos
@@ -230,7 +276,33 @@ createCards(){
             this.cardQuestion.carta6.stats.paciencia,
             this.cardQuestion.carta6.stats.empatia)
     ];
+   // Función para obtener números únicos aleatorios en un rango
+function getRandomUniqueNumbers(count, min, max) {
+    let numbers = Array.from({ length: max - min + 1 }, (_, i) => i + min);
+    return numbers.sort(() => Math.random() - 0.5).slice(0, count);
+}
 
+// Generar 5 índices únicos entre 1 y 5
+let uniqueIndices = getRandomUniqueNumbers(5, 1, 5);
+
+// Crear array de cartas
+this.cardArray = uniqueIndices.map((i, index) => {
+    let cartaKey = `carta${i}`; // Genera la clave dinámica "carta1", "carta2", etc.
+    let cartaData = this.cardQuestion[cartaKey]; // Obtiene los datos de la carta
+    
+    return new card(
+        this,
+        this.sys.game.canvas.width / (index + 2), // Posición basada en el índice
+        this.sys.game.canvas.height / 2,
+        cartaData.sprite, // Sprite de la carta seleccionada
+        500, 700, // Tamaño fijo
+        cartaData.stats.extroversion,
+        cartaData.stats.confianza,
+        cartaData.stats.creatividad,
+        cartaData.stats.paciencia,
+        cartaData.stats.empatia
+    );
+});
     //Crear cartas
      //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
    // this.card1.setSprite(250, 250);
