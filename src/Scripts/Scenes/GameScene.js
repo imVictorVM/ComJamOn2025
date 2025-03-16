@@ -7,6 +7,7 @@ import AffectionSystem from "../Classes/AffectionSystem.js";
 import Timer from "../Classes/Timer.js";
 import ReadDialog from "../Classes/ReadDialog.js";
 import DialogSystem from "../Classes/DialogSystem.js";
+import Explosion from "../Classes/Explosion.js";
 
 export default class GameScene extends Phaser.Scene {
 constructor(){
@@ -31,6 +32,19 @@ constructor(){
     this.CallbackCreated = false;
     this.musicaGame;
     this.poninter = 2;
+    this.explosionArray = [
+        'explo1',
+        'explo2',
+        'explo3',
+        'explo4',
+        'explo5',
+        'explo6',
+        'explo7',
+        'explo8',
+        'explo9',
+        'exploWhite',
+        'exploBlackout'
+    ]
 }
 
 init(ramaSelected){
@@ -90,7 +104,7 @@ create(){
     
     if(this.whichRama == 0 || this.whichRama == 1)
     {
-        this.add.image(
+       this.background =  this.add.image(
             this.sys.game.canvas.width / 2,
             this.sys.game.canvas.height / 2,
             'cerezo'
@@ -98,7 +112,7 @@ create(){
     }
     else if(this.whichRama == 2 || this.whichRama == 3)
         {
-            this.add.image(
+            this.background =   this.add.image(
                 this.sys.game.canvas.width / 2,
                 this.sys.game.canvas.height / 2,
                 'sauce'
@@ -106,7 +120,7 @@ create(){
         }
     else if(this.whichRama == 4 || this.whichRama == 5)
         {
-            this.add.image(
+            this.background =   this.add.image(
                 this.sys.game.canvas.width / 2,
                 this.sys.game.canvas.height / 2,
                 'palmera'
@@ -419,13 +433,92 @@ changeScene(){
 
     if(this.fase == 1){ //Ninguno cumple los requisitos para pasar de ronda
         //Seteo de la explosión en la posición de la rama
-        console.log("RamaKaboom");
+        this.explosion = new Explosion(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2.5,this.explosionArray);
+        const fx= this.cameras.main.shake(500);
+        setTimeout(() => {
+            this.explosion.changeSprite(1);
+           
+        },500);
+
+        setTimeout(() => {
+            this.explosion.changeSprite(2);
+        },600);
+
+        setTimeout(() => {
+            this.explosion.changeSprite(3);
+        },700);
+
+        setTimeout(() => {
+            this.explosion.changeSprite(4);
+        },800);
+
+        setTimeout(() => {
+            this.explosion.changeSprite(5);
+        },900);
+
+        setTimeout(() => {
+            this.explosion.changeSprite(6);
+        },1000);
+
+        setTimeout(() => {
+            this.explosion.changeSprite(7);
+        },1100);
+
+        setTimeout(() => {
+            this.explosion.changeSprite(8);
+        },1200);
+        setTimeout(() => {
+            this.scene.start('CreditsScene')
+        },1300);
     }
     //Si pasan de fase
     else{
         if(this.affectionSystem.GetPlayer1() < 3 && this.affectionSystem.GetPlayer2() < 3){ //Cumplen los requisitos para pasar de 1 ronda pero no para la segunda
             //Seteo 2 imagenes de la explosion uno en cada lado representando a los players
-            console.log("NosotrosKaboom");
+            this.dialogueSystem.showEventDialogues(this.ninfaName + "EndBad", this.reader.dialogData.Eventos);
+           
+            this.events.emit("OnPointerDown");
+            this.j1.setVisible(true);
+            this.j2.setVisible(true);
+            setTimeout(() => {
+                const fx= this.cameras.main.shake(500);
+            },1000);
+            setTimeout(() => {
+                this.explosion = new Explosion(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2.5,this.explosionArray);
+               
+            },1500);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(2);
+            },1600);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(3);
+            },1700);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(4);
+            },1800);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(5);
+            },1900);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(6);
+            },2000);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(7);
+            },2100);
+    
+            setTimeout(() => {
+                this.explosion.changeSprite(8);
+            },2200);
+            setTimeout(() => {
+                this.scene.start('CreditsScene')
+            },2300);
+            
         }
         else if(this.affectionSystem.GetPlayer1() > this.affectionSystem.GetPlayer2()){ //Gana el player 1 pero no el player 2
             //Seteo 1 imagen de explosion en la posición del player 2
@@ -461,11 +554,51 @@ changeScene(){
             if(this.Player1.selectCard && this.Player2.selectCard){
                 if(this.player1accepts && this.player2accepts){ //Si ambos aceptan
                     //Lamentablemente no hay explosiones
-                    console.log("2 pa 1 cada cual que interprete lo que quiera");
+                    this.background =   this.add.image(
+                        this.sys.game.canvas.width / 2,
+                        this.sys.game.canvas.height / 2,
+                        'fondoCorazon'
+                    )
                 }
                 else { //Si alguno rechaza
-                    //Explosión nuclear superMegaHiperRealistaQueSeCargaHastaTusGanasDeVivir
-                    console.log("ExplosiónNuclearSuperMegaHiperRealistaQueSeCargaHastaTusGanasDeVivir");
+                           //Seteo de la explosión en la posición de la rama
+                    this.explosion = new Explosion(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2.5,this.explosionArray);
+                    const fx= this.cameras.main.shake(500);
+                    setTimeout(() => {
+                    this.explosion.changeSprite(1);
+           
+                     },500);
+
+                    setTimeout(() => {
+                    this.explosion.changeSprite(2);
+                    },600);
+
+                    setTimeout(() => {
+                    this.explosion.changeSprite(3);
+                    },700);
+
+                    setTimeout(() => {
+                    this.explosion.changeSprite(4);
+                    },800);
+
+                    setTimeout(() => {
+                    this.explosion.changeSprite(5);
+                    },900);
+
+                    setTimeout(() => {
+                    this.explosion.changeSprite(6);
+                    },1000);
+
+                    setTimeout(() => {
+                    this.explosion.changeSprite(7);
+                    },1100);
+
+                    setTimeout(() => {
+                    this.explosion.changeSprite(8);
+                    },1200);
+                    setTimeout(() => {
+                    this.scene.start('CreditsScene')
+                    },1300);
                 }
             }
             //Input Player 1

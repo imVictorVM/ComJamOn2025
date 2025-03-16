@@ -13,15 +13,13 @@ export default class Explosion{
         //Seteo del sprite de la rama en escena
         this.baseSprite = this.spriteList[0]; //Setea inicialmente el sprite de la rama
 
-        this.sprite = this.scene.add.sprite(this.x, this.y, this.baseSprite).setScale(0.4,0.4); //Añade el sprite de la rama en pantalla en la posición x e y
+        this.sprite = this.scene.add.sprite(this.x, this.y, this.baseSprite).setScale(1,1); //Añade el sprite de la rama en pantalla en la posición x e y
         //this.sprite.setVisible(false);
 
     }
 
     changeSprite(n)
     {
-        this.sprite.setTexture(this.spriteList[n]);
+            this.sprite.setTexture(this.spriteList[n]);
     }
-
-  
 }
