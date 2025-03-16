@@ -137,6 +137,21 @@ create(){
     this.j2 = this.add.image(this.sys.canvas.width - 300, 140,'J2').setVisible(false);
     this.j2.setScale(0.3,0.3)
 
+    
+    this.prompt1 = this.add.image(this.sys.canvas.width/2, 140,'prompt1').setVisible(false);
+    this.prompt1.setScale(0.3,0.3)
+
+    this.prompt2 = this.add.image(this.sys.canvas.width/2, 140,'prompt2').setVisible(false);
+    this.prompt2.setScale(0.3,0.3)
+
+    this.prompt3 = this.add.image(this.sys.canvas.width/2, 140,'prompt3').setVisible(false);
+    this.prompt3.setScale(0.3,0.3)
+
+    this.prompt4 = this.add.image(this.sys.canvas.width/2, 140,'prompt4').setVisible(false);
+    this.prompt4.setScale(0.3,0.3)
+
+    this.prompt5 = this.add.image(this.sys.canvas.width/2, 140,'prompt5').setVisible(false);
+    this.prompt5.setScale(0.3,0.3)
 
     // Capa de fondo dialog
     this.dialogBackground = this.add.graphics();
@@ -180,24 +195,23 @@ create(){
             case(2):
                 this.NinfaStats = new Stats(-1,-1,1,0,1,0);
                 this.ninfaName = "Trix";
-                this.spriteArray = ['RamaTrix','RamaTrixKawaii','RamaTrix.1','RamaTrix.2','RamaTrix.3','Trix','TrixEnfadado','TrixSonrojado']; //Seteamos su array de sprites
+                this.spriteArray = ['RamaTrix','RamaTrixKawaii','RamaTrix.1.','RamaTrix.2','RamaTrix.3','Trix','TrixEnfadado','TrixSonrojado']; //Seteamos su array de sprites
             break;
     
             case(3):
                 this.NinfaStats = new Stats(-1,0,1,-1,0,1);
-                this.ninfaName = "Salena"
-                this.spriteArray = ['RamaSalena','RamaSalenaKawaii','RamaSalena.1','RamaSalena.2','RamaSalena.3.','RamaSalena','RamaSalena.3','RamaSalenaKawaii']; //Seteamos su array de sprites
+                this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauce2','NinfaSauce2Feliz','NinfaSauce2Triste','NinfaSauce2Enfadado']; //Seteamos su array de sprites
             break;
     
             case(4):
                 this.NinfaStats = new Stats(1,1,0,-1,-1,0);
                 this.ninfaName = "Phoebe"
-                this.spriteArray = ['RamaPhoebe','RamaPhoebeKawaii','RamaPhoebe.1','RamaPhoebe.2.','RamaPhoebe.3','Phoebe','PhoebeEnfadado','PhoebeSonrojado']; //Seteamos su array de sprites
+                this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera1','NinfaPalmera1Feliz','NinfaPalmera1Triste','NinfaPalmera1Enfadado']; //Seteamos su array de sprites
     
             case(5):
                 this.NinfaStats = new Stats(1,0,-1,1,0,-1);
                 this.ninfaName = "Pam"
-                this.spriteArray = ['RamaPam','RamaPamKawaii','RamaPam.1','RamaPam.2','RamaPam.3','RamaPam','RamaPam.3','RamaPamKawaii']; //Seteamos su array de sprites
+                this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera2','NinfaPalmera2Feliz','NinfaPalmera2Triste','NinfaPalmera2Enfadado']; //Seteamos su array de sprites
             break;
     
             
@@ -211,14 +225,18 @@ create(){
 
     if(this.fase == 1){
             
-        this.timerPlayer1 = new Timer(this,600,100,-1);
-        this.timerPlayer2 = new Timer(this,1200,100,1);
+        this.timerPlayer1 = new Timer(this,760,150,-1);
+        this.timerPlayer2 = new Timer(this,1150,150,1);
        
         //TIMER
         this.initialTimer = this.time.addEvent({ 
         delay: 3 * 1000, //1000 por milisegundos
-        callback: () => {this.startGame = true} });
+        callback: () => {this.startGame = true
+            this.prompt.setVisible(true);
+            this.vs.setVisible(false);
+        } });
         this.vs.setVisible(true);
+       
             //Startgame
     this.startGame = false; //booleano para empezar el juego
     this.countdown = 3 * 1000; //5 segundos
@@ -230,9 +248,12 @@ create(){
         color: 'white',      
     });
         
+    this.countdownText.setVisible(false);
         this.selectCardQuestion();
          //Crear cartas
-        this.createCards();   
+        this.createCards();  
+        
+        
     }
 
     if(this.fase == 2){
@@ -240,6 +261,7 @@ create(){
         this.ninfa.changeSprite(5);
         this.vs.setVisible(false);
         this.j1.setVisible(true);
+        this.prompt.setVisible(false);
         this.startGame = true
         this.createAnswers();
     }
@@ -252,21 +274,23 @@ selectCardQuestion()
     switch(this.round){
         case 1:
            this.cardQuestion= this.cardJson.Pregunta1;
+           this.prompt = this.prompt1;
             break;
         case 2:
             this.cardQuestion= this.cardJson.Pregunta2;
+            this.prompt = this.prompt2;
             break;
         case 3:
             this.cardQuestion= this.cardJson.Pregunta3;
+            this.prompt = this.prompt3;
             break;
         case 4:
             this.cardQuestion= this.cardJson.Pregunta4;
+            this.prompt = this.prompt3;
             break;
         case 5:
             this.cardQuestion= this.cardJson.Pregunta5;
-            break;
-        case 6:
-            this.cardQuestion= this.cardJson.Pregunta6;
+            this.prompt = this.prompt4;
             break;
     }
 }
@@ -819,7 +843,7 @@ changeScene(){
             }                         
             else{
                 this.countdown -= dt;
-                this.countdownText.setText(Math.floor(this.countdown / 1000) + 1);
+                //this.countdownText.setText(Math.floor(this.countdown / 1000) + 1);
             }
         }  
     }
