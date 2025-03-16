@@ -908,18 +908,18 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "...",
+                    "text": "¡¡¡Hola!!!¿Queréis algo de mí?",
                     "options": [
                         { 
-                            "response": "...", 
+                            "response": "¡¡¡Hola!!!! ¿Qué tal estás?", 
                             "gain": 1, "next": "Phoebe1.1.1" 
                         },
                         { 
-                            "response": "¿Hola? ¿Sabes hablar?", 
+                            "response": "...", 
                             "gain": -1, "next": "Phoebe1.1.2" 
                         },
                         { 
-                            "response": "Hola, buenos días. ", 
+                            "response": "Ay perdón, qué susto me has dado.", 
                             "gain": 0, "next": "Phoebe1.1.3" 
                         }
                     ]
@@ -931,7 +931,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "..."
+                    "text": "¡Genial! Estoy súper feliz por haberte conocido."
                 }
             ]
         },
@@ -940,7 +940,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Claro que sé. Que quiera hacerlo ya es otra cosa."
+                    "text": "¡Oye, no me ignores!"
                 }
             ]
         },
@@ -949,7 +949,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Buenos dias, supongo."
+                    "text": "Lo siento, hablo muy alto."
                 }
             ]
         },
@@ -958,19 +958,19 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Hola, me llamo Beatrix, pero llámame Trix. No me gusta mucho mi nombre.",
+                    "text": "¿Y tú? ¿Te has perdido? ¿Por qué has venido?",
                     "options": [
                         { 
-                            "response": "Encantad@ Trix, un gusto.", 
-                            "gain": 0, "next": "Phoebe1.2.1" 
+                            "response": "¡A encontrar a alguien tan enérgico como yo!", 
+                            "gain": 1, "next": "Phoebe1.2.1" 
                         },
                         { 
-                            "response": "Oh! Trix es un nombre muy bonito, encantad@", 
-                            "gain": 1, "next": "Phoebe1.2.2" 
+                            "response": "El viento me ha llevado hasta ti.", 
+                            "gain": -1, "next": "Phoebe1.2.2" 
                         },
                         { 
-                            "response": "Hola Beatrix, ¿Qué tal todo?", 
-                            "gain": -1, "next": "Phoebe1.2.3" 
+                            "response": "Quería un amigo.", 
+                            "gain": 0, "next": "Phoebe1.2.3" 
                         }
                     ]
                 }
@@ -981,7 +981,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Un placer."
+                    "text": "¡Pues me has encontrado!."
                 }
             ]
         },
@@ -990,7 +990,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Gracias, el tuyo también lo es."
+                    "text": "Ah, bueno."
                 }
             ]
         },
@@ -999,7 +999,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Te he dicho que me llames Trix, ¿eres sordo?"
+                    "text": "¡¡Ya lo somos!!"
                 }
             ]
         },
@@ -1008,19 +1008,19 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Bueno, ya que estáis aquí hablemos. ¿Qué te gusta hacer en tu tiempo libre?",
+                    "text": "Y si jugamos a algún juego? ¿Cuál crees que se me daria bien?",
                     "options": [
                         { 
-                            "response": "No hay nada que me apasione ", 
-                            "gain": 0, "next": "Phoebe2.1.1" 
+                            "response": "Serías muy bueno en el volley, tu energía me motiva.", 
+                            "gain": 1, "next": "Phoebe2.1.1" 
                         },
                         { 
-                            "response": "Tengo mil hobbies y me falta tiempo para hacerlos todos", 
-                            "gain": 1, "next": "Phoebe2.1.2" 
+                            "response": "Al ajedrez.", 
+                            "gain": -1, "next": "Phoebe2.1.2" 
                         },
                         { 
-                            "response": "Estar contigo sin parar", 
-                            "gain": -1, "next": "Phoebe2.1.3" 
+                            "response": "Cualquier deporte, mientras sea conmigo en mi casa.", 
+                            "gain": 0, "next": "Phoebe2.1.3" 
                         }
                     ]
                 }
@@ -1031,7 +1031,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Bueno, una respuesta un poco aburrida."
+                    "text": "¡WoW! Tendré que probarlo, jeje."
                 }
             ]
         },
@@ -1040,7 +1040,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Nos parecemos en eso, entonces."
+                    "text": "Si no implica moverme, no me apetece mucho."
                 }
             ]
         },
@@ -1049,7 +1049,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Nos conocemos de menos de 1 día, ¿Cómo?"
+                    "text": "¿Eh? ¿Tienes algún lugar para jugar al volley en tu casa?"
                 }
             ]
         },
@@ -1058,19 +1058,19 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Me miras muy intensamente, ¿Tienes algo que decirme?",
+                    "text": "Si nos fuésemos de viaje a algún lugar¿Dónde me llevarias?",
                     "options": [
                         { 
-                            "response": "Perdona por perturbar tu paz.", 
-                            "gain": 1, "next": "Phoebe2.2.1" 
+                            "response": "¡Donde tú quieras!", 
+                            "gain": 0, "next": "Phoebe2.2.1" 
                         },
                         { 
-                            "response": "Tú y yo y mi cuarto.", 
-                            "gain": 0, "next": "Phoebe2.2.2" 
+                            "response": "Alguien como tú se merece ir a un hotel de lujo.", 
+                            "gain": -1, "next": "Phoebe2.2.2" 
                         },
                         { 
-                            "response": "Elige tú el plan", 
-                            "gain": -1, "next": "Phoebe2.2.3" 
+                            "response": "Si te apeteciese, un camping, podríamos explorar el bosque juntos.", 
+                            "gain": 1, "next": "Phoebe2.2.3" 
                         }
                     ]
                 }
@@ -1081,7 +1081,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Buena idea, la luna está preciosa."
+                    "text": "Quiero ir a tantos sitios que no me decido. Por eso quería que decidieras tú jajajaja."
                 }
             ]
         },
@@ -1090,7 +1090,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Pero si tu cuarto no habla."
+                    "text": "No necesito lujo para pasármelo bien."
                 }
             ]
         },
@@ -1099,7 +1099,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "He preguntado yo primero."
+                    "text": "Me encanta la naturaleza, ¿Cómo lo has sabido?"
                 }
             ]
         },
@@ -1108,19 +1108,19 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Si esto llevase a algún lado, ¿Dónde nos verías?",
+                    "text": "¿Qué te parece si vamos a Ulaloua? Y luego podemos ir a Kadarichi, después a Malao, y luego a....",
                     "options": [
                         { 
-                            "response": "Ni idea, voy donde me lleva la corriente.", 
-                            "gain": 0 , "next": "Phoebe3.1.1" 
+                            "response": "Uy, creo que te estás viniendo arriba.", 
+                            "gain": -1 , "next": "Phoebe3.1.1" 
                         },
                         { 
-                            "response": "Creo que es demasiado pronto para hablar de eso.", 
-                            "gain": -1, "next": "Phoebe3.1.2"  
+                            "response": "Ay, sí, y luego podemos ir a Filaodao.", 
+                            "gain": 1, "next": "Phoebe3.1.2"  
                         },
                         { 
-                            "response": "Junt@s en una casita con jardín.", 
-                            "gain": 1, "next": "Phoebe3.1.3" 
+                            "response": "Que buena idea.", 
+                            "gain": 0, "next": "Phoebe3.1.3" 
                         }
                     ]
                 }
@@ -1131,7 +1131,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Pero, ¿no piensas más allá?"
+                    "text": "¿Cómo que viniendo arriba? Si solo he dicho un par de cosas."
                 }
             ]
         },
@@ -1140,7 +1140,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Entonces, no nos ves futuro."
+                    "text": "Por fin una persona que piensa igual que yo. ¡Gracias!"
                 }
             ]
         },
@@ -1149,27 +1149,27 @@
                 {},
                 {
                     "character": "Trix",
-                    "text": "Mi futuro ideal."
+                    "text": "¡Gracias!"
                 }
             ]
         },
-        "Phoebe.2": {
+        "Phoebe3.2": {
             "dialogs": [
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Si el mundo nos quisiese separar, que harias",
+                    "text": "Parece que se me acaba el tiempo, nos volvermos a ver, ¿no?",
                     "options": [
                         { 
-                            "response": "Así es la vida, espabila.", 
+                            "response": "Sí, esta noche entre las sábanas.", 
                             "gain": -1 ,"next": "Phoebe3.2.1" 
                         },
                         { 
-                            "response": "Intentaría negociar con quien sea.", 
+                            "response": "Me imagino que si, pero no lo sé.", 
                             "gain": 0, "next": "Phoebe3.2.2" 
                         },
                         { 
-                            "response": "Ni el mar, ni los oceános prodían romper nuestro amor.", 
+                            "response": "Por supuesto, no lo dudes. Tenemos muchos planes pendientes.", 
                             "gain": 1, "next": "Phoebe3.2.3" 
                         }
                     ]
@@ -1181,7 +1181,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "¿No te importaría lo más mínimo?"
+                    "text": "Pero si no vivimos en la misma casa, ¿Cómo te voy a encontrar?"
                 }
             ]
         },
@@ -1190,7 +1190,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Pero eso puede que no arregle nada."
+                    "text": "¡Hay que mantenerse positivo!"
                 }
             ]
         },
@@ -1199,7 +1199,7 @@
                 {},
                 {
                     "character": "Phoebe",
-                    "text": "Se nota que lo darías todo."
+                    "text": "Como me alegro de haberte conocido, congeniamos a la perfección."
                 }
             ]
         }
