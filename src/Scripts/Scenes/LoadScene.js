@@ -50,7 +50,7 @@ export default class loadScene extends Phaser.Scene {
 
     this.load.image('ficha0', 'src/Assets/ficha0.jpg');
     this.load.image('ficha1', 'src/Assets/ficha1.png');
-    this.load.image('ficha2', 'src/Assets/fichaTecnica.png');
+    this.load.image('ficha2', 'src/Assets/ficha2.png');
     this.load.image('ficha3', 'src/Assets/fichaTecnica.png');
     this.load.image('ficha4', 'src/Assets/fichaTecnica.png');
     this.load.image('ficha5', 'src/Assets/fichaTecnica.png');
@@ -66,6 +66,14 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('volver0', 'src/Assets/volver0.png');
     this.load.image('confirmar1', 'src/Assets/confirmar1.png');
     this.load.image('volver1', 'src/Assets/volver1.png');
+    this.load.image('confirmar2', 'src/Assets/confirmar2.png');
+    this.load.image('volver2', 'src/Assets/volver2.png');
+    this.load.image('confirmar3', 'src/Assets/confirmar3.png');
+    this.load.image('volver3', 'src/Assets/volver3.png');
+
+
+
+
     this.load.image('titulo', 'src/Assets/titulo.png');
 
     this.load.image('cerezo', 'src/Assets/cerezo.jpg');
