@@ -70,6 +70,8 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('sauce', 'src/Assets/sauce.jpg');
     this.load.image('palmera', 'src/Assets/palmera.jpg');
     ///////////////////////////
+    //AUDIOS
+    this.load.audio('cambiarBoton', 'src/Sounds/SFX/click_boton.wav');
 
      // Evento para limpiar una vez que todo esté cargado
  this.load.on("complete", () => {

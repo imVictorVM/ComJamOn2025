@@ -19,6 +19,8 @@ export default class MainMenuScene extends Phaser.Scene {
         this.Player2 = new Player2(this, 100, 100, 'player2');      
         this.whatSelection = 0;
 
+        this.sfxCambiarBoton = this.sound.add("cambiarBoton");
+
         this.add.image(
             this.sys.game.canvas.width / 2,
             this.sys.game.canvas.height / 2,
@@ -59,14 +61,16 @@ export default class MainMenuScene extends Phaser.Scene {
         if( this.Player1.moveleft()|| this.Player2.moveleft()){
             if(this.whatSelection == 1){
                 this.whatSelection = 0;
-                
+                this.sfxCambiarBoton.detune += Phaser.Math.Between(-70, 70);
+                this.sfxCambiarBoton.play();
             }
         }
 
         if(this.Player1.moveright()|| this.Player2.moveright()){
             if(this.whatSelection == 0){
                 this.whatSelection = 1;
-                
+                this.sfxCambiarBoton.detune += Phaser.Math.Between(-70, 70);
+                this.sfxCambiarBoton.play();
             }
         }
 
@@ -79,6 +83,7 @@ export default class MainMenuScene extends Phaser.Scene {
         {
             this.empezar.setTint(0x6677EE)
             this.creditos.clearTint()
+
         }
         
         if(this.whatSelection == 1)
