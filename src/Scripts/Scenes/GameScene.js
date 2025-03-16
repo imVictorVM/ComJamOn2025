@@ -539,6 +539,7 @@ changeScene(){
                         if (this.reader.dialogData.Eventos[this.eventoId1]) {
                             this.dialogueSystem.showEventDialogues(this.eventoId1, this.reader.dialogData.Eventos);
                             this.events.emit("OnPointerDown");
+                            this.Player2.selectCard = true;
                         }   
                         else{
                             console.log("No se ha encontrado el " + this.eventoId1);
@@ -549,7 +550,6 @@ changeScene(){
                     }
                     //Si el player 1 ha terminado y el valor del player 2 es el máximo (indica que lee el diálogo del p2 SOLO 1 vez)
                     if(this.timerPlayer1.value <= 0 && this.timerPlayer2.value == this.timerPlayer2.GetMaxValue()){
-                        //Hacer que desaparezcan los fokin dialogos en pantalla
                         if (this.reader.dialogData.Eventos[this.eventoId2]) {
                             this.dialogueSystem.showEventDialogues(this.eventoId2, this.reader.dialogData.Eventos);
                             this.events.emit("OnPointerDown");
@@ -560,6 +560,7 @@ changeScene(){
                         }
                         this.dialogueSystem.actualOptionIndex = 0;
                         this.changeSelectionFase2(this.dialogueSystem.actualOptionIndex)
+                        this.Player2.selectCard = false;
                     }
                     //Resta el tiempo del timer1 mientras le quede tiempo
                     if(this.timerPlayer1.value > 0 ){
