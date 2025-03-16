@@ -91,18 +91,15 @@ preload(){
             
            
         }
-        if(this.whatSelection == 0)
-            {
-                this.volver.setTint(0x6677EE)
-                this.confirmar.clearTint()
-            }
-
-            if(this.whatSelection == 1)
-                {
-                    this.confirmar.setTint(0x6677EE)
-                this.volver.clearTint()
-                   
-                }
+        if (this.whatSelection == 0) {
+            this.volver.setTint(0xFFFFFF);  // Blanco brillante
+            this.confirmar.setTint(0xBBBBBB); // Gris más oscuro para diferenciar
+        }
+        
+        if (this.whatSelection == 1) {    
+            this.confirmar.setTint(0xFFFFFF);
+            this.volver.setTint(0xBBBBBB);
+        }
 
         if((this.Player1.select()|| this.Player2.select())){
 
