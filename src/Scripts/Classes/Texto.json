@@ -762,15 +762,15 @@
                     "options": [
                         { 
                             "response": "Si quieres te lo digo, si nos tomamos algo.", 
-                            "gain": -1, "next": "Cerine2.2.1" 
+                            "gain": -1, "next": "Trix2.2.1" 
                         },
                         { 
                             "response": "A veces es mejor no hablar y solo admirar.", 
-                            "gain": 1, "next": "Cerine2.2.2" 
+                            "gain": 1, "next": "Trix2.2.2" 
                         },
                         { 
                             "response": "Que tienes un pelo muy bonito.", 
-                            "gain": 0, "next": "Cerine2.2.3" 
+                            "gain": 0, "next": "Trix2.2.3" 
                         }
                     ]
                 }
@@ -835,7 +835,7 @@
                 }
             ]
         },
-        "Trix.1.2":{
+        "Trix3.1.2":{
             "dialogs": [
                 {},
                 {
@@ -1035,7 +1035,7 @@
                 }
             ]
         },
-        "Phoebe.1.2":{
+        "Phoebe2.1.2":{
             "dialogs": [
                 {},
                 {
@@ -1135,7 +1135,7 @@
                 }
             ]
         },
-        "Phoebe.3.2.2":{
+        "Phoebe3.1.2":{
             "dialogs": [
                 {},
                 {
@@ -1148,7 +1148,7 @@
             "dialogs": [
                 {},
                 {
-                    "character": "Trix",
+                    "character": "Phoebe",
                     "text": "¡Gracias!"
                 }
             ]
@@ -1200,6 +1200,606 @@
                 {
                     "character": "Phoebe",
                     "text": "Como me alegro de haberte conocido, congeniamos a la perfección."
+                }
+            ]
+        },
+        "Salena1.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": "¿Tú quién eres y qué haces en mi jardín?",
+                    "options": [
+                        { 
+                            "response": "Venia a cautivarte.", 
+                            "gain": -1, "next": "Salena1.1.1" 
+                        },
+                        { 
+                            "response": "Necesitaba despejarme un rato y lo encontré.", 
+                            "gain": 0, "next": "Salena1.1.2" 
+                        },
+                        { 
+                            "response": "Queria componer música alejad@ del mundo.", 
+                            "gain": 1, "next": "Salena1.1.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Salena1.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": "Pues te puedes venir por donde has venido."
+                }
+            ]
+        },
+        "Salena1.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": "Bueno."
+                }
+            ]
+        },
+        "Salena1.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": "Te entiendo, la mejor inspiracion músical es un sitio tranquilo."
+                }
+            ]
+        },
+        "Salena1.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": "No suele venir mucha gente y me aburro mucho. ¿Que harías para entretenerme?",
+                    "options": [
+                        { 
+                            "response": "Te llevaria a un coro para que todos oyesen tu dulce voz.", 
+                            "gain": 0, "next": "Salena1.2.1" 
+                        },
+                        { 
+                            "response": "Un monopoly vestidos de gala.", 
+                            "gain": -1, "next": "Salena1.2.2" 
+                        },
+                        { 
+                            "response": "¿Te atreves a ir a un karaoke conmigo?", 
+                            "gain": 1, "next": "Salena1.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Salena1.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": "Un coro es un lugar perfecto para mejorar."
+                }
+            ]
+        },
+        "Salena1.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": "No me interesa."
+                }
+            ]
+        },
+        "Salena1.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": "A lo mejor algún día haha."
+                }
+            ]
+        },
+        "Salena2.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " ",
+                    "options": [
+                        { 
+                            "response": " ", 
+                            "gain": 1, "next": "Salena2.1.1" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": -1, "next": "Salena2.1.2" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 0, "next": "Salena2.1.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Salena2.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Salena2.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Salena2.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Salena2.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " ",
+                    "options": [
+                        { 
+                            "response": " ", 
+                            "gain": 0, "next": "Salena2.2.1" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": -1, "next": "Salena2.2.2" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 1, "next": "Salena2.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Salena2.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Salena2.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Salena2.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Salena3.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " ",
+                    "options": [
+                        { 
+                            "response": " ", 
+                            "gain": -1 , "next": "Salena3.1.1" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 1, "next": "Salena3.1.2"  
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 0, "next": "Salena3.1.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Salena3.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Salena3.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Salena3.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Salena3.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " ",
+                    "options": [
+                        { 
+                            "response": " ", 
+                            "gain": -1 ,"next": "Salena3.2.1" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 0, "next": "Salena3.2.2" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 1, "next": "Salena3.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Salena3.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Salena3.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Salena3.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam1.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " ",
+                    "options": [
+                        { 
+                            "response": " ", 
+                            "gain": 1, "next": "Pam1.1.1" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": -1, "next": "Pam1.1.2" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 0, "next": "Pam1.1.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Pam1.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam1.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam1.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam1.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " ",
+                    "options": [
+                        { 
+                            "response": " ", 
+                            "gain": 1, "next": "Pam1.2.1" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": -1, "next": "Pam1.2.2" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 0, "next": "Pam1.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Pam1.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam1.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam1.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam2.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " ",
+                    "options": [
+                        { 
+                            "response": " ", 
+                            "gain": 1, "next": "Pam2.1.1" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": -1, "next": "Pam2.1.2" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 0, "next": "Pam2.1.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Pam2.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam2.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam2.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam2.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " ",
+                    "options": [
+                        { 
+                            "response": " ", 
+                            "gain": 0, "next": "Pam2.2.1" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": -1, "next": "Pam2.2.2" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 1, "next": "Pam2.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Pam2.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam2.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam2.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam3.1": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " ",
+                    "options": [
+                        { 
+                            "response": " ", 
+                            "gain": -1 , "next": "Pam3.1.1" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 1, "next": "Pam3.1.2"  
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 0, "next": "Pam3.1.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Pam3.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam3.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam3.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam3.2": {
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " ",
+                    "options": [
+                        { 
+                            "response": " ", 
+                            "gain": -1 ,"next": "Pam3.2.1" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 0, "next": "Pam3.2.2" 
+                        },
+                        { 
+                            "response": " ", 
+                            "gain": 1, "next": "Pam3.2.3" 
+                        }
+                    ]
+                }
+            ]
+        },
+        "Pam3.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam3.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
+                }
+            ]
+        },
+        "Pam3.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": " "
                 }
             ]
         }
