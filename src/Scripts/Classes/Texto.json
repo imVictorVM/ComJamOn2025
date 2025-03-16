@@ -1708,15 +1708,15 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " ",
+                    "text": "¿Pero entonces querías salir conmigo o qué?",
                     "options": [
                         { 
-                            "response": " ", 
-                            "gain": -1 , "next": "Pam3.1.1" 
+                            "response": "Era la intención, sí.", 
+                            "gain": 1 , "next": "Pam3.1.1" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": 1, "next": "Pam3.1.2"  
+                            "response": "Creo que me lo estoy replanteando.", 
+                            "gain": 0, "next": "Pam3.1.2"  
                         },
                         { 
                             "response": " ", 
@@ -1731,7 +1731,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Eh...No me importaría."
                 }
             ]
         },
@@ -1740,7 +1740,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Pues date prisa y piénsatelo ya, jijiji."
                 }
             ]
         },
