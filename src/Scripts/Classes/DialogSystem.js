@@ -12,6 +12,14 @@ export default class DialogSystem {
         this.centerX = this.scene.cameras.main.width / 2;
         this.centerY = this.scene.cameras.main.height / 1.1;
 
+        //Índice de las 3 opciones
+        this.actualOptionIndex = 0;
+
+        //Actual Option
+        this.actualOption;
+
+        //Array de Botones
+        this.button = [];
         // Elementos gráficos para el nombre y diálogo
         this.characterNameBox = this.scene.add.graphics();
         this.characterNameText = this.scene.add.text(0, 0, '', { 
@@ -53,8 +61,8 @@ export default class DialogSystem {
 
         // Muestra la capa oscura desde la escena principal
         this.scene.events.emit('showDialogueBackground');
-
         this.showNextDialogue();
+        
     }
 
     showNextDialogue() {
@@ -126,11 +134,12 @@ export default class DialogSystem {
                 let baseYPosition = dialogueBoxYPosition -100; //Punto fijo en y
 
                 options.reverse().forEach((option, index) => {
+                    console.log("index" + index);
                     const buttonText = `→ ${option.response}`;
                     const initialXPosition = this.centerX + 910; // Punto fijo en X
 
                     // Posición temporal
-                    const button = this.scene.add.text(initialXPosition, baseYPosition, buttonText, {
+                     this.button[index] = this.scene.add.text(initialXPosition, baseYPosition, buttonText, {
                         font: '30px Arial, sans-serif',
                         fill: '#fff',
                         stroke: '#000',
@@ -138,25 +147,24 @@ export default class DialogSystem {
                         backgroundColor: '#000000',
                         padding: { x: 30, y: 20 },
                         fontStyle: 'bold'
-                    }).setOrigin(0.5).setInteractive()
-                    .on('pointerover', () => {
-                        button.setStyle({ fill: '#000000', backgroundColor: '#ffffff' });
-                    })
-                    .on('pointerout', () => {
-                        button.setStyle({ fill: '#fff', backgroundColor: '#000000' });
-                    })
-                    .on('pointerdown', () => this.handleOptionSelection(option.gain, option));
-
+                    }).setOrigin(0.5)
+                    this.button[index].setStyle({ fill: '#000000', backgroundColor: '#ffffff' });
+                  
+                   
+                        this.scene.events.on('selectAnswer', () => {
+                            this.actualOption = options[this.actualOptionIndex];
+                        });
                     // Ajustar x
-                    const adjustedXPosition = initialXPosition - button.width / 2;
-                    button.setX(adjustedXPosition);
+                    const adjustedXPosition = initialXPosition - this.button[index].width / 2;
+                    this.button[index].setX(adjustedXPosition);
 
                     
                     // Siguente botón (hacia arriba)
-                    baseYPosition -= button.height+20; // + altura del botón anterior
+                    baseYPosition -=  this.button[index].height+20; // + altura del botón anterior
 
                     
-                    this.optionButtons.push(button);
+                    this.optionButtons.push( this.button[index]);
+                    ++index;
                 });
 
                 // Revertir la lista de botones para mantener el orden original
@@ -184,12 +192,11 @@ export default class DialogSystem {
 
 
 
-    handleOptionSelection(gain, player) {
+    handleOptionSelection(gain, player,option) {
 
-
+        console.log("gain" + gain);
         this.affectionSystem.AddAffection(gain, player);
-
-
+        
         if (option.next) {
 
             this.showEventDialogues(option.next, this.Dialogues);

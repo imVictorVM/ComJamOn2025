@@ -10,7 +10,7 @@
                     "options": [
                         { 
                             "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
-                            "gain": 0
+                            "gain": 1
                         },
                         { 
                             "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
@@ -18,7 +18,7 @@
                         },
                         { 
                             "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
-                            "gain": 1
+                            "gain": 0
                         }
                     ]
                 }
@@ -30,7 +30,7 @@
                 {},
                 {
                     "character": "Avery",
-                    "text": "Insertar pregunta1",
+                    "text": "Insertar pregunta1 P2",
                     "options": [
                         { 
                             "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
@@ -76,7 +76,7 @@
                 {},
                 {
                     "character": "Avery",
-                    "text": "Insertar pregunta2",
+                    "text": "Insertar pregunta2 P2",
                     "options": [
                         { 
                             "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
@@ -122,7 +122,7 @@
                 {},
                 {
                     "character": "Avery",
-                    "text": "Insertar pregunta3",
+                    "text": "Insertar pregunta3 P2",
                     "options": [
                         { 
                             "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
@@ -265,11 +265,11 @@
                     "options": [
                         { 
                             "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
-                            "gain": 0 
+                            "gain": 0 ,"next": "" 
                         },
                         { 
                             "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
-                            "gain": -1 
+                            "gain": -1, "next": "" 
                         },
                         { 
                             "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
