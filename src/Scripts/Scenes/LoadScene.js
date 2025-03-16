@@ -178,7 +178,33 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('TrixEnfadado', 'src/Assets/TrixEnfadada.png')
     this.load.image('TrixSonrojado', 'src/Assets/TrixSonrojada.png')
 
+    //Rama Salena
+    this.load.image('RamaSalena', 'src/Assets/RamaSalena.png')
+    this.load.image('RamaSalenaKawaii', 'src/Assets/RamaSalenaKawaii.png')
+    this.load.image('RamaSalena.1', 'src/Assets/RamaSalena.1.png')
+    this.load.image('RamaSalena.2', 'src/Assets/RamaSalena.2.png')
+    this.load.image('RamaSalena.3', 'src/Assets/RamaSalena.3.png')
+
     //Palmera
+
+    //Rama Phoebe
+    this.load.image('RamaPhoebe', 'src/Assets/RamaPhoebe.png')
+    this.load.image('RamaPhoebeKawaii', 'src/Assets/RamaPhoebeKawaii.png')
+    this.load.image('RamaPhoebe.1', 'src/Assets/RamaPhoebe.1.png')
+    this.load.image('RamaPhoebe.2', 'src/Assets/RamaPhoebe.2.png')
+    this.load.image('RamaPhoebe.3', 'src/Assets/RamaPhoebe.3.png')
+
+    //Phoebe
+    this.load.image('Phoebe', 'src/Assets/Phoebe.png')
+    this.load.image('PhoebeEnfadado', 'src/Assets/PhoebeEnfadado.png')
+    this.load.image('PhoebeSonrojado', 'src/Assets/PhoebeSonrojado.png')
+
+    //Rama Pam
+    this.load.image('RamaPam', 'src/Assets/RamaPam.png')
+    this.load.image('RamaPamKawaii', 'src/Assets/RamaPamKawaii.png')
+    this.load.image('RamaPam.1', 'src/Assets/RamaPam.1.png')
+    this.load.image('RamaPam.2', 'src/Assets/RamaPam.2.png')
+    this.load.image('RamaPam.3', 'src/Assets/RamaPam.3.png')
 
     ///////////////////////////
 
