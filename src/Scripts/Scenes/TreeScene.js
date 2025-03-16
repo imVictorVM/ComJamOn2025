@@ -15,7 +15,7 @@ preload(){
 
     create(){
 
-
+        this.sfxCambiarRama = this.sound.add("cambiarRama");
 
         const fx=this.cameras.main.fadeIn(1000, 0, 0, 0);
         this.whatSelection = 0;
@@ -68,6 +68,8 @@ preload(){
               
                 console.log(this.whatSelection);
                 this.changeFondo(this.whatSelection);
+                this.sfxCambiarRama.detune += Phaser.Math.Between(-70, 70);
+                this.sfxCambiarRama.play();
             }
         }
 
@@ -76,6 +78,8 @@ preload(){
                 this.whatSelection += 1;
                 console.log(this.whatSelection);
                 this.changeFondo(this.whatSelection);
+                this.sfxCambiarRama.detune += Phaser.Math.Between(-70, 70);
+                this.sfxCambiarRama.play();
             }
         }
 
