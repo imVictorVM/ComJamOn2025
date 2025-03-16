@@ -104,33 +104,33 @@ create(){
     switch(this.whichRama){
 
         case(0):
-            this.NinfaStats = new Stats(-1,0,1,-1,0,1);
+            this.NinfaStats = new Stats(0,1,-1,0,1,-1);
             this.ninfaName = "Avery";
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaCerezo1','NinfaCerezo1Feliz','NinfaCerezo1Triste','NinfaCerezo1Enfadado']; //Seteamos su array de sprites
         break;
 
         case(1):
-            this.NinfaStats = new Stats(1,0,-1,0,1,-1);
+            this.NinfaStats = new Stats(0,-1,0,1,-1,1);
             this.ninfaName = "Cerine";
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaCerezo2','NinfaCerezo2Feliz','NinfaCerezo2Triste','NinfaCerezo2Enfadado']; //Seteamos su array de sprites
         break;
         
         case(2):
-            this.NinfaStats = new Stats(0,-1,-1,1,0,1);
+            this.NinfaStats = new Stats(-1,-1,1,0,1,0);
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauce1','NinfaSauce1Feliz','NinfaSauce1Triste','NinfaSauce1Enfadado']; //Seteamos su array de sprites
         break;
 
         case(3):
-            this.NinfaStats = new Stats(1,-1,0,1,-1,0);
+            this.NinfaStats = new Stats(-1,0,1,-1,0,1);
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauce2','NinfaSauce2Feliz','NinfaSauce2Triste','NinfaSauce2Enfadado']; //Seteamos su array de sprites
         break;
 
         case(4):
-            this.NinfaStats = new Stats(0,1,1,0,-1,-1);
+            this.NinfaStats = new Stats(1,1,0,-1,-1,0);
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera1','NinfaPalmera1Feliz','NinfaPalmera1Triste','NinfaPalmera1Enfadado']; //Seteamos su array de sprites
 
         case(5):
-            this.NinfaStats = new Stats(-1,1,0,-1,1,0);
+            this.NinfaStats = new Stats(1,0,-1,1,0,-1);
             this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera2','NinfaPalmera2Feliz','NinfaPalmera2Triste','NinfaPalmera2Enfadado']; //Seteamos su array de sprites
         break;
 
@@ -537,7 +537,6 @@ changeScene(){
                 else{
                     //Si el valor del timer es el máximo lee el diálogo (indica que es el principio)
                     if(this.timerPlayer1.value == this.timerPlayer1.GetMaxValue()){
-                        console.log("Solo 1 vez")
                         if (this.reader.dialogData.Eventos[this.eventoId1]) {
                             this.dialogueSystem.showEventDialogues(this.eventoId1, this.reader.dialogData.Eventos);
                         }   
@@ -550,7 +549,6 @@ changeScene(){
                     //Si el player 1 ha terminado y el valor del player 2 es el máximo (indica que lee el diálogo del p2 SOLO 1 vez)
                     if(this.timerPlayer1.value <= 0 && this.timerPlayer2.value == this.timerPlayer2.GetMaxValue()){
                         //Hacer que desaparezcan los fokin dialogos en pantalla
-                        console.log("Solo 1 vez P2")
                         if (this.reader.dialogData.Eventos[this.eventoId2]) {
                             this.dialogueSystem.showEventDialogues(this.eventoId2, this.reader.dialogData.Eventos);
                         }   
@@ -565,7 +563,6 @@ changeScene(){
                     }
                      //Resta el tiempo del timer2 mientras le quede tiempo
                     else {
-                       console.log("Resto al P2");
                         this.timerPlayer2.decreaseValue(this.delayTime);
                     }
 
