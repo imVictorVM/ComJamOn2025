@@ -116,6 +116,8 @@ export default class loadScene extends Phaser.Scene {
 
     this.load.json("cardJson", 'src/Scripts/Classes/Phase1Cards.json');
 
+    this.load.json("fondoCorazon", 'src/Scripts/Classes/fondoCorazon.json');
+
 
 
     ///////////////////////////
