@@ -47,6 +47,9 @@ preload(){
 
 create(){
 
+    //CREAMOS JSON
+    this.cardJson = this.cache.json.get('cardJson');
+
     //Tomamos las medidas de la pantalla para la camara
     const { width, height } = this.cameras.main;
 
@@ -142,6 +145,7 @@ create(){
     this.ninfa  = new Ninfa(this, this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, this.spriteArray,this.whichRama, this.NinfaStats); //Creamos la ninfa
 
     if(this.fase ==1){
+        this.selectCardQuestion();
          //Crear cartas
         this.createCards();   
     }
@@ -151,7 +155,34 @@ create(){
         this.createAnswers();
     }
       
+   
 }
+
+selectCardQuestion()
+{
+    switch(this.round){
+        case 0:
+           this.cardQuestion= this.cardJson.Pregunta1;
+            break;
+        case 1:
+            this.cardQuestion= this.cardJson["Pregunta2"];
+            break;
+        case 2:
+            this.cardQuestion= this.cardJson["Pregunta3"];
+            break;
+        case 3:
+            this.cardQuestion= this.cardJson["Pregunta4"];
+            break;
+        case 4:
+            this.cardQuestion= this.cardJson["Pregunta5"];
+            break;
+        case 5:
+            this.cardQuestion= this.cardJson["Pregunta6"];
+    
+            break;
+    }
+}
+
 
 //metodo para ocultar mierda
 createCards(){
@@ -162,17 +193,48 @@ createCards(){
     //crear array
     this.cardArray = [
 
-        this.card1 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,1,0,0,0,0),
-        this.card2 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',1,0,0,0,0,0),
-        this.card3 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,1,0,0,0),
-        this.card4 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,1,0,0),
-        this.card5 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,0,1,0),
-        this.card6 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,'carta',0,0,0,0,0,1)
+        this.card1 = new card(this,this.sys.game.canvas.width / 1.1, this.sys.game.canvas.height / 1.1,this.cardQuestion.carta1.sprite,
+            this.cardQuestion.carta1.stats.extroversion,
+            this.cardQuestion.carta1.stats.confianza,
+            this.cardQuestion.carta1.stats.creatividad,
+            this.cardQuestion.carta1.stats.paciencia,
+            this.cardQuestion.carta1.stats.empatia),
+        this.card2 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta2.sprite,
+            this.cardQuestion.carta2.stats.extroversion,
+            this.cardQuestion.carta2.stats.confianza,
+            this.cardQuestion.carta2.stats.creatividad,
+            this.cardQuestion.carta2.stats.paciencia,
+            this.cardQuestion.carta2.stats.empatia),
+        this.card3 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta3.sprite,
+            this.cardQuestion.carta3.stats.extroversion,
+            this.cardQuestion.carta3.stats.confianza,
+            this.cardQuestion.carta3.stats.creatividad,
+            this.cardQuestion.carta3.stats.paciencia,
+            this.cardQuestion.carta3.stats.empatia),
+        this.card4 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta4.sprite,
+            this.cardQuestion.carta4.stats.extroversion,
+            this.cardQuestion.carta4.stats.confianza,
+            this.cardQuestion.carta4.stats.creatividad,
+            this.cardQuestion.carta4.stats.paciencia,
+            this.cardQuestion.carta4.stats.empatia),
+        this.card5 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta5.sprite,
+            this.cardQuestion.carta5.stats.extroversion,
+            this.cardQuestion.carta5.stats.confianza,
+            this.cardQuestion.carta5.stats.creatividad,
+            this.cardQuestion.carta5.stats.paciencia,
+            this.cardQuestion.carta5.stats.empatia),
+        this.card6 = new card(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2,this.cardQuestion.carta6.sprite,
+            this.cardQuestion.carta6.stats.extroversion,
+            this.cardQuestion.carta6.stats.confianza,
+            this.cardQuestion.carta6.stats.creatividad,
+            this.cardQuestion.carta6.stats.paciencia,
+            this.cardQuestion.carta6.stats.empatia)
     ];
 
     //Crear cartas
      //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
     this.card1.setSprite(this.sys.game.canvas.width / 8, this.sys.game.canvas.height / 2);
+    this.card1.setScale(0.5);
 
     this.selectedcard1Player1 = this.add.text(
         this.sys.game.canvas.width / 8,

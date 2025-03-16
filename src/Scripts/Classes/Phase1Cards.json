@@ -1,0 +1,404 @@
+{
+    "Pregunta1":{
+
+        "carta1":{
+            "sprite": "carta1.1",
+            "stats" : {
+                "extroversion": 1,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+
+        "carta2":{
+            "sprite": "carta1.2",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 1,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+        "carta3":{
+            "sprite": "carta1.3",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :1,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+        "carta4":{
+            "sprite": "carta1.4",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":1,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+
+        "carta5":{
+            "sprite": "carta1.5",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":1,
+                "empatia":0
+           }
+
+        },
+        "carta6":{
+            "sprite": "carta1.6",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":1
+           }
+
+        }
+
+
+
+    },
+    "Pregunta2":{
+
+        "carta1":{
+            "sprite": "carta2.1",
+            "stats" : {
+                "extroversion": 1,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+
+        "carta2":{
+            "sprite": "carta2.2",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 1,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+        "carta3":{
+            "sprite": "carta2.3",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :1,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+        "carta4":{
+            "sprite": "carta2.4",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":1,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+
+        "carta5":{
+            "sprite": "carta2.5",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":1,
+                "empatia":0
+           }
+
+        },
+        "carta6":{
+            "sprite": "carta2.6",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":1
+           }
+
+        }
+
+
+
+    },
+    "Pregunta3":{
+
+        "carta1":{
+            "sprite": "carta3.1",
+            "stats" : {
+                "extroversion": 1,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+
+        "carta2":{
+            "sprite": "carta3.2",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 1,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+        "carta3":{
+            "sprite": "carta3.3",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :1,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+        "carta4":{
+            "sprite": "carta3.4",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":1,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+
+        "carta5":{
+            "sprite": "carta3.5",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":1,
+                "empatia":0
+           }
+
+        },
+        "carta6":{
+            "sprite": "carta3.6",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":1
+           }
+
+        }
+
+
+
+    },
+    "Pregunta4":{
+
+        "carta1":{
+            "sprite": "carta4.1",
+            "stats" : {
+                "extroversion": 1,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+
+        "carta2":{
+            "sprite": "carta4.2",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 1,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+        "carta3":{
+            "sprite": "carta4.3",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :1,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+        "carta4":{
+            "sprite": "carta4.4",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":1,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+
+        "carta5":{
+            "sprite": "carta4.5",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":1,
+                "empatia":0
+           }
+
+        },
+        "carta6":{
+            "sprite": "carta4.6",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":1
+           }
+
+        }
+
+
+
+    },
+    "Pregunta5":{
+
+        "carta1":{
+            "sprite": "carta5.1",
+            "stats" : {
+                "extroversion": 1,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+
+        "carta2":{
+            "sprite": "carta5.2",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 1,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+        "carta3":{
+            "sprite": "carta5.3",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :1,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+        "carta4":{
+            "sprite": "carta5.4",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":1,
+                "inteligencia":0,
+                "empatia":0
+           }
+
+        },
+
+        "carta5":{
+            "sprite": "carta5.5",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":1,
+                "empatia":0
+           }
+
+        },
+        "carta6":{
+            "sprite": "carta5.6",
+            "stats" : {
+                "extroversion": 0,
+                "confianza": 0,
+                "creatividad" :0,
+                " paciencia":0,
+                "inteligencia":0,
+                "empatia":1
+           }
+
+        }
+
+
+
+    }
+
+
+}

@@ -104,7 +104,7 @@ export default class loadScene extends Phaser.Scene {
     this.load.image('carta5.5', 'src/Assets/carta5.5.png');
     this.load.image('carta5.6', 'src/Assets/carta5.6.png');
 
-
+    this.load.json("cardJson", 'src/Scripts/Classes/Phase1Cards.json');
 
 
 
