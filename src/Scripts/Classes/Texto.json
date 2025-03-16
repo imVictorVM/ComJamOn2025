@@ -1308,19 +1308,19 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " ",
+                    "text": "Estaba pensando en componer una canción cuando has llegado. ¿De que género debería hacerlo?",
                     "options": [
                         { 
-                            "response": " ", 
-                            "gain": 1, "next": "Salena2.1.1" 
+                            "response": "Una balada romántica es todo lo que escucho mientras te veo.", 
+                            "gain": 0, "next": "Salena2.1.1" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": -1, "next": "Salena2.1.2" 
+                            "response": "Tipo jazz para improvisar conmigo.", 
+                            "gain": 1, "next": "Salena2.1.2" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": 0, "next": "Salena2.1.3" 
+                            "response": "Heavy metal, como a mí me gusta.", 
+                            "gain": -1, "next": "Salena2.1.3" 
                         }
                     ]
                 }
@@ -1331,7 +1331,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Eso ya está muy visto."
                 }
             ]
         },
@@ -1340,7 +1340,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Ohhh, eso suena bien."
                 }
             ]
         },
@@ -1349,7 +1349,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Lo siento, no soporto el ruido."
                 }
             ]
         },
@@ -1358,18 +1358,18 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " ",
+                    "text": "Unos pájaros interrumpieron mi canto esta mañana ¿Fue justo que me enfadara con ellos?",
                     "options": [
                         { 
-                            "response": " ", 
+                            "response": "Claro que si, toda la razón.", 
                             "gain": 0, "next": "Salena2.2.1" 
                         },
                         { 
-                            "response": " ", 
+                            "response": "No creo que tengas razón, ha sido un poco violento.", 
                             "gain": -1, "next": "Salena2.2.2" 
                         },
                         { 
-                            "response": " ", 
+                            "response": "A la siguiente me invitas y si nos molestan que se preparen.", 
                             "gain": 1, "next": "Salena2.2.3" 
                         }
                     ]
@@ -1381,7 +1381,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Ya sabía yo."
                 }
             ]
         },
@@ -1390,7 +1390,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "He sido justa."
                 }
             ]
         },
@@ -1399,7 +1399,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Ay hahaha desde luego."
                 }
             ]
         },
@@ -1408,18 +1408,18 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " ",
+                    "text": "Pareces interesante ¿Te gustaría quedarte un rato más conmigo?",
                     "options": [
                         { 
-                            "response": " ", 
+                            "response": "Por supuesto,una belleza como tu tiene que estar acompañada.", 
                             "gain": -1 , "next": "Salena3.1.1" 
                         },
                         { 
-                            "response": " ", 
+                            "response": "Claro, te podria dejar un casco y escuchar musica juntic@s.", 
                             "gain": 1, "next": "Salena3.1.2"  
                         },
                         { 
-                            "response": " ", 
+                            "response": "Sí, aunque no se si tu querrás.", 
                             "gain": 0, "next": "Salena3.1.3" 
                         }
                     ]
@@ -1431,7 +1431,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Que empalagos@."
                 }
             ]
         },
@@ -1440,7 +1440,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Me parece muy buena idea."
                 }
             ]
         },
@@ -1449,7 +1449,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Bueno parece que lo dices por compromiso."
                 }
             ]
         },
@@ -1458,19 +1458,19 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " ",
+                    "text": "Puede que podamos convivir en armonía, realmente no me disgustas.",
                     "options": [
                         { 
-                            "response": " ", 
-                            "gain": -1 ,"next": "Salena3.2.1" 
+                            "response": "Siento que ahora estamos en la misma órbita.", 
+                            "gain": 1 ,"next": "Salena3.2.1" 
                         },
                         { 
-                            "response": " ", 
+                            "response": "Me alegra que al final no me rechaces.", 
                             "gain": 0, "next": "Salena3.2.2" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": 1, "next": "Salena3.2.3" 
+                            "response": "Lo siento, no me puedo quedar.", 
+                            "gain": -1, "next": "Salena3.2.3" 
                         }
                     ]
                 }
@@ -1481,7 +1481,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Hahaha, yo lo siento igual."
                 }
             ]
         },
@@ -1490,7 +1490,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Has resultado ser interesante."
                 }
             ]
         },
@@ -1499,7 +1499,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Oh, qué lástima."
                 }
             ]
         },
@@ -1749,7 +1749,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Bueno, pues nos vemos otro día."
                 }
             ]
         },
@@ -1758,19 +1758,19 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " ",
+                    "text": "Vente a mi lado y enrróllate un poco, anda.",
                     "options": [
                         { 
-                            "response": " ", 
-                            "gain": -1 ,"next": "Pam3.2.1" 
+                            "response": "Dale, pásame el pity colega.", 
+                            "gain": 0 ,"next": "Pam3.2.1" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": 0, "next": "Pam3.2.2" 
+                            "response": "Voy, aunque quizás se me escapa un beso.", 
+                            "gain": 1, "next": "Pam3.2.2" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": 1, "next": "Pam3.2.3" 
+                            "response": "Nah, pasando.", 
+                            "gain": 0, "next": "Pam3.2.3" 
                         }
                     ]
                 }
@@ -1781,7 +1781,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Ten ahí, te lo paso cargadito eh."
                 }
             ]
         },
@@ -1790,7 +1790,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Uy, eres muy atrevid@ eh, jijiji."
                 }
             ]
         },
@@ -1799,7 +1799,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Ten buen día entonces."
                 }
             ]
         },
@@ -1916,7 +1916,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": "Eres un poco aburrido tí@."
+                    "text": "Sois un poco aburrid@s, tí@s."
                 }
             ]
         },
@@ -1943,7 +1943,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": "Vete a la mierda."
+                    "text": "Idos a la mierda."
                 }
             ]
         },
