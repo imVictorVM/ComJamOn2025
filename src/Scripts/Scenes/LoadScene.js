@@ -180,10 +180,10 @@ export default class loadScene extends Phaser.Scene {
 
     //Rama Salena
     this.load.image('RamaSalena', 'src/Assets/RamaSalena.png')
-    //sthis.load.image('RamaSalenaKawaii', 'src/Assets/RamaSalenaKawaii.png')
+    this.load.image('RamaSalenaKawaii', 'src/Assets/RamaSalenaKawaii.png')
     this.load.image('RamaSalena.1', 'src/Assets/RamaSalena.1.png')
-    //this.load.image('RamaSalena.2', 'src/Assets/RamaSalena.2.png')
-    //this.load.image('RamaSalena.3', 'src/Assets/RamaSalena.3.png')
+    this.load.image('RamaSalena.2', 'src/Assets/RamaSalena.2.png')
+    this.load.image('RamaSalena.3', 'src/Assets/RamaSalena.3.png')
 
     //Palmera
 
