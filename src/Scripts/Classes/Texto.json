@@ -1208,19 +1208,19 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " ",
+                    "text": "¿Tú quién eres y qué haces en mi jardín?",
                     "options": [
                         { 
-                            "response": " ", 
-                            "gain": 1, "next": "Salena1.1.1" 
+                            "response": "Venia a cautivarte.", 
+                            "gain": -1, "next": "Salena1.1.1" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": -1, "next": "Salena1.1.2" 
+                            "response": "Necesitaba despejarme un rato y lo encontré.", 
+                            "gain": 0, "next": "Salena1.1.2" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": 0, "next": "Salena1.1.3" 
+                            "response": "Queria componer música alejad@ del mundo.", 
+                            "gain": 1, "next": "Salena1.1.3" 
                         }
                     ]
                 }
@@ -1231,7 +1231,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Pues te puedes venir por donde has venido."
                 }
             ]
         },
@@ -1240,7 +1240,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Bueno."
                 }
             ]
         },
@@ -1249,7 +1249,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Te entiendo, la mejor inspiracion músical es un sitio tranquilo."
                 }
             ]
         },
@@ -1258,19 +1258,19 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " ",
+                    "text": "No suele venir mucha gente y me aburro mucho. ¿Que harías para entretenerme?",
                     "options": [
                         { 
-                            "response": " ", 
-                            "gain": 1, "next": "Salena1.2.1" 
+                            "response": "Te llevaria a un coro para que todos oyesen tu dulce voz.", 
+                            "gain": 0, "next": "Salena1.2.1" 
                         },
                         { 
-                            "response": " ", 
+                            "response": "Un monopoly vestidos de gala.", 
                             "gain": -1, "next": "Salena1.2.2" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": 0, "next": "Salena1.2.3" 
+                            "response": "¿Te atreves a ir a un karaoke conmigo?", 
+                            "gain": 1, "next": "Salena1.2.3" 
                         }
                     ]
                 }
@@ -1281,7 +1281,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "Un coro es un lugar perfecto para mejorar."
                 }
             ]
         },
@@ -1290,7 +1290,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "No me interesa."
                 }
             ]
         },
@@ -1299,7 +1299,7 @@
                 {},
                 {
                     "character": "Salena",
-                    "text": " "
+                    "text": "A lo mejor algún día haha."
                 }
             ]
         },
