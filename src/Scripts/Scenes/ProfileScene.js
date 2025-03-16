@@ -62,7 +62,7 @@ preload(){
         
 
     
-       this.pulsado1=true;
+       this.pulsado1=false;
       
     }
 
