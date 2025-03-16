@@ -506,42 +506,42 @@ changeScene(){
             this.j2.setVisible(true);
             setTimeout(() => {
                 const fx= this.cameras.main.shake(500);
-            },1000);
+            },2000);
             setTimeout(() => {
                 this.explosion = new Explosion(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2.5,this.explosionArray);
                
-            },1500);
+            },2500);
     
             setTimeout(() => {
                 this.explosion.changeSprite(2);
-            },1600);
+            },2600);
     
             setTimeout(() => {
                 this.explosion.changeSprite(3);
-            },1700);
+            },2700);
     
             setTimeout(() => {
                 this.explosion.changeSprite(4);
-            },1800);
+            },2800);
     
             setTimeout(() => {
                 this.explosion.changeSprite(5);
-            },1900);
+            },2900);
     
             setTimeout(() => {
                 this.explosion.changeSprite(6);
-            },2000);
+            },3000);
     
             setTimeout(() => {
                 this.explosion.changeSprite(7);
-            },2100);
+            },3100);
     
             setTimeout(() => {
                 this.explosion.changeSprite(8);
-            },2200);
+            },3200);
             setTimeout(() => {
                 this.scene.start('CreditsScene')
-            },2300);
+            },3300);
             
         }
         else if(this.affectionSystem.GetPlayer1() > this.affectionSystem.GetPlayer2()){ //Gana el player 1 pero no el player 2
