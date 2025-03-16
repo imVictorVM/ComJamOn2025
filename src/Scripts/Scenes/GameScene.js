@@ -305,7 +305,7 @@ createAnswers(){
     this.dialogueSystem = new DialogSystem(this, this.affectionSystem,this.reader.dialogData.Eventos);
 
     // Click
-    this.events.on('pointerup', () => this.dialogueSystem.onPointerDown(), this);
+    this.input.on('pointerup', () => this.dialogueSystem.onPointerDown(), this);
    
     // Eventos para mostrar/ocultar capa de fondo
     this.events.on('showDialogueBackground', () => {
