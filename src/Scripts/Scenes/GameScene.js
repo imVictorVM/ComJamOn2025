@@ -59,7 +59,32 @@ create(){
     console.log("round" + this.round);
     console.log("fase" + this.fase);
     
+    if(this.whichRama == 0 || this.whichRama == 1)
+    {
+        this.add.image(
+            this.sys.game.canvas.width / 2,
+            this.sys.game.canvas.height / 2,
+            'cerezo'
+       )
+    }
+    else if(this.whichRama == 2 || this.whichRama == 3)
+        {
+            this.add.image(
+                this.sys.game.canvas.width / 2,
+                this.sys.game.canvas.height / 2,
+                'sauce'
+            )
+        }
+    else if(this.whichRama == 4 || this.whichRama == 5)
+        {
+            this.add.image(
+                this.sys.game.canvas.width / 2,
+                this.sys.game.canvas.height / 2,
+                'palmera'
+            )
+        }
     
+
     //Startgame
     this.startGame = false; //booleano para empezar el juego
     this.countdown = 3 * 1000; //5 segundos
