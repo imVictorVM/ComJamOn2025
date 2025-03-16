@@ -1910,6 +1910,60 @@
                     "text": "¡Podemos estar lo tres juntos y pasarlo genial!"
                 }
             ]
+        },
+        "PamEndBad":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": "Eres un poco aburrido tí@."
+                }
+            ]
+        },
+        "PamEndOne":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": "Jiji, te invito a mi cueva a tomar un cigarro."
+                }
+            ]
+        },
+        "PamEndTwo":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Pam",
+                    "text": "Tengo hierba suficiente para todos."
+                }
+            ]
+        },
+        "SalenaEndBad":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": "Vete a la mierda."
+                }
+            ]
+        },
+        "SalenaEndOne":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": "Quedate conmigo, eres tan calamante como mi sinfonía favorita."
+                }
+            ]
+        },
+        "SalenaEndTwo":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Salena",
+                    "text": "Me gustais mucho. Entre los tres podríamos formar una banda."
+                }
+            ]
         }
 
     }    
