@@ -6,21 +6,48 @@
                 {},
                 {
                     "character": "Avery",
-                    "text": "Insertar pregunta1",
+                    "text": "La verdad que por aquí estaba todo muy tranquilo hasta que llegaste. Me has descolocado.",
                     "options": [
                         { 
-                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
-                            "gain": 1, "next": "" 
+                            "response": "Y más que lo vas a estar si vienes conmigo.", 
+                            "gain": 1, "next": "Avery1.1.1" 
                         },
                         { 
-                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
-                            "gain": -1, "next": "" 
+                            "response": "Bueno, por algo se empieza.", 
+                            "gain": 0, "next": "Avery1.1.2" 
                         },
                         { 
-                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
-                            "gain": 0, "next": "" 
+                            "response": "Perdón por haberte molestado, no era mi intencion.", 
+                            "gain": -1, "next": "Avery1.1.3" 
                         }
                     ]
+                }
+            ]
+        },
+        "Avery1.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Con que estamos con ese plan..."
+                }
+            ]
+        },
+        "Avery1.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "¿Eso es todo lo que tienes para decirme?"
+                }
+            ]
+        },
+        "Avery1.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "¿Entonces para que has venido?"
                 }
             ]
         },
@@ -30,44 +57,99 @@
                 {},
                 {
                     "character": "Avery",
-                    "text": "Insertar pregunta1 P2",
+                    "text": "Y tú, que estás muy callad@. ¿No tienes nada que decirme?",
                     "options": [
                         { 
-                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
-                            "gain": 0, "next": "" 
+                            "response": "...", 
+                            "gain": 0, "next": "Avery1.2.1" 
                         },
                         { 
-                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
-                            "gain": -1, "next": "" 
+                            "response": "No estabas hablando conmigo.", 
+                            "gain": -1, "next": "Avery1.2.2" 
                         },
                         { 
-                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
-                            "gain": 1, "next": "" 
+                            "response": "Es que ha sido verte y quedarme sin palabras.", 
+                            "gain": 1, "next": "Avery1.2.3" 
                         }
                     ]
                 }
             ]
         },
+        "Avery1.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Muy articulado, ya veo..."
+                }
+            ]
+        },
+        "Avery1.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "¿Es que tengo que empezar siempre yo?"
+                }
+            ]
+        },
+        "Avery1.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Si sigues así, te puedo pasar esa excusita."
+                }
+            ]
+        },
+          
         "Avery2.1": {
             "dialogs": [
                 {},
                 {
                     "character": "Avery",
-                    "text": "Insertar pregunta2",
+                    "text": "Volviendo a ti. Suponiendo que te doy una oportunidad, ¿Dónde me llevarías?",
                     "options": [
                         { 
-                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
-                            "gain": 0, "next": "" 
+                            "response": "Una cena romántica con velas.", 
+                            "gain": -1, "next": "Avery2.1.1" 
                         },
                         { 
-                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
-                            "gain": -1, "next": "" 
+                            "response": "A conocer mi cama .", 
+                            "gain": 1, "next": "Avery2.1.2"
                         },
                         { 
-                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
-                            "gain": 1, "next": "" 
+                            "response": "No importa el sitio con tal de estar contigo.", 
+                            "gain": 0, "next": "Avery2.1.3" 
                         }
                     ]
+                }
+            ]
+        },
+        "Avery2.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Como sigas así me da diabetes"
+                }
+            ]
+        },
+        "Avery2.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Que suerte que yo no duermo."
+                }
+            ]
+        },
+        "Avery2.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Veo que no te arriesgas."
                 }
             ]
         },
@@ -76,21 +158,48 @@
                 {},
                 {
                     "character": "Avery",
-                    "text": "Insertar pregunta2 P2",
+                    "text": "Si la oportunidad te la doy a ti, ¿Qué me regalarías?",
                     "options": [
                         { 
-                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
-                            "gain": 0, "next": "" 
+                            "response": "¿Hace falta que me envuelva también?", 
+                            "gain": 1, "next": "Avery2.2.1" 
                         },
                         { 
-                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
-                            "gain": -1, "next": "" 
+                            "response": "Un ramo de cien flores rojas.", 
+                            "gain": 0, "next": "Avery2.2.2" 
                         },
                         { 
-                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
-                            "gain": 1, "next": "" 
+                            "response": "Una colleción de cartas de amor", 
+                            "gain": -1, "next": "Avery2.2.3" 
                         }
                     ]
+                }
+            ]
+        },
+        "Avery2.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Lo que más me gusta de un regalo es desenvolverlo."
+                }
+            ]
+        },
+        "Avery2.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Lo tradicional no es lo mío, pero buen intento."
+                }
+            ]
+        },
+        "Avery2.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "¿Y qué se supone que tengo que hacer con eso?"
                 }
             ]
         },
@@ -99,21 +208,48 @@
                 {},
                 {
                     "character": "Avery",
-                    "text": "Insertar pregunta3",
+                    "text": "Y mi pregunta final para ti. ¿Qué es lo que más te ha llamado la atención de mí?",
                     "options": [
                         { 
-                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
-                            "gain": 0, "next": ""  
+                            "response": "Al ver esa corteza, solo he querido que sea mía.", 
+                            "gain": 1, "next": "Avery3.1.1"  
                         },
                         { 
-                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
-                            "gain": -1, "next": ""  
+                            "response": "Tu amabilidad.", 
+                            "gain": -1, "next": "Avery3.1.2"  
                         },
                         { 
-                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
-                            "gain": 1, "next": "" 
+                            "response": "Tu forma de ser.", 
+                            "gain": 0, "next": "Avery3.1.3" 
                         }
                     ]
+                }
+            ]
+        },
+        "Avery3.1.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Eres una persona de con buen gusto, sin duda."
+                }
+            ]
+        },
+        "Avery3.1.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Pues de eso no tengo mucho."
+                }
+            ]
+        },
+        "Avery3.1.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Gracias, supongo."
                 }
             ]
         },
@@ -122,21 +258,48 @@
                 {},
                 {
                     "character": "Avery",
-                    "text": "Insertar pregunta3 P2",
+                    "text": "Última oportunidad, ¿Algo que quieras decir?",
                     "options": [
                         { 
-                            "response": "Si no nos protegemos a nosotros mismos \nprimero, no podremos proteger a nadie.", 
-                            "gain": 0, "next": ""  
+                            "response": "Eres lo más bonito que me ha pasado.", 
+                            "gain": -1, "next": "Avery3.2.1"  
                         },
                         { 
-                            "response": "Eshe, confía en Ra. No dejará que algo así \nperjudique nuestra supervivencia.", 
-                            "gain": -1, "next": ""  
+                            "response": "Dame una noche y te lo digo.", 
+                            "gain": 1, "next": "Avery3.2.2"  
                         },
                         { 
-                            "response": "Asumiré ese riesgo si significa ayudar a \ntodo aquel que pida auxilio.", 
-                            "gain": 1, "next": "" 
+                            "response": "Creo que así está bien.", 
+                            "gain": 0, "next": "Avery3.2.3" 
                         }
                     ]
+                }
+            ]
+        },
+        "Avery3.2.1":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Nos conocemos de hace un rato, relajate."
+                }
+            ]
+        },
+        "Avery3.2.2":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Que sean 2, entonces."
+                }
+            ]
+        },
+        "Avery3.2.3":{
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Vale..."
                 }
             ]
         },
