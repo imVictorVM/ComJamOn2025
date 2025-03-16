@@ -1508,19 +1508,19 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " ",
+                    "text": "Ey colega, ¿Qué haces tu por aquí?",
                     "options": [
                         { 
-                            "response": " ", 
-                            "gain": 1, "next": "Pam1.1.1" 
+                            "response": "Nah, buscaba a un compa.", 
+                            "gain": 0, "next": "Pam1.1.1" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": -1, "next": "Pam1.1.2" 
+                            "response": "Esperar a que me pidieses salir.", 
+                            "gain": 0, "next": "Pam1.1.2" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": 0, "next": "Pam1.1.3" 
+                            "response": "Me estaba fumando unos porros.", 
+                            "gain": 1, "next": "Pam1.1.3" 
                         }
                     ]
                 }
@@ -1531,7 +1531,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Pues aquí estoy amig@."
                 }
             ]
         },
@@ -1540,7 +1540,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Jijiji, que lanzado eres."
                 }
             ]
         },
@@ -1549,7 +1549,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Hombre, pues comparte."
                 }
             ]
         },
@@ -1558,19 +1558,19 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " ",
+                    "text": "No tendrías un poco de hierba que me pudieras dejar, ¿no?",
                     "options": [
                         { 
-                            "response": " ", 
-                            "gain": 1, "next": "Pam1.2.1" 
+                            "response": "Lo siento, solo fumo tabaco.", 
+                            "gain": 0, "next": "Pam1.2.1" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": -1, "next": "Pam1.2.2" 
+                            "response": "Fumar es malo.", 
+                            "gain": 0, "next": "Pam1.2.2" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": 0, "next": "Pam1.2.3" 
+                            "response": "Claro, aquí tienes.", 
+                            "gain": 1, "next": "Pam1.2.3" 
                         }
                     ]
                 }
@@ -1581,7 +1581,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Vaya tío, que pena."
                 }
             ]
         },
@@ -1590,7 +1590,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Jijiji tiene razón, me alegro de que te cuides, colega."
                 }
             ]
         },
@@ -1599,7 +1599,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Gracias amig@, eres un/a grande."
                 }
             ]
         },
@@ -1608,19 +1608,19 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " ",
+                    "text": "Oye compa, ¿soy yo o te estás convirtiendo en pato?",
                     "options": [
                         { 
-                            "response": " ", 
-                            "gain": 1, "next": "Pam2.1.1" 
+                            "response": "Creo que tú eres el que se está conviertiendo en pato.", 
+                            "gain": 0, "next": "Pam2.1.1" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": -1, "next": "Pam2.1.2" 
+                            "response": "Estoy bastante seguro de que soy una persona.", 
+                            "gain": 0, "next": "Pam2.1.2" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": 0, "next": "Pam2.1.3" 
+                            "response": "¿Me seguirías queriendo si fuese un pato?", 
+                            "gain": 1, "next": "Pam2.1.3" 
                         }
                     ]
                 }
@@ -1631,7 +1631,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Eso estaría super chulo. Sería un pato precioso."
                 }
             ]
         },
@@ -1640,7 +1640,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Eso me recuerda a algo... Ah, se me ha olvidado."
                 }
             ]
         },
@@ -1649,7 +1649,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Por supuesto. Además serías el pato más hermoso del mundo."
                 }
             ]
         },
@@ -1658,19 +1658,19 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " ",
+                    "text": "Tí@, me encantan las focas.",
                     "options": [
                         { 
-                            "response": " ", 
+                            "response": "Igual. Aunque prefiero los leones marinos.", 
                             "gain": 0, "next": "Pam2.2.1" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": -1, "next": "Pam2.2.2" 
+                            "response": "Un vez conocí una foca rosa. Muy maja.", 
+                            "gain": 1, "next": "Pam2.2.2" 
                         },
                         { 
-                            "response": " ", 
-                            "gain": 1, "next": "Pam2.2.3" 
+                            "response": "A mi me gustan la calabazas.", 
+                            "gain": 0, "next": "Pam2.2.3" 
                         }
                     ]
                 }
@@ -1681,7 +1681,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Esos también están guays. Pero mo tanto como las focas."
                 }
             ]
         },
@@ -1690,7 +1690,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Me alegra saber que tu también eres amante de la hierba."
                 }
             ]
         },
@@ -1699,7 +1699,7 @@
                 {},
                 {
                     "character": "Pam",
-                    "text": " "
+                    "text": "Jijiji, las que te van a dar si sigues cambiando de tema."
                 }
             ]
         },
