@@ -426,7 +426,7 @@ createAnswers(){
 
     this.dialogBackground = this.add.graphics();
     this.dialogBackground.fillStyle(0xffffff, 0.4); // Blanco, 50% de transparencia
-    this.dialogBackground.fillRect(0, 0, 300, 300);
+  //  this.dialogBackground.fillRect(0, 0, 300, 300);
     this.dialogBackground.setVisible(false); // Oculto al inicio
 
     //Instanciar ReadDialog
