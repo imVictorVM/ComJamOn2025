@@ -286,137 +286,27 @@ createCards() {
         );
     })
 
-
-
     //Crear cartas
      //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
-   // this.card1.setSprite(250, 250);
-    //this.card1.setScale(2, 2); // Duplica el tamaño del sprite
-    //this.card1.setSize(200, 300); // Ajusta el tamaño a 200x300 píxeles
-    //this.card1.displayWidth = this.card1.width * 0;
-    //this.card1.displayHeight = this.card1.height * 0;
+     this.selectedcard1Player1 = this.add.image(this.sys.game.canvas.width / 9.5,this.sys.game.canvas.height / 1.10,'jugador1').setVisible(true);
+    this.selectedcard1Player2 = this.add.image(this.sys.game.canvas.width / 8.9,this.sys.game.canvas.height / 1.08,'jugador2').setVisible(false);
 
-    this.selectedcard1Player1 = this.add.text(
-        this.sys.game.canvas.width / 8,
-        this.sys.game.canvas.height / 1.3,
-        '----', { 
-        fontSize: '40px', 
-        color: 'white',      
-    }).setVisible(true);
-    
+    this.selectedcard2Player1 = this.add.image(this.sys.game.canvas.width / 3.8,this.sys.game.canvas.height / 1.10,'jugador1').setVisible(false);
+    this.selectedcard2Player2 = this.add.image(this.sys.game.canvas.width / 3.70,this.sys.game.canvas.height / 1.08,'jugador2').setVisible(false);
 
-    this.selectedcard1Player2 = this.add.text(
-        this.sys.game.canvas.width /8,
-        this.sys.game.canvas.height / 4,
-        '----', { 
-        fontSize: '40px', 
-        color: 'red',      
-    }).setVisible(false);
+    this.selectedcard3Player1 = this.add.image(this.sys.game.canvas.width / 2.4,this.sys.game.canvas.height / 1.10,'jugador1').setVisible(false);
+    this.selectedcard3Player2 = this.add.image(this.sys.game.canvas.width / 2.36,this.sys.game.canvas.height / 1.08,'jugador2').setVisible(false);
 
-    //this.card2.setSprite(500, 500);
-    //this.card2.setSprite(this.sys.game.canvas.width / 5, this.sys.game.canvas.height / 2);
-    //this.card2.displayWidth = this.card1.width * 0.15;
-    //this.card2.displayHeight = this.card1.height * 0.15;
+    this.selectedcard4Player1 = this.add.image(this.sys.game.canvas.width / 1.73,this.sys.game.canvas.height / 1.10,'jugador1').setVisible(false);
+    this.selectedcard4Player2 = this.add.image(this.sys.game.canvas.width / 1.71,this.sys.game.canvas.height / 1.08,'jugador2').setVisible(false);
 
-    this.selectedcard2Player1 = this.add.text(
-        this.sys.game.canvas.width / 5,
-        this.sys.game.canvas.height / 1.3,
-        '----', { 
-        fontSize: '40px', 
-        color: 'white',      
-    }).setVisible(false);
+    this.selectedcard5Player1 = this.add.image(this.sys.game.canvas.width / 1.37,this.sys.game.canvas.height / 1.10,'jugador1').setVisible(false);
+    this.selectedcard5Player2 = this.add.image(this.sys.game.canvas.width / 1.36,this.sys.game.canvas.height / 1.08,'jugador2').setVisible(false);
 
-    this.selectedcard2Player2 = this.add.text(
-        this.sys.game.canvas.width / 5,
-        this.sys.game.canvas.height / 4,
-        '----', { 
-        fontSize: '40px', 
-        color: 'red',      
-    }).setVisible(false);
-    
-    //this.card3.setSprite(500, 500);
-    //this.card3.setSprite(this.sys.game.canvas.width / 3, this.sys.game.canvas.height / 2);
-    //this.card3.displayWidth = this.card1.width * 0.15;
-    //this.card3.displayHeight = this.card1.height * 0.15;
+    this.selectedcard6Player1 = this.add.image(this.sys.game.canvas.width / 1.12,this.sys.game.canvas.height / 1.10,'jugador1').setVisible(false);
+    this.selectedcard6Player2 = this.add.image(this.sys.game.canvas.width / 1.11,this.sys.game.canvas.height / 1.08,'jugador2').setVisible(true);
 
-    this.selectedcard3Player1 = this.add.text(
-        this.sys.game.canvas.width / 3,
-        this.sys.game.canvas.height / 1.3,
-        '----', { 
-        fontSize: '40px', 
-        color: 'white',      
-    }).setVisible(false);
-
-    this.selectedcard3Player2 = this.add.text(
-        this.sys.game.canvas.width / 3,
-        this.sys.game.canvas.height / 4,
-        '----', { 
-        fontSize: '40px', 
-        color: 'red',      
-    }).setVisible(false);
-    
-    //this.card4.setSprite(500, 500);
-    //this.card4.setSprite(this.sys.game.canvas.width / 1.5, this.sys.game.canvas.height / 2);
-   // this.card4.displayWidth = this.card1.width * 0.15;
-    //this.card4.displayHeight = this.card1.height * 0.15;
-    this.selectedcard4Player1 = this.add.text(
-        this.sys.game.canvas.width / 1.5,
-        this.sys.game.canvas.height / 1.3,
-        '----', { 
-        fontSize: '40px', 
-        color: 'white',      
-    }).setVisible(false);
-
-    this.selectedcard4Player2 = this.add.text(
-        this.sys.game.canvas.width / 1.5,
-        this.sys.game.canvas.height / 4,
-        '----', { 
-        fontSize: '40px', 
-        color: 'red',      
-    }).setVisible(false);
-
-    //this.card1.setSprite(500, 500);
-    //this.card5.setSprite(this.sys.game.canvas.width / 1.35, this.sys.game.canvas.height / 2);
-
-   // this.card5.displayWidth = this.card1.width * 0.15;
-    //this.card5.displayHeight = this.card1.height * 0.15;
-
-    this.selectedcard5Player1 = this.add.text(
-        this.sys.game.canvas.width / 1.35,
-        this.sys.game.canvas.height / 1.3,
-        '----', { 
-        fontSize: '40px', 
-        color: 'white',      
-    }).setVisible(false);
-
-    this.selectedcard5Player2 = this.add.text(
-        this.sys.game.canvas.width / 1.35,
-        this.sys.game.canvas.height / 4,
-        '----', { 
-        fontSize: '40px', 
-        color: 'red',      
-    }).setVisible(false);
-   
-   // this.card6.setSprite(500, 500);
-    //this.card6.setSprite(this.sys.game.canvas.width / 1.15, this.sys.game.canvas.height / 2);
-    //this.card6.displayWidth = this.card1.width * 0.15;
-   // this.card6.displayHeight = this.card1.height * 0.15;
-    this.selectedcard6Player1 = this.add.text(
-        this.sys.game.canvas.width / 1.15,
-        this.sys.game.canvas.height / 1.3,
-        '----', { 
-        fontSize: '40px', 
-        color: 'white',      
-    }).setVisible(false);
-
-    this.selectedcard6Player2 = this.add.text(
-        this.sys.game.canvas.width / 1.15,
-        this.sys.game.canvas.height / 4,
-        '----', { 
-        fontSize: '40px', 
-        color: 'red',      
-    }).setVisible(true);
-
+  
     this.totalOptions = 5; //Max of cards created - 1
 }
 
@@ -532,20 +422,9 @@ changeScene(){
             this.Player2.selectCard = false;
             this.add.image(600, 950,'acepto');
             this.add.image(1200, 950,'rechazo');
-            this.selectedPlayer1 = this.add.text(
-                600,
-                1000,
-                '----', { 
-                fontSize: '40px', 
-                color: 'blue',      
-            }).setVisible(true);
-            this.selectedPlayer2 = this.add.text(
-                1200,
-                1025,
-                '----', { 
-                fontSize: '40px', 
-                color: 'red',      
-            }).setVisible(true);
+            this.selectedPlayer1 = this.add.image(600,1000,'jugador1').setVisible(true);
+   
+            this.selectedPlayer2 = this.add.image(1200,1025,'jugador2').setVisible(true);
             this.isPoliamor = true;
             this.player1accepts = false;
             this.player2accepts = false;
