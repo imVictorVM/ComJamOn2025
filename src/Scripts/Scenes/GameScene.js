@@ -250,10 +250,6 @@ createCards() {
         return numbers;
     }
 
-    if (!this.cardQuestion) {
-        console.error("Error: this.cardQuestion no está definido.");
-        return;
-    }
 
     let uniqueIndices = getRandomUniqueNumbers(6, 1, 6);
     console.log("Índices generados:", uniqueIndices);
@@ -272,11 +268,6 @@ createCards() {
     this.cardArray = uniqueIndices.map((i, index) => {
         let cartaKey = `carta${i}`;
         let cartaData = this.cardQuestion[cartaKey];
-
-        if (!cartaData) {
-            console.error(`Error: No se encontró ${cartaKey} en this.cardQuestion`);
-            return null;
-        }
 
         let posX = startX + (index * (cardWidth + spacing)); // Posición centrada
 
