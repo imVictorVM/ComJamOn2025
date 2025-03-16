@@ -171,12 +171,12 @@ create(){
     
             case(3):
                 this.NinfaStats = new Stats(-1,0,1,-1,0,1);
-                this.ninfaName = "Phoebe"
                 this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaSauce2','NinfaSauce2Feliz','NinfaSauce2Triste','NinfaSauce2Enfadado']; //Seteamos su array de sprites
             break;
     
             case(4):
                 this.NinfaStats = new Stats(1,1,0,-1,-1,0);
+                this.ninfaName = "Phoebe"
                 this.spriteArray = ['rama','ramaSonrojada','rama1.','rama2.','rama3.','NinfaPalmera1','NinfaPalmera1Feliz','NinfaPalmera1Triste','NinfaPalmera1Enfadado']; //Seteamos su array de sprites
     
             case(5):
