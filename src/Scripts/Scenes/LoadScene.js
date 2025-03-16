@@ -72,6 +72,7 @@ export default class loadScene extends Phaser.Scene {
     ///////////////////////////
     //AUDIOS
     this.load.audio('cambiarBoton', 'src/Sounds/SFX/click_boton.wav');
+    this.load.audio('cambiarRama', 'src/Sounds/SFX/pasar_hojas.wav');
 
      // Evento para limpiar una vez que todo esté cargado
  this.load.on("complete", () => {
