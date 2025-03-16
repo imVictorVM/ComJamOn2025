@@ -1802,7 +1802,116 @@
                     "text": " "
                 }
             ]
+        },
+        "AveryEndBad":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "No me interesais."
+                }
+            ]
+        },
+        "AveryEndOne":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Estaría dispuesto a salir contigo."
+                }
+            ]
+        },
+        "AveryEndTwo":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Avery",
+                    "text": "Estoy interesado en ambos."
+                }
+            ]
+        },
+        "CerineEndBad":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Cerine",
+                    "text": "Lo siento, pero no me interesais."
+                }
+            ]
+        },
+        "CerineEndOne":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Cerine",
+                    "text": "¿Querrías salir conmigo?"
+                }
+            ]
+        },
+        "CerineEndTow":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Cerine",
+                    "text": "Me gustais ambos."
+                }
+            ]
+        },
+        "TrixEndBad":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Dejadme en paz, por favor."
+                }
+            ]
+        },
+        "TrixEndOne":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Creo... que me gustas."
+                }
+            ]
+        },
+        "TrixEndTwo":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Trix",
+                    "text": "Yo.. No puedo elegir entre ambos."
+                }
+            ]
+        },
+        "PhoebeEndBad":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "¡¡Sois muy buenos amigos!!"
+                }
+            ]
+        },
+        "PhoebeEndOne":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "Podría estar contigo durante el resto de mi vida."
+                }
+            ]
+        },
+        "PhoebeEndTwo":{ 
+            "dialogs": [
+                {},
+                {
+                    "character": "Phoebe",
+                    "text": "¡Podemos estar lo tres juntos y pasarlo genial!"
+                }
+            ]
         }
+
     }    
 }
      
