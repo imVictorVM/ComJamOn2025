@@ -28,6 +28,8 @@ constructor(){
     this.respuestaP1 = false;
     this.respuestaP2 = false;
     this.start = true;
+
+    this.musicaGame;
 }
 
 init(ramaSelected){
@@ -49,6 +51,26 @@ preload(){
 }
 
 create(){
+
+    // Detener la música anterior si está en reproducción
+    if (this.sound.get('musicaMenu')) {
+        this.sound.get('musicaMenu').stop();
+    }
+
+    if(this.whichRama == 0 || this.whichRama == 1){
+        // Reproducir la nueva música
+        this.musicaGame = this.sound.add('musicaCerezo', { loop: true });
+        this.musicaGame.play();
+    }
+    else if(this.whichRama == 2 || this.whichRama == 3){
+        this.musicaGame = this.sound.add('musicaSauce', { loop: true });
+        this.musicaGame.play();
+            
+    }
+    else {
+        this.musicaGame = this.sound.add('musicaPalmera', { loop: true });
+        this.musicaGame.play();
+    }
 
     //CREAMOS JSON
     this.cardJson = this.cache.json.get('cardJson');

@@ -15,6 +15,13 @@ export default class MainMenuScene extends Phaser.Scene {
     }
 
     create(){
+
+         // Crear la instancia de la música si no existe
+         if (!this.sound.get('musicaMenu')) {
+            this.menuMusic = this.sound.add('musicaMenu', { loop: true });
+            this.menuMusic.play();
+        }
+
         this.Player1 = new Player1(this, 100, 100, 'player1');
         this.Player2 = new Player2(this, 100, 100, 'player2');      
         this.whatSelection = 0;
@@ -87,13 +94,13 @@ export default class MainMenuScene extends Phaser.Scene {
 
 
         if (this.whatSelection == 0) {
-            this.empezar.setTint(0xFFFFFF);  // Blanco brillante
-            this.creditos.setTint(0xBBBBBB); // Gris más oscuro para diferenciar
+            this.creditos.setTint(0xFFFFFF);
+            this.empezar.setTint(0xBBBBBB);
         }
         
         if (this.whatSelection == 1) {    
-            this.creditos.setTint(0xFFFFFF);
-            this.empezar.setTint(0xBBBBBB);
+            this.empezar.setTint(0xFFFFFF);  // Blanco brillante
+            this.creditos.setTint(0xBBBBBB); // Gris más oscuro para diferenciar
         }
     }
 

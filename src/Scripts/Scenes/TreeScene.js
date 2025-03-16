@@ -6,7 +6,7 @@ export default class TreeScene extends Phaser.Scene {
         super({key: "TreeScene"})
 
         this.whatSelection = 0;
-
+        this.menuMusic;
     }
 
 preload(){
@@ -14,6 +14,12 @@ preload(){
 }
 
     create(){
+
+                 // Crear la instancia de la música si no existe
+                 if (!this.sound.get('musicaMenu')) {
+                    this.menuMusic = this.sound.add('musicaMenu', { loop: true });
+                    this.menuMusic.play();
+                }
 
         //JUGADORES
         this.Player1 = new Player1(this, 100, 100, 'player1');
