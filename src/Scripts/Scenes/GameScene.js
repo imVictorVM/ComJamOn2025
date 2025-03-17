@@ -51,7 +51,7 @@ constructor(){
 init(ramaSelected){
     
     this.whichRama = ramaSelected.selection;
-    console.log( this.whichRama);
+    console.log( this.whichRama + "rama");
     
 }
 
@@ -194,6 +194,7 @@ create(){
     this.selectionPlayer1 = 0;
     this.selectionPlayer2 = 5;
 
+    console.log("THIS RAMA" + this.whichRama);
         switch(this.whichRama){
 
             case(0):
@@ -222,11 +223,14 @@ create(){
             case(4):
                 this.NinfaStats = new Stats(1,1,0,-1,-1,0);
                 this.ninfaName = "Phoebe"
+                console.log("wahahaha")
                 this.spriteArray = ['RamaPhoebe','RamaPhoebeKawaii','RamaPhoebe.1','RamaPhoebe.2','RamaPhoebe.3','Phoebe','PhoebeEnfadado','PhoebeSonrojado']; //Seteamos su array de sprites
+                break;
     
             case(5):
                 this.NinfaStats = new Stats(1,0,-1,1,0,-1);
                 this.ninfaName = "Pam"
+                console.log("PAM?")
                 this.spriteArray = ['RamaPam','RamaPamKawaii','RamaPam.1','RamaPam.2','RamaPam.3','RamaPam','RamaPam.3','RamaPamKawaii']; //Seteamos su array de sprites
             break;
     
