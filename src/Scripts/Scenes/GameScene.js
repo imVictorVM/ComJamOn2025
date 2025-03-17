@@ -45,6 +45,7 @@ constructor(){
         'exploWhite',
         'exploBlackout'
     ]
+    this.explosionSound;
 }
 
 init(ramaSelected){
@@ -68,7 +69,7 @@ preload(){
 
 create(){
 
-    this.explosion = this.sound.add("explosion");
+    this.explosionSound = this.sound.add("explosion");
         
 
     this.corazonbackground = this.add.image(
@@ -472,7 +473,7 @@ changeScene(){
 
     if(this.fase == 1){ //Ninguno cumple los requisitos para pasar de ronda
         //Seteo de la explosión en la posición de la rama
-       // this.explosion.play();
+        this.explosionSound.play();
         this.explosion = new Explosion(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2.5,this.explosionArray);
         const fx= this.cameras.main.shake(500);
         setTimeout(() => {
@@ -520,7 +521,7 @@ changeScene(){
             this.events.emit("OnPointerDown");
             this.j1.setVisible(true);
             this.j2.setVisible(true);
-         //   this.explosion.play();
+            this.explosionSound.play();
             setTimeout(() => {
                 const fx= this.cameras.main.shake(500);
             },2000);
@@ -575,7 +576,7 @@ changeScene(){
                 this.dialogBackground.setVisible(false);
             },4000);
             setTimeout(() => {
-             //   this.explosion.play();
+                this.explosionSound.play();
                 const fx= this.cameras.main.shake(500);
                 this.explosion = new Explosion(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2.5,this.explosionArray);
                
@@ -626,7 +627,7 @@ changeScene(){
                 this.dialogBackground.setVisible(false);
             },4000);
             setTimeout(() => {
-         //       this.explosion.play();
+                this.explosionSound.play();
                 const fx= this.cameras.main.shake(500);
                 this.explosion = new Explosion(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2.5,this.explosionArray);
                
@@ -700,7 +701,7 @@ changeScene(){
                 }
                 else { //Si alguno rechaza
                            //Seteo de la explosión en la posición de la rama
-                     //      this.explosion.play();
+                    this.explosionSound.play();
                     this.explosion = new Explosion(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2.5,this.explosionArray);
                     const fx= this.cameras.main.shake(500);
                     setTimeout(() => {
