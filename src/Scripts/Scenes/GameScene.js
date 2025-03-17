@@ -217,6 +217,7 @@ create(){
     
             case(3):
                 this.NinfaStats = new Stats(-1,0,1,-1,0,1);
+                this.ninfaName = "Salena"
                 this.spriteArray = ['RamaSalena','RamaSalenaKawaii','RamaSalena.1','RamaSalena.2','RamaSalena.3','RamaSalena','RamaSalena.3','RamaSalenaKawaii']; //Seteamos su array de sprites
             break;
     
