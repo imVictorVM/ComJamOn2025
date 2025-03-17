@@ -226,7 +226,7 @@ create(){
                 this.ninfaName = "Phoebe"
                 console.log("wahahaha")
                 this.spriteArray = ['RamaPhoebe','RamaPhoebeKawaii','RamaPhoebe.1','RamaPhoebe.2','RamaPhoebe.3','Phoebe','PhoebeEnfadado','PhoebeSonrojado']; //Seteamos su array de sprites
-                break;
+            break;
     
             case(5):
                 this.NinfaStats = new Stats(1,0,-1,1,0,-1);
@@ -392,10 +392,7 @@ createAnswers(){
 
     //Creación del diálogo background
 
-    this.dialogBackground = this.add.graphics();
-    this.dialogBackground.fillStyle(0xffffff, 0.4); // Blanco, 50% de transparencia
-  //  this.dialogBackground.fillRect(0, 0, 300, 300);
-    this.dialogBackground.setVisible(false); // Oculto al inicio
+   
 
     //Instanciar ReadDialog
     this.reader = new ReadDialog(this);  
@@ -440,13 +437,19 @@ createAnswers(){
 //para comprobar la eleccion
 checkPlayerElection(player, selection) {
     for (let i = 0; i < this.cardArray.length; i++) {
-        if (this.cardArray[selection].stats.statsArray[i] === 1) {
+        if (this.cardArray[selection].stats.statsArray[i] == 1) {
+
+            console.log("puntos a sumar: " + this.ninfa.NinfaStats.statsArray[i]);
+
             this.affectionSystem.AddAffection(this.ninfa.NinfaStats.statsArray[i], player);
+           
             if(this.ninfa.NinfaStats.statsArray[i]==1) {
                 this.playerHasAnsweredGood++;
             }
         }
     }
+    console.log(this.affectionSystem.GetPlayer1());
+    console.log(this.affectionSystem.GetPlayer2());
 }
 
 
@@ -1078,19 +1081,19 @@ changeScene(){
     changeSelectionFase2(whatSelection){
         switch(whatSelection){
             case(0):
-            this.dialogueSystem.button[2].setStyle({ fill: '#fff', backgroundColor: '#000000' }); 
-            this.dialogueSystem.button[1].setStyle({ fill: '#000000', backgroundColor: '#ffffff' });
-            this.dialogueSystem.button[0].setStyle({ fill: '#000000', backgroundColor: '#ffffff' });
+            this.dialogueSystem.button[2].setStyle({ fill: '#fff', backgroundColor: '#535D81' }); 
+            this.dialogueSystem.button[1].setStyle({ fill: '#535D81', backgroundColor: '#ffffff' });
+            this.dialogueSystem.button[0].setStyle({ fill: '#535D81', backgroundColor: '#ffffff' });
             break;
             case(1):
-            this.dialogueSystem.button[2].setStyle({ fill: '#000000', backgroundColor: '#ffffff' });
-            this.dialogueSystem.button[1].setStyle({ fill: '#fff', backgroundColor: '#000000' }); 
-            this.dialogueSystem.button[0].setStyle({ fill: '#000000', backgroundColor: '#ffffff' });
+            this.dialogueSystem.button[2].setStyle({ fill: '#535D81', backgroundColor: '#ffffff' });
+            this.dialogueSystem.button[1].setStyle({ fill: '#fff', backgroundColor: '#535D81' }); 
+            this.dialogueSystem.button[0].setStyle({ fill: '#535D81', backgroundColor: '#ffffff' });
             break;
             case(2):
-            this.dialogueSystem.button[2].setStyle({ fill: '#000000', backgroundColor: '#ffffff' });
-            this.dialogueSystem.button[1].setStyle({ fill: '#000000', backgroundColor: '#ffffff' });
-            this.dialogueSystem.button[0].setStyle({ fill: '#fff', backgroundColor: '#000000' }); 
+            this.dialogueSystem.button[2].setStyle({ fill: '#535D81', backgroundColor: '#ffffff' });
+            this.dialogueSystem.button[1].setStyle({ fill: '#535D81', backgroundColor: '#ffffff' });
+            this.dialogueSystem.button[0].setStyle({ fill: '#fff', backgroundColor: '#535D81' }); 
             break;
         }
     }

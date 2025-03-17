@@ -10,7 +10,7 @@ export default class Stats
        this.inteligencia = inteligencia;
        this.empatia = empatia;
 
-       this.statsArray = [this.extroversion,this.confianza,this.creatividad,this.paciencia,this.empatia];
+       this.statsArray = [this.extroversion,this.confianza,this.creatividad,this.paciencia,this.inteligencia,this.empatia];
     } 
    
 }
