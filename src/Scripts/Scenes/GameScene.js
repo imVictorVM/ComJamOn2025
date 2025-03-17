@@ -328,28 +328,26 @@ createCards() {
         return numbers;
     }
 
-
     let uniqueIndices = getRandomUniqueNumbers(6, 1, 6);
     console.log("Índices generados:", uniqueIndices);
 
     // Configuración de tamaño y posición
     let cardWidth = 200;  
     let cardHeight = 280;  
-    let spacing = 100;  // Reducción de espacio entre cartas
-    let yPos = 820;     // Ubicación en la parte inferior
+    let spacing = 100; 
+    let yPos = 820;     
 
     // Calcular punto de inicio para centrar mejor
     let totalWidth = (6 * cardWidth) + (5 * spacing); 
     let startX = (this.sys.game.canvas.width - totalWidth) / 2 + (cardWidth / 2);
 
-    // Crear cartas
+    // Crear cartas asegurando el tamaño correcto
     this.cardArray = uniqueIndices.map((i, index) => {
         let cartaKey = `carta${i}`;
         let cartaData = this.cardQuestion[cartaKey];
-
         let posX = startX + (index * (cardWidth + spacing)); // Posición centrada
 
-        return new card(
+        let newCard = new card(
             this,
             posX,
             yPos,
@@ -362,7 +360,12 @@ createCards() {
             cartaData.stats.paciencia,
             cartaData.stats.empatia
         );
-    })
+
+        
+        newCard.setDisplaySize(cardWidth, cardHeight);
+
+        return newCard;
+    });
 
     //Crear cartas
      //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
