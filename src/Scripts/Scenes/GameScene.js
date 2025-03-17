@@ -254,7 +254,7 @@ create(){
        
             //Startgame
     this.startGame = false; //booleano para empezar el juego
-    this.countdown = 3 * 1000; //5 segundos
+    this.countdown = 3 * 5000; //5 segundos
     this.countdownText = this.add.text(
         900,
         70,
