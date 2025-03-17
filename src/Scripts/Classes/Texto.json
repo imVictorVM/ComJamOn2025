@@ -961,7 +961,7 @@
                     "text": "¿Y tú? ¿Te has perdido? ¿Por qué has venido?",
                     "options": [
                         { 
-                            "response": "¡A encontrar a alguien tan enérgico como yo!", 
+                            "response": "¡A encontrar a alguien\n tan enérgico como yo!", 
                             "gain": 1, "next": "Phoebe1.2.1" 
                         },
                         { 
@@ -1011,7 +1011,7 @@
                     "text": "Y si jugamos a algún juego? ¿Cuál crees que se me daria bien?",
                     "options": [
                         { 
-                            "response": "Serías muy bueno en el volley, tu energía me motiva.", 
+                            "response": "Serías muy bueno en el volley,\n tu energía me motiva.", 
                             "gain": 1, "next": "Phoebe2.1.1" 
                         },
                         { 
@@ -1019,7 +1019,7 @@
                             "gain": -1, "next": "Phoebe2.1.2" 
                         },
                         { 
-                            "response": "Cualquier deporte, mientras sea conmigo en mi casa.", 
+                            "response": "Cualquier deporte, mientras sea \nconmigo en mi casa.", 
                             "gain": 0, "next": "Phoebe2.1.3" 
                         }
                     ]
@@ -1065,11 +1065,11 @@
                             "gain": 0, "next": "Phoebe2.2.1" 
                         },
                         { 
-                            "response": "Alguien como tú se merece ir a un hotel de lujo.", 
+                            "response": "Alguien como tú se merece \nir a un hotel de lujo.", 
                             "gain": -1, "next": "Phoebe2.2.2" 
                         },
                         { 
-                            "response": "Si te apeteciese, un camping, podríamos explorar el bosque juntos.", 
+                            "response": "Si te apeteciese, un camping,\n podríamos explorar el bosque juntos.", 
                             "gain": 1, "next": "Phoebe2.2.3" 
                         }
                     ]
@@ -1169,7 +1169,7 @@
                             "gain": 0, "next": "Phoebe3.2.2" 
                         },
                         { 
-                            "response": "Por supuesto, no lo dudes. Tenemos muchos planes pendientes.", 
+                            "response": "Por supuesto, no lo dudes.\n Tenemos muchos planes pendientes.", 
                             "gain": 1, "next": "Phoebe3.2.3" 
                         }
                     ]
