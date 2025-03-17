@@ -4,7 +4,7 @@ import TreeScene from "./Scenes/TreeScene.js";
 import CreditsScene from "./Scenes/CreditsScene.js";
 import GameScene from "./Scenes/GameScene.js"
 import ProfileScene from "./Scenes/ProfileScene.js";
-
+import CreditsMenu from "./Scenes/CreditsSceneFromMenu.js"
 let config = {
 	type: Phaser.AUTO,
 	parent: 'juego',
@@ -17,7 +17,7 @@ let config = {
 		height: 1080,
 		zoom: 1
 	},
-	scene: [LoadScene,MainMenuScene,TreeScene,ProfileScene,CreditsScene,GameScene],
+	scene: [LoadScene,MainMenuScene,TreeScene,ProfileScene,CreditsScene,GameScene,CreditsMenu],
 	physics: { 
 		default: 'arcade', 
 		arcade: { 
