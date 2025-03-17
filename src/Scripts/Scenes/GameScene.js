@@ -246,8 +246,8 @@ create(){
 
     if(this.fase == 1){
             
-        this.timerPlayer1 = new Timer(this,760,150,-1);
-        this.timerPlayer2 = new Timer(this,1150,150,1);
+        this.timerPlayer1 = new Timer(this,760,130,-1);
+        this.timerPlayer2 = new Timer(this,1150,130,1);
        
         //TIMER
         this.initialTimer = this.time.addEvent({ 

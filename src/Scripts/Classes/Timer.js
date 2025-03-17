@@ -34,13 +34,13 @@ export default class Timer extends Phaser.GameObjects.Graphics
 
         //  Set color of the time bar
 
-        this.bar.fillStyle(0x0000ff);
+        this.bar.fillStyle(0x535D81);
 
         //Checks the actual value of the time
         var d = Math.floor(this.p * this.value / 4);
         d = d * this.z; //Sets the rotation
         //Draw the slider
-        this.bar.fillRect(this.x + 2, this.y + 2, d, 12);
+        this.bar.fillRect(this.x + 2, this.y + 2, d, 20);
 
     }
 
