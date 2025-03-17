@@ -307,11 +307,11 @@ selectCardQuestion()
             break;
         case 4:
             this.cardQuestion= this.cardJson.Pregunta4;
-            this.prompt = this.prompt3;
+            this.prompt = this.prompt4;
             break;
         case 5:
             this.cardQuestion= this.cardJson.Pregunta5;
-            this.prompt = this.prompt4;
+            this.prompt = this.prompt5;
             break;
     }
 }

@@ -100,13 +100,13 @@ preload(){
            
         }
         if (this.whatSelection == 0) {
-            this.confirmar.setTint(0xFFFFFF);
-            this.volver.setTint(0xBBBBBB);
+            this.confirmar.setTint(0xBBBBBB);
+            this.volver.setTint(0xFFFFFF);
         }
         
         if (this.whatSelection == 1) {     
-            this.volver.setTint(0xFFFFFF);  // Blanco brillante
-            this.confirmar.setTint(0xBBBBBB); // Gris más oscuro para diferenciar
+            this.volver.setTint(0xBBBBBB);  // Blanco brillante
+            this.confirmar.setTint(0xFFFFFF); // Gris más oscuro para diferenciar
         }
 
         if((this.Player1.select()|| this.Player2.select())){

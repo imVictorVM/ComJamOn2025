@@ -95,13 +95,13 @@ export default class MainMenuScene extends Phaser.Scene {
 
 
         if (this.whatSelection == 0) {
-            this.creditos.setTint(0xFFFFFF);
-            this.empezar.setTint(0xBBBBBB);
+            this.creditos.setTint(0xBBBBBB);
+            this.empezar.setTint(0xFFFFFF);
         }
         
         if (this.whatSelection == 1) {    
-            this.empezar.setTint(0xFFFFFF);  // Blanco brillante
-            this.creditos.setTint(0xBBBBBB); // Gris más oscuro para diferenciar
+            this.empezar.setTint(0xBBBBBB);  // Blanco brillante
+            this.creditos.setTint(0xFFFFFF); // Gris más oscuro para diferenciar
         }
     }
 
