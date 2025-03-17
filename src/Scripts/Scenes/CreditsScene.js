@@ -85,7 +85,9 @@ export default class CreditsScene extends Phaser.Scene {
 
         if(this.Player1.select()|| this.Player2.select()){
             console.log("select");
-            this.scene.start('MainMenuScene');
+            //this.scene.start('MainMenuScene');
+            //reinicia la pagina entera
+            window.location.reload();
         }
     }
 }
