@@ -94,7 +94,6 @@ preload(){
 
         if(this.Player1.select()|| this.Player2.select()){
 
-
             this.changeScene(this.whatSelection);
 
         }
