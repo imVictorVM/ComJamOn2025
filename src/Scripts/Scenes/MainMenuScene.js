@@ -16,6 +16,7 @@ export default class MainMenuScene extends Phaser.Scene {
 
     create(){
 
+        
          // Crear la instancia de la música si no existe
          if (!this.sound.get('musicaMenu')) {
             this.menuMusic = this.sound.add('musicaMenu', { loop: true });

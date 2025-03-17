@@ -229,6 +229,9 @@ export default class loadScene extends Phaser.Scene {
     this.load.audio('musicaSauce', 'src/Sounds/Music/saucelloron.wav');
     this.load.audio('musicaPalmera', 'src/Sounds/Music/palmera.wav');
 
+    this.load.audio('clickDialogo', 'src/Sounds/SFX/click_avanzar_dialogo.wav');
+    this.load.audio('explosion', 'src/Sounds/SFX/explosion.wav');
+    this.load.audio('sacarCarta', 'src/Sounds/SFX/sacar_carta.wav');
      // Evento para limpiar una vez que todo esté cargado
  this.load.on("complete", () => {
     progressBar.destroy();
