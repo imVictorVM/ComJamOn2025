@@ -27,7 +27,7 @@ export default class DialogSystem {
             fill: '#BFCAD9', 
             fontFamily: 'Arial, sans-serif', 
             stroke: '#535D81', 
-            strokeThickness: 4 
+            strokeThickness: 10 
         }).setOrigin(0.5, 0.5);
 
         this.dialogueBox = this.scene.add.graphics();
