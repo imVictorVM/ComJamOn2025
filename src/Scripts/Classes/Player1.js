@@ -14,8 +14,8 @@ export default class Player1 extends Player {
 
     }
     
-init(){
-}
+init(){ 
+} 
 
 moveleft(){
     if(!this.selectCard) return Phaser.Input.Keyboard.JustDown(this.leftMovKey);

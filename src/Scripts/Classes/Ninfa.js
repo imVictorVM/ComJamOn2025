@@ -12,6 +12,7 @@ export default class Ninfa{
 
         //Seteo de las estadísticas en función de la NinfaElegida
         this.NinfaStats = stats;
+        console.log(this.NinfaStats);
 
         //Todos los sprites (la rama y la ninfa en cuestión)
 

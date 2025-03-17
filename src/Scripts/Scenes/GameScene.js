@@ -224,14 +224,12 @@ create(){
             case(4):
                 this.NinfaStats = new Stats(1,1,0,-1,-1,0);
                 this.ninfaName = "Phoebe"
-                console.log("wahahaha")
                 this.spriteArray = ['RamaPhoebe','RamaPhoebeKawaii','RamaPhoebe.1','RamaPhoebe.2','RamaPhoebe.3','Phoebe','PhoebeEnfadado','PhoebeSonrojado']; //Seteamos su array de sprites
             break;
     
             case(5):
                 this.NinfaStats = new Stats(1,0,-1,1,0,-1);
                 this.ninfaName = "Pam"
-                console.log("PAM?")
                 this.spriteArray = ['RamaPam','RamaPamKawaii','RamaPam.1','RamaPam.2','RamaPam.3','RamaPam','RamaPam.3','RamaPamKawaii']; //Seteamos su array de sprites
             break;
     
@@ -329,7 +327,6 @@ createCards() {
     }
 
     let uniqueIndices = getRandomUniqueNumbers(6, 1, 6);
-    console.log("Índices generados:", uniqueIndices);
 
     // Configuración de tamaño y posición
     let cardWidth = 200;  
@@ -358,6 +355,7 @@ createCards() {
             cartaData.stats.confianza,
             cartaData.stats.creatividad,
             cartaData.stats.paciencia,
+            cartaData.stats.inteligencia,
             cartaData.stats.empatia
         );
 
@@ -366,6 +364,10 @@ createCards() {
 
         return newCard;
     });
+
+    console.log("CreateCards: " + this.cardArray[0])
+
+
 
     //Crear cartas
      //Chuleta de stats: [empatia, extroversion, estabilidadMental, creatividad, paciencia, inteligencia]
@@ -441,9 +443,6 @@ createAnswers(){
 checkPlayerElection(player, selection) {
     for (let i = 0; i < this.cardArray.length; i++) {
         if (this.cardArray[selection].stats.statsArray[i] == 1) {
-
-            console.log("puntos a sumar: " + this.ninfa.NinfaStats.statsArray[i]);
-
             this.affectionSystem.AddAffection(this.ninfa.NinfaStats.statsArray[i], player);
            
             if(this.ninfa.NinfaStats.statsArray[i]==1) {
@@ -451,8 +450,6 @@ checkPlayerElection(player, selection) {
             }
         }
     }
-    console.log(this.affectionSystem.GetPlayer1());
-    console.log(this.affectionSystem.GetPlayer2());
 }
 
 
